@@ -1,0 +1,62 @@
+{
+  "user_id": "alice-zr-ejnvjto",
+  "agent_id": "travel-agent-zr-ejnvjto",
+  "app_id": "concierge-zr-ejnvjto",
+  "run_id": "trip-zr-ejnvjto",
+  "results": [
+    {
+      "id": "1162e96e-c236-4629-bf57-641356d06b9b",
+      "memory": "User consistently books aisle seats on flights, indicating a preference for easy aisle access.",
+      "user_id": "alice-zr-ejnvjto",
+      "agent_id": "travel-agent-zr-ejnvjto",
+      "app_id": "concierge-zr-ejnvjto",
+      "run_id": "trip-zr-ejnvjto",
+      "score": 0.2895,
+      "score_breakdown": {
+        "semantic": 0.5855,
+        "bm25": 0.1383,
+        "entity": 0.0
+      },
+      "metadata": {},
+      "categories": [],
+      "created_at": "2026-05-27T19:00:14+00:00",
+      "updated_at": "2026-05-27T19:00:28+00:00"
+    },
+    {
+      "id": "1629f01f-9eca-4ab5-803a-6c70aa4e4a73",
+      "memory": "User enjoys staying at boutique hotels in Lisbon, preferring their unique style and personalized service.",
+      "user_id": "alice-zr-ejnvjto",
+      "agent_id": "travel-agent-zr-ejnvjto",
+      "app_id": "concierge-zr-ejnvjto",
+      "run_id": "trip-zr-ejnvjto",
+      "score": 0.2476,
+      "score_breakdown": {
+        "semantic": 0.6189,
+        "bm25": 0.0,
+        "entity": 0.0
+      },
+      "metadata": {},
+      "categories": [],
+      "created_at": "2026-05-27T19:00:14+00:00",
+      "updated_at": "2026-05-27T19:00:27+00:00"
+    },
+    {
+      "id": "ae1a1c40-540b-4bf8-be86-a7e1d5ecb695",
+      "memory": "User follows a vegetarian diet, avoiding meat and animal products in meals.",
+      "user_id": "alice-zr-ejnvjto",
+      "agent_id": "travel-agent-zr-ejnvjto",
+      "app_id": "concierge-zr-ejnvjto",
+      "run_id": "trip-zr-ejnvjto",
+      "score": 0.1819,
+      "score_breakdown": {
+        "semantic": 0.4548,
+        "bm25": 0.0,
+        "entity": 0.0
+      },
+      "metadata": {},
+      "categories": [],
+      "created_at": "2026-05-27T19:00:14+00:00",
+      "updated_at": "2026-05-27T19:00:27+00:00"
+    }
+  ]
+}

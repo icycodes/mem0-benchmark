@@ -1,0 +1,130 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 5,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1779909139889,
+            "stop": 1779909142746
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_log_contains_run_id",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 14,
+                "start": 1779909139913,
+                "stop": 1779909139927,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_contains_run_id():\n        rid = _run_id()\n        log = _read_log()\n>       assert re.search(rf\"^RUN_ID:\\s*{re.escape(rid)}\\s*$\", log, re.MULTILINE), (\n            f\"Log must contain a line 'RUN_ID: {rid}'. Log content:\\n{log}\"\n        )\nE       AssertionError: Log must contain a line 'RUN_ID: zr-gppbrod'. Log content:\nE         Error: Export job timed out or failed to return structured data\nE         RUN_ID: zr-1779908837\nE         Added memory: Hi, my name is Priya Shah and I work as a Senior Data Engineer at Helios Robotics.\nE         Added memory: I'm based in Bengaluru and I've been at Helios for about 4 years.\nE         Added memory: I have a Master's degree in Computer Science from IIT Bombay.\nE         Added memory: You can reach me at priya.shah@helios-robotics.example and my LinkedIn handle is priya-shah-de.\nE         Waiting for server-side extraction...\nE         EXPORT_ID: 6e7e44ef-e460-4caf-8c53-ef24148bc53b\nE         Polling export status... (attempt 1/24)\nE         Polling export status... (attempt 2/24)\nE         Polling export status... (attempt 3/24)\nE         Polling export status... (attempt 4/24)\nE         Polling export status... (attempt 5/24)\nE         Polling export status... (attempt 6/24)\nE         Polling export status... (attempt 7/24)\nE         Polling export status... (attempt 8/24)\nE         Polling export status... (attempt 9/24)\nE         Polling export status... (attempt 10/24)\nE         Polling export status... (attempt 11/24)\nE         Polling export status... (attempt 12/24)\nE         Polling export status... (attempt 13/24)\nE         Polling export status... (attempt 14/24)\nE         Polling export status... (attempt 15/24)\nE         Polling export status... (attempt 16/24)\nE         Polling export status... (attempt 17/24)\nE         Polling export status... (attempt 18/24)\nE         Polling export status... (attempt 19/24)\nE         Polling export status... (attempt 20/24)\nE         Polling export status... (attempt 21/24)\nE         Polling export status... (attempt 22/24)\nE         Polling export status... (attempt 23/24)\nE         Polling export status... (attempt 24/24)\nE         \nE       assert None\nE        +  where None = <function search at 0x787233953ba0>('^RUN_ID:\\\\s*zr\\\\-gppbrod\\\\s*$', 'Error: Export job timed out or failed to return structured data\\nRUN_ID: zr-1779908837\\nAdded memory: Hi, my name is ...export status... (attempt 22/24)\\nPolling export status... (attempt 23/24)\\nPolling export status... (attempt 24/24)\\n', re.MULTILINE)\nE        +    where <function search at 0x787233953ba0> = re.search\nE        +    and   re.MULTILINE = re.MULTILINE\n\ntests/test_final_state.py:59: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_export_id",
+                "status": "passed",
+                "duration": 0,
+                "start": 1779909139927,
+                "stop": 1779909139927,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_export_status_ready",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1779909139928,
+                "stop": 1779909139932,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_contains_export_status_ready():\n        log = _read_log()\n>       assert re.search(r\"^EXPORT_STATUS:\\s*ready\\s*$\", log, re.MULTILINE), (\n            f\"Log must contain literal line 'EXPORT_STATUS: ready'. Log:\\n{log}\"\n        )\nE       AssertionError: Log must contain literal line 'EXPORT_STATUS: ready'. Log:\nE         Error: Export job timed out or failed to return structured data\nE         RUN_ID: zr-1779908837\nE         Added memory: Hi, my name is Priya Shah and I work as a Senior Data Engineer at Helios Robotics.\nE         Added memory: I'm based in Bengaluru and I've been at Helios for about 4 years.\nE         Added memory: I have a Master's degree in Computer Science from IIT Bombay.\nE         Added memory: You can reach me at priya.shah@helios-robotics.example and my LinkedIn handle is priya-shah-de.\nE         Waiting for server-side extraction...\nE         EXPORT_ID: 6e7e44ef-e460-4caf-8c53-ef24148bc53b\nE         Polling export status... (attempt 1/24)\nE         Polling export status... (attempt 2/24)\nE         Polling export status... (attempt 3/24)\nE         Polling export status... (attempt 4/24)\nE         Polling export status... (attempt 5/24)\nE         Polling export status... (attempt 6/24)\nE         Polling export status... (attempt 7/24)\nE         Polling export status... (attempt 8/24)\nE         Polling export status... (attempt 9/24)\nE         Polling export status... (attempt 10/24)\nE         Polling export status... (attempt 11/24)\nE         Polling export status... (attempt 12/24)\nE         Polling export status... (attempt 13/24)\nE         Polling export status... (attempt 14/24)\nE         Polling export status... (attempt 15/24)\nE         Polling export status... (attempt 16/24)\nE         Polling export status... (attempt 17/24)\nE         Polling export status... (attempt 18/24)\nE         Polling export status... (attempt 19/24)\nE         Polling export status... (attempt 20/24)\nE         Polling export status... (attempt 21/24)\nE         Polling export status... (attempt 22/24)\nE         Polling export status... (attempt 23/24)\nE         Polling export status... (attempt 24/24)\nE         \nE       assert None\nE        +  where None = <function search at 0x787233953ba0>('^EXPORT_STATUS:\\\\s*ready\\\\s*$', 'Error: Export job timed out or failed to return structured data\\nRUN_ID: zr-1779908837\\nAdded memory: Hi, my name is ...export status... (attempt 22/24)\\nPolling export status... (attempt 23/24)\\nPolling export status... (attempt 24/24)\\n', re.MULTILINE)\nE        +    where <function search at 0x787233953ba0> = re.search\nE        +    and   re.MULTILINE = re.MULTILINE\n\ntests/test_final_state.py:73: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_profile_fields",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1779909139932,
+                "stop": 1779909139936,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_contains_profile_fields():\n        log = _read_log()\n        for key in (\"FULL_NAME\", \"CURRENT_COMPANY\", \"LOCATION\"):\n            match = re.search(rf\"^{key}:\\s*(.+?)\\s*$\", log, re.MULTILINE)\n>           assert match, f\"Log must contain '{key}: <non-empty value>'. Log:\\n{log}\"\nE           AssertionError: Log must contain 'FULL_NAME: <non-empty value>'. Log:\nE             Error: Export job timed out or failed to return structured data\nE             RUN_ID: zr-1779908837\nE             Added memory: Hi, my name is Priya Shah and I work as a Senior Data Engineer at Helios Robotics.\nE             Added memory: I'm based in Bengaluru and I've been at Helios for about 4 years.\nE             Added memory: I have a Master's degree in Computer Science from IIT Bombay.\nE             Added memory: You can reach me at priya.shah@helios-robotics.example and my LinkedIn handle is priya-shah-de.\nE             Waiting for server-side extraction...\nE             EXPORT_ID: 6e7e44ef-e460-4caf-8c53-ef24148bc53b\nE             Polling export status... (attempt 1/24)\nE             Polling export status... (attempt 2/24)\nE             Polling export status... (attempt 3/24)\nE             Polling export status... (attempt 4/24)\nE             Polling export status... (attempt 5/24)\nE             Polling export status... (attempt 6/24)\nE             Polling export status... (attempt 7/24)\nE             Polling export status... (attempt 8/24)\nE             Polling export status... (attempt 9/24)\nE             Polling export status... (attempt 10/24)\nE             Polling export status... (attempt 11/24)\nE             Polling export status... (attempt 12/24)\nE             Polling export status... (attempt 13/24)\nE             Polling export status... (attempt 14/24)\nE             Polling export status... (attempt 15/24)\nE             Polling export status... (attempt 16/24)\nE             Polling export status... (attempt 17/24)\nE             Polling export status... (attempt 18/24)\nE             Polling export status... (attempt 19/24)\nE             Polling export status... (attempt 20/24)\nE             Polling export status... (attempt 21/24)\nE             Polling export status... (attempt 22/24)\nE             Polling export status... (attempt 23/24)\nE             Polling export status... (attempt 24/24)\nE             \nE           assert None\n\ntests/test_final_state.py:82: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_create_export_response_artifact",
+                "status": "passed",
+                "duration": 0,
+                "start": 1779909139936,
+                "stop": 1779909139936,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_get_export_response_artifact",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779909139936,
+                "stop": 1779909139937,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_lead_profile_artifact",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1779909139937,
+                "stop": 1779909139941,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_lead_profile_artifact():\n        data = _load_json(LEAD_PROFILE_FILE)\n        assert isinstance(data, dict), \"lead_profile.json must be a JSON object.\"\n        expected = _entity_ids()\n        for key, value in expected.items():\n>           assert data.get(key) == value, (\n                f\"lead_profile.json[{key}] expected {value!r}, got {data.get(key)!r}.\"\n            )\nE           AssertionError: lead_profile.json[user_id] expected 'lead-zr-gppbrod', got 'lead-zr-1779908666'.\nE           assert 'lead-zr-1779908666' == 'lead-zr-gppbrod'\nE             - lead-zr-gppbrod\nE             + lead-zr-1779908666\n\ntests/test_final_state.py:115: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_lead_profile_content_matches_source_memories",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1779909139941,
+                "stop": 1779909139945,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_lead_profile_content_matches_source_memories():\n        data = _load_json(LEAD_PROFILE_FILE)\n        profile = data.get(\"profile\", {})\n    \n        full_name = (profile.get(\"full_name\") or \"\").lower()\n        company = (profile.get(\"current_company\") or \"\").lower()\n        location = (profile.get(\"location\") or \"\").lower()\n        email = (profile.get(\"contact_email\") or \"\").lower()\n    \n>       assert \"priya\" in full_name and \"shah\" in full_name, (\n            f\"profile.full_name must contain 'priya' and 'shah' (case-insensitive), got {full_name!r}.\"\n        )\nE       AssertionError: profile.full_name must contain 'priya' and 'shah' (case-insensitive), got ''.\nE       assert ('priya' in '')\n\ntests/test_final_state.py:164: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_server_state_has_lead_memories",
+                "status": "passed",
+                "duration": 2011,
+                "start": 1779909139945,
+                "stop": 1779909141956,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_export_retrievable_again",
+                "status": "passed",
+                "duration": 789,
+                "start": 1779909141957,
+                "stop": 1779909142746,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

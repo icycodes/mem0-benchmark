@@ -1,0 +1,15 @@
+{
+    "run_id": "test_run_final_2",
+    "collection_name": "mem0_demo_test_run_final_2",
+    "user_id": "alex",
+    "added_memory_ids": [
+        "92edeb57-1501-4d46-8afa-76c7cce19ea4",
+        "3fd9656b-2f05-4cc6-a63e-d1c37f3fb1a2"
+    ],
+    "updated_memory_id": "92edeb57-1501-4d46-8afa-76c7cce19ea4",
+    "updated_memory_text": "Alex now prefers vegetarian food and tracks calories.",
+    "deleted_memory_id": "3fd9656b-2f05-4cc6-a63e-d1c37f3fb1a2",
+    "search_query": "What are Alex's food preferences?",
+    "search_result_count": 1,
+    "final_memory_count": 1
+}

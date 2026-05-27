@@ -1,0 +1,75 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: anyio-4.13.0, json-ctrf-0.5.0
+collected 5 items
+
+tests/test_final_state.py .FFFF                                          [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_log_file_user_memory_lines ________________________
+
+    def test_log_file_user_memory_lines():
+        run_id = _run_id()
+        _, user_matches, _ = _parse_log()
+>       assert len(user_matches) >= 3, (
+            f"Expected at least 3 'User memory:' lines (one per participant), got {len(user_matches)}."
+        )
+E       AssertionError: Expected at least 3 'User memory:' lines (one per participant), got 0.
+E       assert 0 >= 3
+E        +  where 0 = len([])
+
+tests/test_final_state.py:58: AssertionError
+_______________________ test_log_file_agent_memory_line ________________________
+
+    def test_log_file_agent_memory_line():
+        run_id = _run_id()
+        _, _, agent_matches = _parse_log()
+>       assert len(agent_matches) >= 1, (
+            f"Expected at least 1 'Agent memory:' line in {LOG_FILE}, found {len(agent_matches)}."
+        )
+E       AssertionError: Expected at least 1 'Agent memory:' line in /home/user/group_chat/output.log, found 0.
+E       assert 0 >= 1
+E        +  where 0 = len([])
+
+tests/test_final_state.py:80: AssertionError
+______________ test_memories_attributed_to_each_user_on_platform _______________
+
+    def test_memories_attributed_to_each_user_on_platform():
+        pytest.importorskip("mem0")
+        from mem0 import MemoryClient
+    
+        api_key = os.environ.get("MEM0_API_KEY")
+        assert api_key, "MEM0_API_KEY env var must be set for verification."
+    
+        _, user_matches, _ = _parse_log()
+        user_ids = sorted({m.group("uid") for m in user_matches})
+>       assert user_ids, "No user_ids parsed from log file."
+E       AssertionError: No user_ids parsed from log file.
+E       assert []
+
+tests/test_final_state.py:125: AssertionError
+_______________ test_memory_attributed_to_assistant_on_platform ________________
+
+    def test_memory_attributed_to_assistant_on_platform():
+        pytest.importorskip("mem0")
+        from mem0 import MemoryClient
+    
+        api_key = os.environ.get("MEM0_API_KEY")
+        assert api_key, "MEM0_API_KEY env var must be set for verification."
+    
+        _, _, agent_matches = _parse_log()
+        agent_ids = sorted({m.group("aid") for m in agent_matches})
+>       assert agent_ids, "No agent_ids parsed from log file."
+E       AssertionError: No agent_ids parsed from log file.
+E       assert []
+
+tests/test_final_state.py:155: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_log_file_session_line
+FAILED tests/test_final_state.py::test_log_file_user_memory_lines - Assertion...
+FAILED tests/test_final_state.py::test_log_file_agent_memory_line - Assertion...
+FAILED tests/test_final_state.py::test_memories_attributed_to_each_user_on_platform
+FAILED tests/test_final_state.py::test_memory_attributed_to_assistant_on_platform
+========================= 4 failed, 1 passed in 1.07s ==========================

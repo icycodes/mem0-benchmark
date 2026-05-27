@@ -1,0 +1,9 @@
+Ingesting memories for Alice (alice-zr-ejnvjto)...
+Ingesting memories for Bob (bob-zr-ejnvjto)...
+Waiting for memories to be processed...
+Retry 1/10: Alice=0, Bob=0
+Retry 2/10: Alice=0, Bob=0
+Found 3 memories for Alice and 3 for Bob.
+RUN_ID: zr-ejnvjto
+TRAVELER_A_MEMORIES: 3
+TRAVELER_B_MEMORIES: 3

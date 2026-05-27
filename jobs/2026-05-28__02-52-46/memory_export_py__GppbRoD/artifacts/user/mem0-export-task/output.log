@@ -1,0 +1,32 @@
+Error: Export job timed out or failed to return structured data
+RUN_ID: zr-1779908837
+Added memory: Hi, my name is Priya Shah and I work as a Senior Data Engineer at Helios Robotics.
+Added memory: I'm based in Bengaluru and I've been at Helios for about 4 years.
+Added memory: I have a Master's degree in Computer Science from IIT Bombay.
+Added memory: You can reach me at priya.shah@helios-robotics.example and my LinkedIn handle is priya-shah-de.
+Waiting for server-side extraction...
+EXPORT_ID: 6e7e44ef-e460-4caf-8c53-ef24148bc53b
+Polling export status... (attempt 1/24)
+Polling export status... (attempt 2/24)
+Polling export status... (attempt 3/24)
+Polling export status... (attempt 4/24)
+Polling export status... (attempt 5/24)
+Polling export status... (attempt 6/24)
+Polling export status... (attempt 7/24)
+Polling export status... (attempt 8/24)
+Polling export status... (attempt 9/24)
+Polling export status... (attempt 10/24)
+Polling export status... (attempt 11/24)
+Polling export status... (attempt 12/24)
+Polling export status... (attempt 13/24)
+Polling export status... (attempt 14/24)
+Polling export status... (attempt 15/24)
+Polling export status... (attempt 16/24)
+Polling export status... (attempt 17/24)
+Polling export status... (attempt 18/24)
+Polling export status... (attempt 19/24)
+Polling export status... (attempt 20/24)
+Polling export status... (attempt 21/24)
+Polling export status... (attempt 22/24)
+Polling export status... (attempt 23/24)
+Polling export status... (attempt 24/24)

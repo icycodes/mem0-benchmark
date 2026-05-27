@@ -1,0 +1,62 @@
+{
+  "user_id": "bob-zr-ejnvjto",
+  "agent_id": "travel-agent-zr-ejnvjto",
+  "app_id": "concierge-zr-ejnvjto",
+  "run_id": "trip-zr-ejnvjto",
+  "results": [
+    {
+      "id": "ae24421f-32a3-45f2-ac64-526405366361",
+      "memory": "User always requests a window seat for airline flights.",
+      "user_id": "bob-zr-ejnvjto",
+      "agent_id": "travel-agent-zr-ejnvjto",
+      "app_id": "concierge-zr-ejnvjto",
+      "run_id": "trip-zr-ejnvjto",
+      "score": 0.2458,
+      "score_breakdown": {
+        "semantic": 0.5645,
+        "bm25": 0.05,
+        "entity": 0.0
+      },
+      "metadata": {},
+      "categories": [],
+      "created_at": "2026-05-27T19:00:15+00:00",
+      "updated_at": "2026-05-27T19:00:28+00:00"
+    },
+    {
+      "id": "91b4cb58-a28d-4fbb-941b-8f3c13696fe5",
+      "memory": "User has an allergy to shellfish and must avoid shellfish-containing foods.",
+      "user_id": "bob-zr-ejnvjto",
+      "agent_id": "travel-agent-zr-ejnvjto",
+      "app_id": "concierge-zr-ejnvjto",
+      "run_id": "trip-zr-ejnvjto",
+      "score": 0.2306,
+      "score_breakdown": {
+        "semantic": 0.5219,
+        "bm25": 0.0548,
+        "entity": 0.0
+      },
+      "metadata": {},
+      "categories": [],
+      "created_at": "2026-05-27T19:00:15+00:00",
+      "updated_at": "2026-05-27T19:00:27+00:00"
+    },
+    {
+      "id": "f2d90ad2-aead-4d0b-8866-907c4b709e7c",
+      "memory": "User prefers ski resorts in Hokkaido, Japan, when planning ski vacations.",
+      "user_id": "bob-zr-ejnvjto",
+      "agent_id": "travel-agent-zr-ejnvjto",
+      "app_id": "concierge-zr-ejnvjto",
+      "run_id": "trip-zr-ejnvjto",
+      "score": 0.2222,
+      "score_breakdown": {
+        "semantic": 0.5555,
+        "bm25": 0.0,
+        "entity": 0.0
+      },
+      "metadata": {},
+      "categories": [],
+      "created_at": "2026-05-27T19:00:15+00:00",
+      "updated_at": "2026-05-27T19:00:28+00:00"
+    }
+  ]
+}

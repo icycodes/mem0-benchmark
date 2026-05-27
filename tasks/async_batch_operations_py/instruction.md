@@ -1,0 +1,112 @@
+# Mem0 Platform — Async Client, Batch Update, History Audit (Python)
+
+## Background
+
+A fitness coaching product stores athlete preferences and notes in **Mem0 Platform** and needs to bulk-correct stored memories after a coaching session. To keep the rewriting code non-blocking inside an event loop, the team uses the `AsyncMemoryClient` Python SDK. After the bulk update they want an auditable change log for one specific memory using `client.history(...)`.
+
+Your job is to write an async Python script that:
+
+1. Ingests several memories for a single athlete concurrently using `AsyncMemoryClient.add(...)`.
+2. Retrieves all memories with `client.get_all(filters=...)` using a v2-style filter.
+3. Bulk-edits two of those memories with `client.batch_update(...)` in a single SDK call.
+4. Reads the change log for one of the updated memories with `client.history(memory_id=...)`.
+5. Bulk-deletes a third memory with `client.batch_delete(...)` to demonstrate cleanup.
+6. Writes JSON artifacts and a structured stdout log.
+
+Relevant Mem0 documentation:
+- Async Client: https://docs.mem0.ai/platform/features/async-client
+- Batch Update Memories: https://docs.mem0.ai/api-reference/memory/batch-update
+- Batch Delete Memories: https://docs.mem0.ai/api-reference/memory/batch-delete
+- Memory History: https://docs.mem0.ai/api-reference/memory/history-memory
+- Entity-Scoped Memory: https://docs.mem0.ai/platform/features/entity-scoped-memory
+
+## Requirements
+
+- Use the **Mem0 Platform Python SDK** — specifically `from mem0 import AsyncMemoryClient`. Do NOT use the synchronous `MemoryClient` or the open-source `Memory` class.
+- The script must be an `async` program (entry point through `asyncio.run(...)`).
+- Read `MEM0_API_KEY` and `ZEALT_RUN_ID` from the environment. Fail fast with a clear error message if either is missing.
+- Build a per-run identifier suffix from `ZEALT_RUN_ID` and use it on every `user_id`/`agent_id`/`app_id`/`run_id` so concurrent runs do not collide.
+- The single athlete you operate on is scoped by:
+  - `user_id   = "athlete-${run-id}"`
+  - `agent_id  = "coach-${run-id}"`
+  - `app_id    = "fitness-app-${run-id}"`
+  - `run_id    = "session-${run-id}"`
+- Ingest the following **four** independent memories using `await client.add(...)`. Each `add` call must include all four entity IDs above. The exact `messages` list for each call MUST be sent verbatim:
+  1. `[{"role": "user", "content": "I run 5 kilometers every Tuesday morning."}]`
+  2. `[{"role": "user", "content": "I do strength training with kettlebells on Thursdays."}]`
+  3. `[{"role": "user", "content": "I prefer plant-based protein shakes after workouts."}]`
+  4. `[{"role": "user", "content": "My resting heart rate is around 58 bpm."}]`
+  These four `add` calls SHOULD be issued **concurrently** (e.g. `asyncio.gather(...)`) to exercise the async client.
+- After ingestion completes, call `await client.get_all(filters={"AND": [...]})` with a compound `AND` filter over the four entity IDs and persist the returned list to `/home/user/mem0-async-task/all_memories.json` as a JSON object with the shape:
+  ```json
+  {
+    "user_id": "athlete-${run-id}",
+    "agent_id": "coach-${run-id}",
+    "app_id": "fitness-app-${run-id}",
+    "run_id": "session-${run-id}",
+    "memories": [ /* the list returned by client.get_all(...) */ ]
+  }
+  ```
+  Normalize the SDK response: if `client.get_all(...)` returns an object containing a `results` field, store that list under `memories`; if it already returns a list, store it as-is.
+- From the retrieved memories, pick:
+  - One memory whose text contains the keyword `kettlebells` (case-insensitive); store its id as `BARBELL_ID`.
+  - One memory whose text contains the keyword `plant-based` (case-insensitive); store its id as `NUTRITION_ID`.
+  - One memory whose text contains the keyword `heart rate` (case-insensitive); store its id as `HEART_ID`.
+- Submit a **single** batch update using `await client.batch_update(memories=[...])` that updates BOTH `BARBELL_ID` and `NUTRITION_ID` in one call:
+  - `BARBELL_ID` → new text: `Strength training with dumbbells on Thursdays`
+  - `NUTRITION_ID` → new text: `Prefers whey protein shakes after workouts`
+  The response from `batch_update` MUST be persisted to `/home/user/mem0-async-task/batch_update_response.json`.
+- Call `await client.history(memory_id=BARBELL_ID)` and persist an audit artifact to `/home/user/mem0-async-task/barbell_history.json` with the shape:
+  ```json
+  {
+    "memory_id": "<BARBELL_ID>",
+    "updated_text": "Strength training with dumbbells on Thursdays",
+    "history": [ /* full list returned by client.history(...) */ ]
+  }
+  ```
+  `history` must contain at least 2 entries (the initial `ADD` event and the subsequent `UPDATE` event from the batch update).
+- Submit a **separate** batch delete using `await client.batch_delete(memories=[{"memory_id": HEART_ID}])` so the heart-rate memory is removed from the project. Persist the SDK response to `/home/user/mem0-async-task/batch_delete_response.json`.
+- Capture the script's stdout to `/home/user/mem0-async-task/output.log`. The log MUST contain the following lines, in this order:
+  - `RUN_ID: <ZEALT_RUN_ID>`
+  - `TOTAL_MEMORIES: <integer >= 4>`
+  - `BARBELL_ID: <non-empty id>`
+  - `NUTRITION_ID: <non-empty id>`
+  - `HEART_ID: <non-empty id>`
+  - `BATCH_UPDATE_COUNT: 2`
+  - `BATCH_DELETE_COUNT: 1`
+  - `HISTORY_EVENTS: <integer >= 2>`
+
+## Implementation Hints
+
+- The Mem0 Platform v2 filter shape for `get_all` is `{ "AND": [ {"user_id": ...}, {"agent_id": ...}, ... ] }`. The top-level entity kwargs are deprecated for v2 endpoints — use the `filters=` argument.
+- Memory extraction on Mem0 Platform is asynchronous server-side; you may need a short retry/wait loop after the four `client.add(...)` calls before `client.get_all(...)` returns the four extracted memories.
+- `client.batch_update(...)` takes a list of dicts shaped `{"memory_id": <id>, "text": <new text>}` and returns a server message such as `{"message": "Successfully updated 2 memories"}`. Parse the integer from that message (or count the entries you submitted) to print `BATCH_UPDATE_COUNT`.
+- `client.batch_delete(...)` takes a list of dicts shaped `{"memory_id": <id>}` and returns a similar message. Print `BATCH_DELETE_COUNT` accordingly.
+- The Mem0 Platform `history` endpoint returns a list of events (each with at least `event`, `new_memory`, optionally `old_memory`, `created_at`). Persist the entire list verbatim.
+- The `AsyncMemoryClient` constructor reads `MEM0_API_KEY` from the environment when no `api_key` argument is provided.
+
+## Acceptance Criteria
+
+- Project path: `/home/user/mem0-async-task`
+- Ensure the script is executed end-to-end against the live Mem0 Platform and the output artifacts exist.
+- Log file: `/home/user/mem0-async-task/output.log` — the script's stdout must be captured/redirected to this file. It must contain, on separate lines:
+  - `RUN_ID: <ZEALT_RUN_ID>`
+  - `TOTAL_MEMORIES: <integer >= 4>`
+  - `BARBELL_ID: <non-empty id>`
+  - `NUTRITION_ID: <non-empty id>`
+  - `HEART_ID: <non-empty id>`
+  - `BATCH_UPDATE_COUNT: 2`
+  - `BATCH_DELETE_COUNT: 1`
+  - `HISTORY_EVENTS: <integer >= 2>`
+- Output artifacts (all valid JSON):
+  - `/home/user/mem0-async-task/all_memories.json` — contains keys `user_id`, `agent_id`, `app_id`, `run_id`, `memories`. `memories` is a list of at least 4 items, each containing at least `id` and `memory` fields.
+  - `/home/user/mem0-async-task/batch_update_response.json` — the raw SDK response from `batch_update` (a JSON object or list, not the request payload).
+  - `/home/user/mem0-async-task/barbell_history.json` — contains keys `memory_id`, `updated_text`, `history`. `memory_id` is a non-empty string. `updated_text` equals `"Strength training with dumbbells on Thursdays"`. `history` is a list with at least 2 entries.
+  - `/home/user/mem0-async-task/batch_delete_response.json` — the raw SDK response from `batch_delete`.
+- Server-side effects, verified through a fresh `AsyncMemoryClient` instance under the same entity scope:
+  - At least one memory containing the keyword `dumbbells` (case-insensitive) is retrievable, demonstrating the batch update of `BARBELL_ID`.
+  - At least one memory containing the keyword `whey` (case-insensitive) is retrievable, demonstrating the batch update of `NUTRITION_ID`.
+  - No memory in the entity scope contains both the substrings `resting` AND `bpm` (case-insensitive), demonstrating that `HEART_ID` was deleted.
+  - At least one memory containing the keyword `5 kilometers` or `tuesday` (case-insensitive) remains, demonstrating that untouched memories survived.
+- Use `${run-id}` from the `ZEALT_RUN_ID` environment variable. No identifiers may be hard-coded without the `${run-id}` suffix.
+

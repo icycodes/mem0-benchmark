@@ -1,0 +1,83 @@
+2026-05-27 19:05:13,852 - INFO - Starting Mem0 demo with run_id: test_run_123
+2026-05-27 19:05:13,852 - INFO - Collection name: mem0_demo_test_run_123
+2026-05-27 19:05:19,142 - INFO - Adding conversation to memory...
+2026-05-27 19:05:32,555 - INFO - Starting Mem0 demo with run_id: test_run_456
+2026-05-27 19:05:32,555 - INFO - Collection name: mem0_demo_test_run_456
+2026-05-27 19:05:34,612 - INFO - Adding conversation to memory...
+2026-05-27 19:05:35,517 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:05:36,325 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-05-27 19:05:36,327 - ERROR - LLM extraction failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2026-05-27 19:05:36,327 - INFO - Add response: {"results": []}
+2026-05-27 19:05:36,328 - WARNING - Could not extract IDs from add_response. Fetching all memories for user.
+2026-05-27 19:05:58,830 - INFO - Starting Mem0 demo with run_id: test_run_789
+2026-05-27 19:05:58,830 - INFO - Collection name: mem0_demo_test_run_789
+2026-05-27 19:06:00,940 - INFO - Adding conversation to memory...
+2026-05-27 19:06:01,576 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:06:05,808 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-27 19:06:05,968 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:06:05,981 - WARNING - Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 19:06:05,982 - INFO - Inserting 1 vectors into collection mem0_demo_test_run_789
+2026-05-27 19:06:08,641 - WARNING - Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 19:06:09,165 - INFO - Add response: {"results": [{"id": "a7174438-033d-4384-a34a-9b1f4d8242d9", "memory": "User's name is Alex, and they are a vegan who enjoys hiking on weekends.", "event": "ADD"}]}
+2026-05-27 19:06:09,165 - INFO - Added memory IDs: ['a7174438-033d-4384-a34a-9b1f4d8242d9']
+2026-05-27 19:06:09,165 - INFO - Adding more distinct facts to ensure at least 2 memories...
+2026-05-27 19:06:09,319 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:06:13,246 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-27 19:06:13,398 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:06:13,409 - INFO - Inserting 1 vectors into collection mem0_demo_test_run_789
+2026-05-27 19:06:34,930 - INFO - Starting Mem0 demo with run_id: test_run_999
+2026-05-27 19:06:34,930 - INFO - Collection name: mem0_demo_test_run_999
+2026-05-27 19:06:36,996 - INFO - Adding conversation to memory...
+2026-05-27 19:06:37,861 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:06:39,706 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-27 19:06:40,111 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:06:40,183 - WARNING - Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 19:06:40,183 - INFO - Inserting 2 vectors into collection mem0_demo_test_run_999
+2026-05-27 19:06:43,045 - WARNING - Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 19:06:43,631 - INFO - Add response: {"results": [{"id": "41f3eb5c-413a-4c3f-86ed-1dca3def6c31", "memory": "User's name is Alex, and they are a vegan who enjoys hiking on weekends.", "event": "ADD"}, {"id": "6333415b-c9c8-4226-aa67-0f998dad6a42", "memory": "Alex lives in Seattle.", "event": "ADD"}]}
+2026-05-27 19:06:43,632 - INFO - Added memory IDs: ['41f3eb5c-413a-4c3f-86ed-1dca3def6c31', '6333415b-c9c8-4226-aa67-0f998dad6a42']
+2026-05-27 19:06:43,632 - INFO - Performing semantic search for: 'What does Alex like to do on weekends?'
+2026-05-27 19:06:55,438 - INFO - Starting Mem0 demo with run_id: test_run_final
+2026-05-27 19:06:55,438 - INFO - Collection name: mem0_demo_test_run_final
+2026-05-27 19:06:57,645 - INFO - Adding conversation to memory...
+2026-05-27 19:06:58,228 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:06:59,529 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-27 19:06:59,704 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:06:59,716 - WARNING - Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 19:06:59,717 - INFO - Inserting 1 vectors into collection mem0_demo_test_run_final
+2026-05-27 19:07:03,135 - WARNING - Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 19:07:03,827 - INFO - Add response: {"results": [{"id": "4b5c2038-42fe-4a08-959a-6aec9a289ee1", "memory": "User's name is Alex, they are a vegan, and they enjoy hiking on weekends.", "event": "ADD"}]}
+2026-05-27 19:07:03,828 - INFO - Added memory IDs: ['4b5c2038-42fe-4a08-959a-6aec9a289ee1']
+2026-05-27 19:07:03,828 - INFO - Adding more distinct facts to ensure at least 2 memories...
+2026-05-27 19:07:03,971 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:07:05,337 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-27 19:07:05,479 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:07:05,490 - INFO - Inserting 1 vectors into collection mem0_demo_test_run_final
+2026-05-27 19:07:08,789 - INFO - Updated all memories for user: {'results': [{'id': '4b5c2038-42fe-4a08-959a-6aec9a289ee1', 'memory': "User's name is Alex, they are a vegan, and they enjoy hiking on weekends.", 'hash': '29cd0e3a18ded95bbf30d9b2cb38b361', 'metadata': {'category': 'preferences'}, 'created_at': '2026-05-27T19:06:59.717138+00:00', 'updated_at': '2026-05-27T19:06:59.717138+00:00', 'user_id': 'alex'}, {'id': 'c36dceee-2f29-423c-bda5-6dc1779f21ad', 'memory': 'User, Alex, lives in Seattle.', 'hash': '0c0d499331f5ad2a72e2ac5ef09a3e4d', 'metadata': {'category': 'preferences'}, 'created_at': '2026-05-27T19:07:05.490304+00:00', 'updated_at': '2026-05-27T19:07:05.490304+00:00', 'user_id': 'alex'}]}
+2026-05-27 19:07:08,789 - INFO - Updated memory IDs: []
+2026-05-27 19:07:08,789 - INFO - Performing semantic search for: 'What does Alex like to do on weekends?'
+2026-05-27 19:07:08,931 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:07:08,946 - INFO - Search results: {"results": [{"id": "c36dceee-2f29-423c-bda5-6dc1779f21ad", "memory": "User, Alex, lives in Seattle.", "hash": "0c0d499331f5ad2a72e2ac5ef09a3e4d", "metadata": {"category": "preferences"}, "score": 1.0, "created_at": "2026-05-27T19:07:05.490304+00:00", "updated_at": "2026-05-27T19:07:05.490304+00:00", "user_id": "alex"}, {"id": "4b5c2038-42fe-4a08-959a-6aec9a289ee1", "memory": "User's name is Alex, they are a vegan, and they enjoy hiking on weekends.", "hash": "29cd0e3a18ded95bbf30d9b2cb38b361", "metadata": {"category": "preferences"}, "score": 0.8492875695228577, "created_at": "2026-05-27T19:06:59.717138+00:00", "updated_at": "2026-05-27T19:06:59.717138+00:00", "user_id": "alex"}]}
+2026-05-27 19:07:28,088 - INFO - Starting Mem0 demo with run_id: test_run_final_2
+2026-05-27 19:07:28,088 - INFO - Collection name: mem0_demo_test_run_final_2
+2026-05-27 19:07:31,903 - INFO - Adding conversation to memory...
+2026-05-27 19:07:32,656 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:07:34,103 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-27 19:07:34,300 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:07:34,377 - WARNING - Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 19:07:34,378 - INFO - Inserting 2 vectors into collection mem0_demo_test_run_final_2
+2026-05-27 19:07:38,339 - WARNING - Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 19:07:38,917 - INFO - Add response: {"results": [{"id": "92edeb57-1501-4d46-8afa-76c7cce19ea4", "memory": "User's name is Alex, they are a vegan, and they enjoy hiking on weekends.", "event": "ADD"}, {"id": "3fd9656b-2f05-4cc6-a63e-d1c37f3fb1a2", "memory": "User lives in Seattle.", "event": "ADD"}]}
+2026-05-27 19:07:38,917 - INFO - Added memory IDs: ['92edeb57-1501-4d46-8afa-76c7cce19ea4', '3fd9656b-2f05-4cc6-a63e-d1c37f3fb1a2']
+2026-05-27 19:07:38,918 - INFO - Performing semantic search for: 'What does Alex like to do on weekends?'
+2026-05-27 19:07:39,079 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:07:39,097 - INFO - Search results: [{"id": "3fd9656b-2f05-4cc6-a63e-d1c37f3fb1a2", "memory": "User lives in Seattle.", "hash": "cf76a412662c48c91b45dbd3ab4ed330", "metadata": {"category": "preferences"}, "score": 1.0, "created_at": "2026-05-27T19:07:34.378230+00:00", "updated_at": "2026-05-27T19:07:34.378230+00:00", "user_id": "alex"}, {"id": "92edeb57-1501-4d46-8afa-76c7cce19ea4", "memory": "User's name is Alex, they are a vegan, and they enjoy hiking on weekends.", "hash": "29cd0e3a18ded95bbf30d9b2cb38b361", "metadata": {"category": "preferences"}, "score": 0.849808931350708, "created_at": "2026-05-27T19:07:34.378161+00:00", "updated_at": "2026-05-27T19:07:34.378161+00:00", "user_id": "alex"}]
+2026-05-27 19:07:39,097 - INFO - Updating memory 92edeb57-1501-4d46-8afa-76c7cce19ea4...
+2026-05-27 19:07:39,257 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:07:39,269 - INFO - Updating memory with data='Alex now prefers vegetarian food and tracks calories.'
+2026-05-27 19:07:41,925 - INFO - Updating memory with ID memory_id='92edeb57-1501-4d46-8afa-76c7cce19ea4' with data='Alex now prefers vegetarian food and tracks calories.'
+2026-05-27 19:07:43,275 - INFO - Deleting memory 3fd9656b-2f05-4cc6-a63e-d1c37f3fb1a2...
+2026-05-27 19:07:43,278 - INFO - Deleting memory with memory_id='3fd9656b-2f05-4cc6-a63e-d1c37f3fb1a2'
+2026-05-27 19:07:45,196 - INFO - Final memory count: 1
+2026-05-27 19:07:45,504 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 19:07:45,521 - INFO - Demo completed successfully. Result written to result.json

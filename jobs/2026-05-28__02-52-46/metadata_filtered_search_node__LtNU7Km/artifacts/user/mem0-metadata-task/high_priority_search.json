@@ -1,0 +1,69 @@
+{
+  "user_id": "planner-zr-ltnu7km",
+  "filter_priority": "high",
+  "results": [
+    {
+      "id": "ba535f3b-2309-421c-b2d0-4f019144adbb",
+      "memory": "User prefers aisle seats on long-haul flights and chooses direct routes when traveling to Tokyo.",
+      "userId": "planner-zr-ltnu7km",
+      "agentId": null,
+      "appId": null,
+      "runId": null,
+      "score": 0.1644,
+      "scoreBreakdown": {
+        "semantic": 0.4111,
+        "bm25": 0,
+        "entity": 0
+      },
+      "metadata": {
+        "category": "travel",
+        "priority": "high"
+      },
+      "categories": [],
+      "createdAt": "2026-05-27T18:55:53+00:00",
+      "updatedAt": "2026-05-27T18:56:42+00:00"
+    },
+    {
+      "id": "1fb80319-49c1-4886-97e4-0a0ca7ee5288",
+      "memory": "User runs interval workouts on the treadmill three times per week",
+      "userId": "planner-zr-ltnu7km",
+      "agentId": null,
+      "appId": null,
+      "runId": null,
+      "score": 0.1488,
+      "scoreBreakdown": {
+        "semantic": 0.372,
+        "bm25": 0,
+        "entity": 0
+      },
+      "metadata": {
+        "category": "health",
+        "priority": "high"
+      },
+      "categories": [],
+      "createdAt": "2026-05-27T18:55:54+00:00",
+      "updatedAt": "2026-05-27T18:56:46+00:00"
+    },
+    {
+      "id": "a6ad2f10-d079-4a88-8454-3f258ecbe00e",
+      "memory": "User files their quarterly tax estimate payments with their accountant annually in March, ensuring the required estimated taxes are submitted on schedule each year.",
+      "userId": "planner-zr-ltnu7km",
+      "agentId": null,
+      "appId": null,
+      "runId": null,
+      "score": 0.1098,
+      "scoreBreakdown": {
+        "semantic": 0.2746,
+        "bm25": 0,
+        "entity": 0
+      },
+      "metadata": {
+        "category": "finance",
+        "priority": "high"
+      },
+      "categories": [],
+      "createdAt": "2026-05-27T18:55:52+00:00",
+      "updatedAt": "2026-05-27T18:56:46.835863+00:00"
+    }
+  ]
+}

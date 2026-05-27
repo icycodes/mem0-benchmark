@@ -1,0 +1,195 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: anyio-4.13.0, json-ctrf-0.5.0
+collected 10 items
+
+tests/test_final_state.py F.FF..FF..                                     [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_log_contains_run_id ___________________________
+
+    def test_log_contains_run_id():
+        rid = _run_id()
+        log = _read_log()
+>       assert re.search(rf"^RUN_ID:\s*{re.escape(rid)}\s*$", log, re.MULTILINE), (
+            f"Log must contain a line 'RUN_ID: {rid}'. Log content:\n{log}"
+        )
+E       AssertionError: Log must contain a line 'RUN_ID: zr-gppbrod'. Log content:
+E         Error: Export job timed out or failed to return structured data
+E         RUN_ID: zr-1779908837
+E         Added memory: Hi, my name is Priya Shah and I work as a Senior Data Engineer at Helios Robotics.
+E         Added memory: I'm based in Bengaluru and I've been at Helios for about 4 years.
+E         Added memory: I have a Master's degree in Computer Science from IIT Bombay.
+E         Added memory: You can reach me at priya.shah@helios-robotics.example and my LinkedIn handle is priya-shah-de.
+E         Waiting for server-side extraction...
+E         EXPORT_ID: 6e7e44ef-e460-4caf-8c53-ef24148bc53b
+E         Polling export status... (attempt 1/24)
+E         Polling export status... (attempt 2/24)
+E         Polling export status... (attempt 3/24)
+E         Polling export status... (attempt 4/24)
+E         Polling export status... (attempt 5/24)
+E         Polling export status... (attempt 6/24)
+E         Polling export status... (attempt 7/24)
+E         Polling export status... (attempt 8/24)
+E         Polling export status... (attempt 9/24)
+E         Polling export status... (attempt 10/24)
+E         Polling export status... (attempt 11/24)
+E         Polling export status... (attempt 12/24)
+E         Polling export status... (attempt 13/24)
+E         Polling export status... (attempt 14/24)
+E         Polling export status... (attempt 15/24)
+E         Polling export status... (attempt 16/24)
+E         Polling export status... (attempt 17/24)
+E         Polling export status... (attempt 18/24)
+E         Polling export status... (attempt 19/24)
+E         Polling export status... (attempt 20/24)
+E         Polling export status... (attempt 21/24)
+E         Polling export status... (attempt 22/24)
+E         Polling export status... (attempt 23/24)
+E         Polling export status... (attempt 24/24)
+E         
+E       assert None
+E        +  where None = <function search at 0x787233953ba0>('^RUN_ID:\\s*zr\\-gppbrod\\s*$', 'Error: Export job timed out or failed to return structured data\nRUN_ID: zr-1779908837\nAdded memory: Hi, my name is ...export status... (attempt 22/24)\nPolling export status... (attempt 23/24)\nPolling export status... (attempt 24/24)\n', re.MULTILINE)
+E        +    where <function search at 0x787233953ba0> = re.search
+E        +    and   re.MULTILINE = re.MULTILINE
+
+tests/test_final_state.py:59: AssertionError
+____________________ test_log_contains_export_status_ready _____________________
+
+    def test_log_contains_export_status_ready():
+        log = _read_log()
+>       assert re.search(r"^EXPORT_STATUS:\s*ready\s*$", log, re.MULTILINE), (
+            f"Log must contain literal line 'EXPORT_STATUS: ready'. Log:\n{log}"
+        )
+E       AssertionError: Log must contain literal line 'EXPORT_STATUS: ready'. Log:
+E         Error: Export job timed out or failed to return structured data
+E         RUN_ID: zr-1779908837
+E         Added memory: Hi, my name is Priya Shah and I work as a Senior Data Engineer at Helios Robotics.
+E         Added memory: I'm based in Bengaluru and I've been at Helios for about 4 years.
+E         Added memory: I have a Master's degree in Computer Science from IIT Bombay.
+E         Added memory: You can reach me at priya.shah@helios-robotics.example and my LinkedIn handle is priya-shah-de.
+E         Waiting for server-side extraction...
+E         EXPORT_ID: 6e7e44ef-e460-4caf-8c53-ef24148bc53b
+E         Polling export status... (attempt 1/24)
+E         Polling export status... (attempt 2/24)
+E         Polling export status... (attempt 3/24)
+E         Polling export status... (attempt 4/24)
+E         Polling export status... (attempt 5/24)
+E         Polling export status... (attempt 6/24)
+E         Polling export status... (attempt 7/24)
+E         Polling export status... (attempt 8/24)
+E         Polling export status... (attempt 9/24)
+E         Polling export status... (attempt 10/24)
+E         Polling export status... (attempt 11/24)
+E         Polling export status... (attempt 12/24)
+E         Polling export status... (attempt 13/24)
+E         Polling export status... (attempt 14/24)
+E         Polling export status... (attempt 15/24)
+E         Polling export status... (attempt 16/24)
+E         Polling export status... (attempt 17/24)
+E         Polling export status... (attempt 18/24)
+E         Polling export status... (attempt 19/24)
+E         Polling export status... (attempt 20/24)
+E         Polling export status... (attempt 21/24)
+E         Polling export status... (attempt 22/24)
+E         Polling export status... (attempt 23/24)
+E         Polling export status... (attempt 24/24)
+E         
+E       assert None
+E        +  where None = <function search at 0x787233953ba0>('^EXPORT_STATUS:\\s*ready\\s*$', 'Error: Export job timed out or failed to return structured data\nRUN_ID: zr-1779908837\nAdded memory: Hi, my name is ...export status... (attempt 22/24)\nPolling export status... (attempt 23/24)\nPolling export status... (attempt 24/24)\n', re.MULTILINE)
+E        +    where <function search at 0x787233953ba0> = re.search
+E        +    and   re.MULTILINE = re.MULTILINE
+
+tests/test_final_state.py:73: AssertionError
+_______________________ test_log_contains_profile_fields _______________________
+
+    def test_log_contains_profile_fields():
+        log = _read_log()
+        for key in ("FULL_NAME", "CURRENT_COMPANY", "LOCATION"):
+            match = re.search(rf"^{key}:\s*(.+?)\s*$", log, re.MULTILINE)
+>           assert match, f"Log must contain '{key}: <non-empty value>'. Log:\n{log}"
+E           AssertionError: Log must contain 'FULL_NAME: <non-empty value>'. Log:
+E             Error: Export job timed out or failed to return structured data
+E             RUN_ID: zr-1779908837
+E             Added memory: Hi, my name is Priya Shah and I work as a Senior Data Engineer at Helios Robotics.
+E             Added memory: I'm based in Bengaluru and I've been at Helios for about 4 years.
+E             Added memory: I have a Master's degree in Computer Science from IIT Bombay.
+E             Added memory: You can reach me at priya.shah@helios-robotics.example and my LinkedIn handle is priya-shah-de.
+E             Waiting for server-side extraction...
+E             EXPORT_ID: 6e7e44ef-e460-4caf-8c53-ef24148bc53b
+E             Polling export status... (attempt 1/24)
+E             Polling export status... (attempt 2/24)
+E             Polling export status... (attempt 3/24)
+E             Polling export status... (attempt 4/24)
+E             Polling export status... (attempt 5/24)
+E             Polling export status... (attempt 6/24)
+E             Polling export status... (attempt 7/24)
+E             Polling export status... (attempt 8/24)
+E             Polling export status... (attempt 9/24)
+E             Polling export status... (attempt 10/24)
+E             Polling export status... (attempt 11/24)
+E             Polling export status... (attempt 12/24)
+E             Polling export status... (attempt 13/24)
+E             Polling export status... (attempt 14/24)
+E             Polling export status... (attempt 15/24)
+E             Polling export status... (attempt 16/24)
+E             Polling export status... (attempt 17/24)
+E             Polling export status... (attempt 18/24)
+E             Polling export status... (attempt 19/24)
+E             Polling export status... (attempt 20/24)
+E             Polling export status... (attempt 21/24)
+E             Polling export status... (attempt 22/24)
+E             Polling export status... (attempt 23/24)
+E             Polling export status... (attempt 24/24)
+E             
+E           assert None
+
+tests/test_final_state.py:82: AssertionError
+__________________________ test_lead_profile_artifact __________________________
+
+    def test_lead_profile_artifact():
+        data = _load_json(LEAD_PROFILE_FILE)
+        assert isinstance(data, dict), "lead_profile.json must be a JSON object."
+        expected = _entity_ids()
+        for key, value in expected.items():
+>           assert data.get(key) == value, (
+                f"lead_profile.json[{key}] expected {value!r}, got {data.get(key)!r}."
+            )
+E           AssertionError: lead_profile.json[user_id] expected 'lead-zr-gppbrod', got 'lead-zr-1779908666'.
+E           assert 'lead-zr-1779908666' == 'lead-zr-gppbrod'
+E             - lead-zr-gppbrod
+E             + lead-zr-1779908666
+
+tests/test_final_state.py:115: AssertionError
+______________ test_lead_profile_content_matches_source_memories _______________
+
+    def test_lead_profile_content_matches_source_memories():
+        data = _load_json(LEAD_PROFILE_FILE)
+        profile = data.get("profile", {})
+    
+        full_name = (profile.get("full_name") or "").lower()
+        company = (profile.get("current_company") or "").lower()
+        location = (profile.get("location") or "").lower()
+        email = (profile.get("contact_email") or "").lower()
+    
+>       assert "priya" in full_name and "shah" in full_name, (
+            f"profile.full_name must contain 'priya' and 'shah' (case-insensitive), got {full_name!r}."
+        )
+E       AssertionError: profile.full_name must contain 'priya' and 'shah' (case-insensitive), got ''.
+E       assert ('priya' in '')
+
+tests/test_final_state.py:164: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_log_contains_export_id
+PASSED tests/test_final_state.py::test_create_export_response_artifact
+PASSED tests/test_final_state.py::test_get_export_response_artifact
+PASSED tests/test_final_state.py::test_server_state_has_lead_memories
+PASSED tests/test_final_state.py::test_export_retrievable_again
+FAILED tests/test_final_state.py::test_log_contains_run_id - AssertionError: ...
+FAILED tests/test_final_state.py::test_log_contains_export_status_ready - Ass...
+FAILED tests/test_final_state.py::test_log_contains_profile_fields - Assertio...
+FAILED tests/test_final_state.py::test_lead_profile_artifact - AssertionError...
+FAILED tests/test_final_state.py::test_lead_profile_content_matches_source_memories
+========================= 5 failed, 5 passed in 2.86s ==========================

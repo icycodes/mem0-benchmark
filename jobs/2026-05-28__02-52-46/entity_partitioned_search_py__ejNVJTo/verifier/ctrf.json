@@ -1,0 +1,88 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1779908461473,
+            "stop": 1779908465906
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_alice_artifact_exists_and_valid",
+                "status": "passed",
+                "duration": 558,
+                "start": 1779908462449,
+                "stop": 1779908463007,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bob_artifact_exists_and_valid",
+                "status": "passed",
+                "duration": 2,
+                "start": 1779908463008,
+                "stop": 1779908463010,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_contents",
+                "status": "passed",
+                "duration": 3,
+                "start": 1779908463010,
+                "stop": 1779908463013,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_side_alice_has_vegetarian_memory",
+                "status": "passed",
+                "duration": 486,
+                "start": 1779908463013,
+                "stop": 1779908463499,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_side_bob_has_shellfish_memory",
+                "status": "passed",
+                "duration": 696,
+                "start": 1779908463499,
+                "stop": 1779908464195,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_cross_isolation_alice_not_seeing_bob",
+                "status": "passed",
+                "duration": 622,
+                "start": 1779908464196,
+                "stop": 1779908464818,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_cross_isolation_bob_not_seeing_alice",
+                "status": "passed",
+                "duration": 1088,
+                "start": 1779908464818,
+                "stop": 1779908465906,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,74 @@
+{
+  "user_id": "planner-zr-ltnu7km",
+  "filter_category": "finance",
+  "results": [
+    {
+      "id": "95d942b0-c6a8-4da7-a671-46846b26a162",
+      "memory": "User maxes out their 401(k) contributions early each year, ensuring they reach the annual contribution limit well before the deadline.",
+      "userId": "planner-zr-ltnu7km",
+      "metadata": {
+        "category": "finance",
+        "priority": "low"
+      },
+      "categories": null,
+      "createdAt": "2026-05-27T11:55:53-07:00",
+      "updatedAt": "2026-05-27T11:56:37-07:00",
+      "expirationDate": null,
+      "structuredAttributes": {
+        "year": 2026,
+        "month": 5,
+        "day": 27,
+        "hour": 18,
+        "minute": 55,
+        "dayOfWeek": "wednesday",
+        "weekOfYear": 22,
+        "dayOfYear": 147,
+        "quarter": 2,
+        "isWeekend": false
+      },
+      "eventDate": null,
+      "eventStart": null,
+      "eventEnd": null,
+      "timePrecision": null,
+      "timezone": null,
+      "stateKey": null,
+      "polarity": null,
+      "temporalRelation": null,
+      "planStatus": null
+    },
+    {
+      "id": "a6ad2f10-d079-4a88-8454-3f258ecbe00e",
+      "memory": "User files their quarterly tax estimate payments with their accountant annually in March, ensuring the required estimated taxes are submitted on schedule each year.",
+      "userId": "planner-zr-ltnu7km",
+      "metadata": {
+        "category": "finance",
+        "priority": "high"
+      },
+      "categories": null,
+      "createdAt": "2026-05-27T11:55:52-07:00",
+      "updatedAt": "2026-05-27T11:56:29-07:00",
+      "expirationDate": null,
+      "structuredAttributes": {
+        "year": 2026,
+        "month": 5,
+        "day": 27,
+        "hour": 18,
+        "minute": 55,
+        "dayOfWeek": "wednesday",
+        "weekOfYear": 22,
+        "dayOfYear": 147,
+        "quarter": 2,
+        "isWeekend": false
+      },
+      "eventDate": null,
+      "eventStart": null,
+      "eventEnd": null,
+      "timePrecision": null,
+      "timezone": null,
+      "stateKey": null,
+      "polarity": null,
+      "temporalRelation": null,
+      "planStatus": null
+    }
+  ]
+}
