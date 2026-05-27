@@ -1,0 +1,5 @@
+{
+  "title": "Mem0 Benchmark",
+  "description": "Performance results of AI coding models on Mem0 tasks, measuring success rate and execution time with high precision.",
+  "github_repo": "https://github.com/icycodes/mem0-benchmark"
+}
