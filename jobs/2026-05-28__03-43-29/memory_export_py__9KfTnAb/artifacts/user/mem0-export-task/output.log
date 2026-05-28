@@ -1,0 +1,137 @@
+HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+RUN_ID: zr-9kftnab
+Ingesting memories…
+  add #1: {'event_id': '3e22d5e3-d013-4c04-9cc4-49df86a96df4', 'status': 'PENDING'}
+  add #2: {'event_id': 'b79db964-6d34-4a11-b510-56a4c0e4e9a2', 'status': 'PENDING'}
+  add #3: {'event_id': 'cd2f5771-6f9a-497c-9701-d856d2b8a3a8', 'status': 'PENDING'}
+  add #4: {'event_id': '44f63d3e-4ea9-439b-a9e5-62a9ff065c10', 'status': 'PENDING'}
+Waiting for memory extraction to settle (45 s)…
+JSON schema: {
+  "properties": {
+    "full_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Full Name"
+    },
+    "current_role": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Current Role"
+    },
+    "current_company": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Current Company"
+    },
+    "location": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Location"
+    },
+    "years_at_company": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Years At Company"
+    },
+    "education": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Education"
+    },
+    "contact_email": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Contact Email"
+    }
+  },
+  "title": "LeadProfile",
+  "type": "object"
+}
+Submitting export job with filters: {'AND': [{'user_id': 'lead-zr-9kftnab'}, {'agent_id': 'csm-zr-9kftnab'}, {'run_id': 'intake-zr-9kftnab'}]}
+create_memory_export response: {'message': 'Memory export request received. The export will be ready in a few seconds.', 'id': '314f66c4-7095-4e1d-a540-3c92eb192d8e'}
+EXPORT_ID: 314f66c4-7095-4e1d-a540-3c92eb192d8e
+Initial export processing pause (15 s)…
+Polling export status (max 180s, every 15s)…
+  [15s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [15s] Not ready yet (all fields null or empty) — continuing to poll…
+  [30s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [30s] Not ready yet (all fields null or empty) — continuing to poll…
+  [45s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [45s] Not ready yet (all fields null or empty) — continuing to poll…
+  [60s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [60s] Not ready yet (all fields null or empty) — continuing to poll…
+  [75s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [75s] Not ready yet (all fields null or empty) — continuing to poll…
+  [90s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [90s] Not ready yet (all fields null or empty) — continuing to poll…
+  [105s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [105s] Not ready yet (all fields null or empty) — continuing to poll…
+  [120s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [120s] Not ready yet (all fields null or empty) — continuing to poll…
+  [135s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [135s] Not ready yet (all fields null or empty) — continuing to poll…
+  [150s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [150s] Not ready yet (all fields null or empty) — continuing to poll…
+  [165s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [165s] Not ready yet (all fields null or empty) — continuing to poll…
+  [180s] raw response: {'location': None, 'education': None, 'full_name': None, 'current_role': None, 'contact_email': None, 'current_company': None, 'years_at_company': None}
+  [180s] Not ready yet (all fields null or empty) — continuing to poll…
+Performing final get attempt…
+EXPORT_STATUS: ready
+FULL_NAME: None
+CURRENT_COMPANY: None
+LOCATION: None
+Artifacts written to /home/user/mem0-export-task
+Verifying server-side memories…
+WARNING: get_all verification call failed (quota/rate-limit?): {"error":"Usage quota exceeded for this billing period. Please upgrade your plan at https://app.mem0.ai/dashboard/usage-and-billing.","event_type":"SEARCH","quota_limit":1000,"quota_used":1000,"quota_reset":"2026-06-01T00:00:00+00:00"}
+Done.

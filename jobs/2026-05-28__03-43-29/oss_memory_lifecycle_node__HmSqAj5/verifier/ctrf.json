@@ -1,0 +1,97 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 4,
+            "failed": 3,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1779913963815,
+            "stop": 1779913963869
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_package_json_is_esm_with_mem0ai_dependency",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779913963845,
+                "stop": 1779913963846,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_mem0ai_node_module_installed",
+                "status": "passed",
+                "duration": 0,
+                "start": 1779913963846,
+                "stop": 1779913963846,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_alice_search_artifact_shape",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 12,
+                "start": 1779913963846,
+                "stop": 1779913963858,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_alice_search_artifact_shape():\n        run_id = _run_id()\n        data = _load_json(ALICE_SEARCH)\n        assert isinstance(data, dict), f\"{ALICE_SEARCH} must be a JSON object, got {type(data).__name__}.\"\n>       assert data.get(\"userId\") == f\"alice-{run_id}\", (\n            f\"Expected `userId` in {ALICE_SEARCH} to be 'alice-{run_id}', got {data.get('userId')!r}.\"\n        )\nE       AssertionError: Expected `userId` in /home/user/mem0-node-task/alice_search.json to be 'alice-zr-hmsqaj5', got 'alice-test-run-001'.\nE       assert 'alice-test-run-001' == 'alice-zr-hmsqaj5'\nE         - alice-zr-hmsqaj5\nE         + alice-test-run-001\n\ntests/test_final_state.py:56: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_bob_search_artifact_shape",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 5,
+                "start": 1779913963858,
+                "stop": 1779913963863,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_bob_search_artifact_shape():\n        run_id = _run_id()\n        data = _load_json(BOB_SEARCH)\n        assert isinstance(data, dict), f\"{BOB_SEARCH} must be a JSON object, got {type(data).__name__}.\"\n>       assert data.get(\"userId\") == f\"bob-{run_id}\", (\n            f\"Expected `userId` in {BOB_SEARCH} to be 'bob-{run_id}', got {data.get('userId')!r}.\"\n        )\nE       AssertionError: Expected `userId` in /home/user/mem0-node-task/bob_search.json to be 'bob-zr-hmsqaj5', got 'bob-test-run-001'.\nE       assert 'bob-test-run-001' == 'bob-zr-hmsqaj5'\nE         - bob-zr-hmsqaj5\nE         + bob-test-run-001\n\ntests/test_final_state.py:77: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_alice_history_artifact_shape",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779913963863,
+                "stop": 1779913963864,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_required_lines",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1779913963864,
+                "stop": 1779913963868,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_output_log_contains_required_lines():\n        assert os.path.isfile(OUTPUT_LOG), f\"Expected stdout log at {OUTPUT_LOG} to exist.\"\n    \n        with open(OUTPUT_LOG, \"r\", encoding=\"utf-8\") as f:\n            log = f.read()\n    \n        run_id = _run_id()\n        expected_run_line = f\"RUN_ID: {run_id}\"\n>       assert any(line.strip() == expected_run_line for line in log.splitlines()), (\n            f\"Expected a line exactly equal to '{expected_run_line}' in {OUTPUT_LOG}.\\nLog content:\\n{log}\"\n        )\nE       AssertionError: Expected a line exactly equal to 'RUN_ID: zr-hmsqaj5' in /home/user/mem0-node-task/output.log.\nE         Log content:\nE         RUN_ID: test-run-001\nE         Ingesting Alice's conversation...\nE         Ingesting Bob's conversation...\nE         Searching Alice's memories...\nE         Searching Bob's memories...\nE         ALICE_RESULTS: 2\nE         BOB_RESULTS: 3\nE         Found vegetarian memory: id=3baa3cec-76e8-4c60-91b7-68b3a749e4e5, text=\"User is vegetarian and loves sourdough bread\"\nE         UPDATED_MEMORY_ID: 3baa3cec-76e8-4c60-91b7-68b3a749e4e5\nE         HISTORY_EVENTS: 2\nE         \nE       assert False\nE        +  where False = any(<generator object test_output_log_contains_required_lines.<locals>.<genexpr> at 0x7f291b415220>)\n\ntests/test_final_state.py:142: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_scope_isolation_keywords",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779913963868,
+                "stop": 1779913963869,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

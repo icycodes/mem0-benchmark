@@ -1,0 +1,13 @@
+{
+  "name": "mem0-node-task",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Mem0 Open Source Node.js memory lifecycle demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mem0ai": "^3.0.5"
+  }
+}

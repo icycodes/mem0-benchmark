@@ -1,0 +1,237 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: anyio-4.13.0, json-ctrf-0.5.0
+collected 15 items
+
+tests/test_final_state.py ..FFFFFFFFFFF.F                                [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_log_contains_run_id ___________________________
+
+    def test_log_contains_run_id():
+        rid = _run_id()
+>       log = _read_log()
+
+tests/test_final_state.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_log() -> str:
+>       assert os.path.isfile(LOG_FILE), f"Log file does not exist at {LOG_FILE}."
+E       AssertionError: Log file does not exist at /home/user/mem0-metadata-task/output.log.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/output.log')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:27: AssertionError
+__________________________ test_log_contains_user_id ___________________________
+
+    def test_log_contains_user_id():
+        uid = _user_id()
+>       log = _read_log()
+
+tests/test_final_state.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_log() -> str:
+>       assert os.path.isfile(LOG_FILE), f"Log file does not exist at {LOG_FILE}."
+E       AssertionError: Log file does not exist at /home/user/mem0-metadata-task/output.log.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/output.log')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:27: AssertionError
+_______________________ test_log_contains_finance_count ________________________
+
+    def test_log_contains_finance_count():
+>       log = _read_log()
+
+tests/test_final_state.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_log() -> str:
+>       assert os.path.isfile(LOG_FILE), f"Log file does not exist at {LOG_FILE}."
+E       AssertionError: Log file does not exist at /home/user/mem0-metadata-task/output.log.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/output.log')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:27: AssertionError
+____________________ test_log_contains_high_priority_count _____________________
+
+    def test_log_contains_high_priority_count():
+>       log = _read_log()
+
+tests/test_final_state.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_log() -> str:
+>       assert os.path.isfile(LOG_FILE), f"Log file does not exist at {LOG_FILE}."
+E       AssertionError: Log file does not exist at /home/user/mem0-metadata-task/output.log.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/output.log')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:27: AssertionError
+_________________________ test_log_contains_finance_id _________________________
+
+    def test_log_contains_finance_id():
+>       log = _read_log()
+
+tests/test_final_state.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_log() -> str:
+>       assert os.path.isfile(LOG_FILE), f"Log file does not exist at {LOG_FILE}."
+E       AssertionError: Log file does not exist at /home/user/mem0-metadata-task/output.log.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/output.log')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:27: AssertionError
+______________________ test_log_contains_multivitamin_id _______________________
+
+    def test_log_contains_multivitamin_id():
+>       log = _read_log()
+
+tests/test_final_state.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_log() -> str:
+>       assert os.path.isfile(LOG_FILE), f"Log file does not exist at {LOG_FILE}."
+E       AssertionError: Log file does not exist at /home/user/mem0-metadata-task/output.log.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/output.log')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:27: AssertionError
+_______________________ test_log_contains_history_events _______________________
+
+    def test_log_contains_history_events():
+>       log = _read_log()
+
+tests/test_final_state.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _read_log() -> str:
+>       assert os.path.isfile(LOG_FILE), f"Log file does not exist at {LOG_FILE}."
+E       AssertionError: Log file does not exist at /home/user/mem0-metadata-task/output.log.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/output.log')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:27: AssertionError
+_____________________ test_finance_memories_artifact_shape _____________________
+
+    def test_finance_memories_artifact_shape():
+>       data = _load_json(FINANCE_FILE)
+
+tests/test_final_state.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/home/user/mem0-metadata-task/finance_memories.json'
+
+    def _load_json(path: str):
+>       assert os.path.isfile(path), f"Expected artifact does not exist: {path}."
+E       AssertionError: Expected artifact does not exist: /home/user/mem0-metadata-task/finance_memories.json.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/finance_memories.json')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:33: AssertionError
+___________________ test_high_priority_search_artifact_shape ___________________
+
+    def test_high_priority_search_artifact_shape():
+>       data = _load_json(HIGH_PRIORITY_FILE)
+
+tests/test_final_state.py:163: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/home/user/mem0-metadata-task/high_priority_search.json'
+
+    def _load_json(path: str):
+>       assert os.path.isfile(path), f"Expected artifact does not exist: {path}."
+E       AssertionError: Expected artifact does not exist: /home/user/mem0-metadata-task/high_priority_search.json.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/high_priority_search.json')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:33: AssertionError
+________________________ test_finance_history_artifact _________________________
+
+    def test_finance_history_artifact():
+>       data = _load_json(HISTORY_FILE)
+
+tests/test_final_state.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/home/user/mem0-metadata-task/finance_history.json'
+
+    def _load_json(path: str):
+>       assert os.path.isfile(path), f"Expected artifact does not exist: {path}."
+E       AssertionError: Expected artifact does not exist: /home/user/mem0-metadata-task/finance_history.json.
+E       assert False
+E        +  where False = <function isfile at 0x7b322878c220>('/home/user/mem0-metadata-task/finance_history.json')
+E        +    where <function isfile at 0x7b322878c220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:33: AssertionError
+________________ test_server_state_finance_updated_to_september ________________
+
+    def test_server_state_finance_updated_to_september():
+        memories = _fetch_metadata_scope("finance")
+        assert isinstance(memories, list), (
+            f"Server response should be a list, got {type(memories).__name__}."
+        )
+        texts = [_memory_text(m).lower() for m in memories]
+>       assert any("september" in t for t in texts), (
+            f"Expected the updated finance memory to contain 'september'. Texts: {texts}"
+        )
+E       AssertionError: Expected the updated finance memory to contain 'september'. Texts: []
+E       assert False
+E        +  where False = any(<generator object test_server_state_finance_updated_to_september.<locals>.<genexpr> at 0x7b31eb2f7920>)
+
+tests/test_final_state.py:254: AssertionError
+______________________ test_server_state_travel_survived _______________________
+
+    def test_server_state_travel_survived():
+        memories = _fetch_metadata_scope("travel")
+        assert isinstance(memories, list), (
+            f"Server response should be a list, got {type(memories).__name__}."
+        )
+        texts = [_memory_text(m).lower() for m in memories]
+>       assert any("tokyo" in t for t in texts), (
+            f"Expected at least one travel memory containing 'tokyo' to survive. Texts: {texts}"
+        )
+E       AssertionError: Expected at least one travel memory containing 'tokyo' to survive. Texts: []
+E       assert False
+E        +  where False = any(<generator object test_server_state_travel_survived.<locals>.<genexpr> at 0x7b31eb2f7e00>)
+
+tests/test_final_state.py:276: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_package_json_is_es_module_with_mem0ai_dep
+PASSED tests/test_final_state.py::test_node_modules_mem0ai_installed
+PASSED tests/test_final_state.py::test_server_state_multivitamin_deleted
+FAILED tests/test_final_state.py::test_log_contains_run_id - AssertionError: ...
+FAILED tests/test_final_state.py::test_log_contains_user_id - AssertionError:...
+FAILED tests/test_final_state.py::test_log_contains_finance_count - Assertion...
+FAILED tests/test_final_state.py::test_log_contains_high_priority_count - Ass...
+FAILED tests/test_final_state.py::test_log_contains_finance_id - AssertionErr...
+FAILED tests/test_final_state.py::test_log_contains_multivitamin_id - Asserti...
+FAILED tests/test_final_state.py::test_log_contains_history_events - Assertio...
+FAILED tests/test_final_state.py::test_finance_memories_artifact_shape - Asse...
+FAILED tests/test_final_state.py::test_high_priority_search_artifact_shape - ...
+FAILED tests/test_final_state.py::test_finance_history_artifact - AssertionEr...
+FAILED tests/test_final_state.py::test_server_state_finance_updated_to_september
+FAILED tests/test_final_state.py::test_server_state_travel_survived - Asserti...
+========================= 12 failed, 3 passed in 3.85s =========================

@@ -1,0 +1,271 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: anyio-4.13.0, json-ctrf-0.5.0
+collected 10 items
+
+tests/test_final_state.py FFFF..FFF.                                     [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_log_contains_run_id ___________________________
+
+    def test_log_contains_run_id():
+        rid = _run_id()
+        log = _read_log()
+>       assert re.search(rf"^RUN_ID:\s*{re.escape(rid)}\s*$", log, re.MULTILINE), (
+            f"Log must contain a line 'RUN_ID: {rid}'. Log content:\n{log}"
+        )
+E       AssertionError: Log must contain a line 'RUN_ID: zr-6k4cezr'. Log content:
+E         
+E       assert None
+E        +  where None = <function search at 0x7ed8113bbba0>('^RUN_ID:\\s*zr\\-6k4cezr\\s*$', '', re.MULTILINE)
+E        +    where <function search at 0x7ed8113bbba0> = re.search
+E        +    and   re.MULTILINE = re.MULTILINE
+
+tests/test_final_state.py:59: AssertionError
+_________________________ test_log_contains_export_id __________________________
+
+    def test_log_contains_export_id():
+        log = _read_log()
+        match = re.search(r"^EXPORT_ID:\s*(\S+)\s*$", log, re.MULTILINE)
+>       assert match, f"Log must contain 'EXPORT_ID: <non-empty id>'. Log:\n{log}"
+E       AssertionError: Log must contain 'EXPORT_ID: <non-empty id>'. Log:
+E         
+E       assert None
+
+tests/test_final_state.py:67: AssertionError
+____________________ test_log_contains_export_status_ready _____________________
+
+    def test_log_contains_export_status_ready():
+        log = _read_log()
+>       assert re.search(r"^EXPORT_STATUS:\s*ready\s*$", log, re.MULTILINE), (
+            f"Log must contain literal line 'EXPORT_STATUS: ready'. Log:\n{log}"
+        )
+E       AssertionError: Log must contain literal line 'EXPORT_STATUS: ready'. Log:
+E         
+E       assert None
+E        +  where None = <function search at 0x7ed8113bbba0>('^EXPORT_STATUS:\\s*ready\\s*$', '', re.MULTILINE)
+E        +    where <function search at 0x7ed8113bbba0> = re.search
+E        +    and   re.MULTILINE = re.MULTILINE
+
+tests/test_final_state.py:73: AssertionError
+_______________________ test_log_contains_profile_fields _______________________
+
+    def test_log_contains_profile_fields():
+        log = _read_log()
+        for key in ("FULL_NAME", "CURRENT_COMPANY", "LOCATION"):
+            match = re.search(rf"^{key}:\s*(.+?)\s*$", log, re.MULTILINE)
+>           assert match, f"Log must contain '{key}: <non-empty value>'. Log:\n{log}"
+E           AssertionError: Log must contain 'FULL_NAME: <non-empty value>'. Log:
+E             
+E           assert None
+
+tests/test_final_state.py:82: AssertionError
+__________________________ test_lead_profile_artifact __________________________
+
+    def test_lead_profile_artifact():
+        data = _load_json(LEAD_PROFILE_FILE)
+        assert isinstance(data, dict), "lead_profile.json must be a JSON object."
+        expected = _entity_ids()
+        for key, value in expected.items():
+            assert data.get(key) == value, (
+                f"lead_profile.json[{key}] expected {value!r}, got {data.get(key)!r}."
+            )
+    
+        # export_id must match the one in create_export_response.json
+        create_data = _load_json(CREATE_EXPORT_FILE)
+        assert data.get("export_id") == create_data.get("id"), (
+            "lead_profile.json['export_id'] must match the `id` from create_export_response.json. "
+            f"export_id={data.get('export_id')!r}, create.id={create_data.get('id')!r}"
+        )
+    
+        # also confirm log line uses the same export id
+        log = _read_log()
+        log_match = re.search(r"^EXPORT_ID:\s*(\S+)\s*$", log, re.MULTILINE)
+>       assert log_match and log_match.group(1) == data.get("export_id"), (
+            "EXPORT_ID line in output.log must match lead_profile.json['export_id']. "
+            f"log_export_id={log_match.group(1) if log_match else None!r}, "
+            f"profile_export_id={data.get('export_id')!r}"
+        )
+E       AssertionError: EXPORT_ID line in output.log must match lead_profile.json['export_id']. log_export_id=None, profile_export_id='71796ecc-d50c-4666-b358-8bde4ed4528b'
+E       assert (None)
+
+tests/test_final_state.py:129: AssertionError
+______________ test_lead_profile_content_matches_source_memories _______________
+
+    def test_lead_profile_content_matches_source_memories():
+        data = _load_json(LEAD_PROFILE_FILE)
+        profile = data.get("profile", {})
+    
+        full_name = (profile.get("full_name") or "").lower()
+        company = (profile.get("current_company") or "").lower()
+        location = (profile.get("location") or "").lower()
+        email = (profile.get("contact_email") or "").lower()
+    
+>       assert "priya" in full_name and "shah" in full_name, (
+            f"profile.full_name must contain 'priya' and 'shah' (case-insensitive), got {full_name!r}."
+        )
+E       AssertionError: profile.full_name must contain 'priya' and 'shah' (case-insensitive), got ''.
+E       assert ('priya' in '')
+
+tests/test_final_state.py:164: AssertionError
+_____________________ test_server_state_has_lead_memories ______________________
+
+args = (<mem0.client.main.MemoryClient object at 0x7ed7d4100470>,)
+kwargs = {'filters': {'AND': [{'user_id': 'lead-zr-6k4cezr'}, {'agent_id': 'csm-zr-6k4cezr'}, {'run_id': 'intake-zr-6k4cezr'}]}, 'version': 'v2'}
+response_text = '{"error":"Usage quota exceeded for this billing period. Please upgrade your plan at https://app.mem0.ai/dashboard/usage-and-billing.","event_type":"SEARCH","quota_limit":1000,"quota_used":1000,"quota_reset":"2026-06-01T00:00:00+00:00"}'
+error_details = {'error': 'Usage quota exceeded for this billing period. Please upgrade your plan at https://app.mem0.ai/dashboard/usage-and-billing.', 'event_type': 'SEARCH', 'quota_limit': 1000, 'quota_reset': '2026-06-01T00:00:00+00:00', ...}
+debug_info = {'method': 'POST', 'retry_after': 357913, 'status_code': 429, 'url': 'https://api.mem0.ai/v3/memories/'}
+error_data = {'error': 'Usage quota exceeded for this billing period. Please upgrade your plan at https://app.mem0.ai/dashboard/usage-and-billing.', 'event_type': 'SEARCH', 'quota_limit': 1000, 'quota_reset': '2026-06-01T00:00:00+00:00', ...}
+retry_after = '357913', header = 'X-RateLimit-Reset', value = None
+exception = RateLimitError(message='{"error":"Usage quota exceeded for this billing period. Please upgrade your plan at https://ap...', debug_info={'status_code': 429, 'url': 'https://api.mem0.ai/v3/memories/', 'method': 'POST', 'retry_after': 357913})
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        try:
+>           return func(*args, **kwargs)
+
+usr/local/lib/python3.12/dist-packages/mem0/client/utils.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/mem0/client/main.py:266: in get_all
+    response.raise_for_status()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Response [429 Too Many Requests]>
+
+    def raise_for_status(self) -> Response:
+        """
+        Raise the `HTTPStatusError` if one occurred.
+        """
+        request = self._request
+        if request is None:
+            raise RuntimeError(
+                "Cannot call `raise_for_status` as the request "
+                "instance has not been set on this response."
+            )
+    
+        if self.is_success:
+            return self
+    
+        if self.has_redirect_location:
+            message = (
+                "{error_type} '{0.status_code} {0.reason_phrase}' for url '{0.url}'\n"
+                "Redirect location: '{0.headers[location]}'\n"
+                "For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{0.status_code}"
+            )
+        else:
+            message = (
+                "{error_type} '{0.status_code} {0.reason_phrase}' for url '{0.url}'\n"
+                "For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{0.status_code}"
+            )
+    
+        status_class = self.status_code // 100
+        error_types = {
+            1: "Informational response",
+            3: "Redirect response",
+            4: "Client error",
+            5: "Server error",
+        }
+        error_type = error_types.get(status_class, "Invalid status code")
+        message = message.format(self, error_type=error_type)
+>       raise HTTPStatusError(message, request=request, response=self)
+E       httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/'
+E       For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+usr/local/lib/python3.12/dist-packages/httpx/_models.py:829: HTTPStatusError
+
+During handling of the above exception, another exception occurred:
+
+    def test_server_state_has_lead_memories():
+        pytest.importorskip("mem0")
+        api_key = os.environ.get("MEM0_API_KEY")
+        assert api_key, "MEM0_API_KEY required for server-side verification."
+    
+>       memories = _fetch_server_memories()
+
+tests/test_final_state.py:210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_final_state.py:188: in _fetch_server_memories
+    response = client.get_all(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<mem0.client.main.MemoryClient object at 0x7ed7d4100470>,)
+kwargs = {'filters': {'AND': [{'user_id': 'lead-zr-6k4cezr'}, {'agent_id': 'csm-zr-6k4cezr'}, {'run_id': 'intake-zr-6k4cezr'}]}, 'version': 'v2'}
+response_text = '{"error":"Usage quota exceeded for this billing period. Please upgrade your plan at https://app.mem0.ai/dashboard/usage-and-billing.","event_type":"SEARCH","quota_limit":1000,"quota_used":1000,"quota_reset":"2026-06-01T00:00:00+00:00"}'
+error_details = {'error': 'Usage quota exceeded for this billing period. Please upgrade your plan at https://app.mem0.ai/dashboard/usage-and-billing.', 'event_type': 'SEARCH', 'quota_limit': 1000, 'quota_reset': '2026-06-01T00:00:00+00:00', ...}
+debug_info = {'method': 'POST', 'retry_after': 357913, 'status_code': 429, 'url': 'https://api.mem0.ai/v3/memories/'}
+error_data = {'error': 'Usage quota exceeded for this billing period. Please upgrade your plan at https://app.mem0.ai/dashboard/usage-and-billing.', 'event_type': 'SEARCH', 'quota_limit': 1000, 'quota_reset': '2026-06-01T00:00:00+00:00', ...}
+retry_after = '357913', header = 'X-RateLimit-Reset', value = None
+exception = RateLimitError(message='{"error":"Usage quota exceeded for this billing period. Please upgrade your plan at https://ap...', debug_info={'status_code': 429, 'url': 'https://api.mem0.ai/v3/memories/', 'method': 'POST', 'retry_after': 357913})
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except httpx.HTTPStatusError as e:
+            logger.error(f"HTTP error occurred: {e}")
+    
+            # Extract error details from response
+            response_text = ""
+            error_details = {}
+            debug_info = {
+                "status_code": e.response.status_code,
+                "url": str(e.request.url),
+                "method": e.request.method,
+            }
+    
+            try:
+                response_text = e.response.text
+                # Try to parse JSON response for additional error details
+                if e.response.headers.get("content-type", "").startswith("application/json"):
+                    error_data = json.loads(response_text)
+                    if isinstance(error_data, dict):
+                        error_details = error_data
+                        response_text = error_data.get("detail", response_text)
+            except (json.JSONDecodeError, AttributeError):
+                # Fallback to plain text response
+                pass
+    
+            # Add rate limit information if available
+            if e.response.status_code == 429:
+                retry_after = e.response.headers.get("Retry-After")
+                if retry_after:
+                    try:
+                        debug_info["retry_after"] = int(retry_after)
+                    except ValueError:
+                        pass
+    
+                # Add rate limit headers if available
+                for header in ["X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset"]:
+                    value = e.response.headers.get(header)
+                    if value:
+                        debug_info[header.lower().replace("-", "_")] = value
+    
+            # Create specific exception based on status code
+            exception = create_exception_from_response(
+                status_code=e.response.status_code,
+                response_text=response_text,
+                details=error_details,
+                debug_info=debug_info,
+            )
+    
+>           raise exception
+E           mem0.exceptions.RateLimitError: {"error":"Usage quota exceeded for this billing period. Please upgrade your plan at https://app.mem0.ai/dashboard/usage-and-billing.","event_type":"SEARCH","quota_limit":1000,"quota_used":1000,"quota_reset":"2026-06-01T00:00:00+00:00"}
+
+usr/local/lib/python3.12/dist-packages/mem0/client/utils.py:86: RateLimitError
+------------------------------ Captured log call -------------------------------
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_create_export_response_artifact
+PASSED tests/test_final_state.py::test_get_export_response_artifact
+PASSED tests/test_final_state.py::test_export_retrievable_again
+FAILED tests/test_final_state.py::test_log_contains_run_id - AssertionError: ...
+FAILED tests/test_final_state.py::test_log_contains_export_id - AssertionErro...
+FAILED tests/test_final_state.py::test_log_contains_export_status_ready - Ass...
+FAILED tests/test_final_state.py::test_log_contains_profile_fields - Assertio...
+FAILED tests/test_final_state.py::test_lead_profile_artifact - AssertionError...
+FAILED tests/test_final_state.py::test_lead_profile_content_matches_source_memories
+FAILED tests/test_final_state.py::test_server_state_has_lead_memories - mem0....
+========================= 7 failed, 3 passed in 2.80s ==========================

@@ -1,0 +1,160 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 15,
+            "passed": 15,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1779911810894,
+            "stop": 1779911814537
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_package_json_is_es_module_with_mem0ai_dep",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779911810927,
+                "stop": 1779911810928,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_node_modules_mem0ai_installed",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779911810928,
+                "stop": 1779911810929,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_run_id",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779911810929,
+                "stop": 1779911810930,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_user_id",
+                "status": "passed",
+                "duration": 0,
+                "start": 1779911810930,
+                "stop": 1779911810930,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_finance_count",
+                "status": "passed",
+                "duration": 0,
+                "start": 1779911810931,
+                "stop": 1779911810931,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_high_priority_count",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779911810931,
+                "stop": 1779911810932,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_finance_id",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779911810932,
+                "stop": 1779911810933,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_multivitamin_id",
+                "status": "passed",
+                "duration": 0,
+                "start": 1779911810933,
+                "stop": 1779911810933,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_history_events",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779911810933,
+                "stop": 1779911810934,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_finance_memories_artifact_shape",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779911810934,
+                "stop": 1779911810935,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_high_priority_search_artifact_shape",
+                "status": "passed",
+                "duration": 0,
+                "start": 1779911810935,
+                "stop": 1779911810935,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_finance_history_artifact",
+                "status": "passed",
+                "duration": 0,
+                "start": 1779911810936,
+                "stop": 1779911810936,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_state_finance_updated_to_september",
+                "status": "passed",
+                "duration": 1916,
+                "start": 1779911810936,
+                "stop": 1779911812852,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_state_multivitamin_deleted",
+                "status": "passed",
+                "duration": 861,
+                "start": 1779911812853,
+                "stop": 1779911813714,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_state_travel_survived",
+                "status": "passed",
+                "duration": 822,
+                "start": 1779911813715,
+                "stop": 1779911814537,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

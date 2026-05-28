@@ -1,0 +1,39 @@
+2026-05-27 20:45:11,738 [INFO] ============================================================
+2026-05-27 20:45:11,738 [INFO] Mem0 + Chroma demo starting
+2026-05-27 20:45:11,738 [INFO] Run-ID          : zr-pbx2myd
+2026-05-27 20:45:11,739 [INFO] Collection name : mem0_demo_zr-pbx2myd
+2026-05-27 20:45:11,739 [INFO] Chroma path     : /home/user/myproject/chroma_db
+2026-05-27 20:45:11,739 [INFO] User-ID         : alex
+2026-05-27 20:45:11,739 [INFO] ============================================================
+2026-05-27 20:45:11,739 [INFO] Initialising Memory from config …
+2026-05-27 20:45:13,187 [INFO] Memory instance ready.
+2026-05-27 20:45:13,187 [INFO] Adding conversation for user_id=alex …
+2026-05-27 20:45:13,813 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 20:45:19,860 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-27 20:45:20,184 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 20:45:20,274 [WARNING] Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 20:45:20,274 [INFO] Inserting 5 vectors into collection mem0_demo_zr-pbx2myd
+2026-05-27 20:45:23,477 [WARNING] Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 20:45:24,126 [INFO] add() raw response: {"results": [{"id": "18c2f132-c13a-41eb-8e69-180837b3c4ce", "memory": "User's name is Alex and has been vegan for three years, enjoying the lifestyle.", "event": "ADD"}, {"id": "8736f0d6-a01c-4f01-b325-007b9738bd97", "memory": "Alex goes hiking every weekend in the hills near their house, which helps clear their head.", "event": "ADD"}, {"id": "fd61200f-c096-4186-ad1c-d28b093d3396", "memory": "Alex meditates every morning as part of their routine.", "event": "ADD"}, {"id": "58ff5494-2c9d-47eb-a5bd-62e9b2d0622c", "memory": "Alex's favorite hiking trail is the Ridgeline Trail, where they usually pack a vegan lunch and spend the whole morning.", "event": "ADD"}, {"id": "c069311f-3826-414d-987d-759bf426fee4", "memory": "Hiking is Alex's favorite weekend activity.", "event": "ADD"}]}
+2026-05-27 20:45:24,127 [INFO] Memories added (5): ['18c2f132-c13a-41eb-8e69-180837b3c4ce', '8736f0d6-a01c-4f01-b325-007b9738bd97', 'fd61200f-c096-4186-ad1c-d28b093d3396', '58ff5494-2c9d-47eb-a5bd-62e9b2d0622c', 'c069311f-3826-414d-987d-759bf426fee4']
+2026-05-27 20:45:24,127 [INFO] Searching with query: 'What does Alex eat? Is Alex vegan or vegetarian?'
+2026-05-27 20:45:24,284 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 20:45:24,302 [INFO] search() raw response: {"results": [{"id": "fd61200f-c096-4186-ad1c-d28b093d3396", "memory": "Alex meditates every morning as part of their routine.", "hash": "6c03c8f0311175ca7756a1f3cbc10626", "metadata": {"category": "preferences"}, "score": 1.0, "created_at": "2026-05-27T20:45:20.274443+00:00", "updated_at": "2026-05-27T20:45:20.274443+00:00", "user_id": "alex"}, {"id": "c069311f-3826-414d-987d-759bf426fee4", "memory": "Hiking is Alex's favorite weekend activity.", "hash": "1f0444fab539dff364a19d57dfccbe6a", "metadata": {"category": "preferences"}, "score": 1.0, "created_at": "2026-05-27T20:45:20.274467+00:00", "updated_at": "2026-05-27T20:45:20.274467+00:00", "user_id": "alex"}, {"id": "8736f0d6-a01c-4f01-b325-007b9738bd97", "memory": "Alex goes hiking every weekend in the hills near their house, which helps clear their head.", "hash": "84a85837d78bb90fd11cf2913af21b05", "metadata": {"category": "preferences"}, "score": 1.0, "created_at": "2026-05-27T20:45:20.274429+00:00", "updated_at": "2026-05-27T20:45:20.274429+00:00", "user_id": "alex"}, {"id": "58ff5494-2c9d-47eb-a5bd-62e9b2d0622c", "memory": "Alex's favorite hiking trail is the Ridgeline Trail, where they usually pack a vegan lunch and spend the whole morning.", "hash": "060be4df781190516d90e215babfccae", "metadata": {"category": "preferences"}, "score": 0.8918890953063965, "created_at": "2026-05-27T20:45:20.274456+00:00", "updated_at": "2026-05-27T20:45:20.274456+00:00", "user_id": "alex"}, {"id": "18c2f132-c13a-41eb-8e69-180837b3c4ce", "memory": "User's name is Alex and has been vegan for three years, enjoying the lifestyle.", "hash": "ca5a0f9afbad7ebedd18027f30c54f67", "metadata": {"category": "preferences"}, "score": 0.5681620240211487, "created_at": "2026-05-27T20:45:20.274387+00:00", "updated_at": "2026-05-27T20:45:20.274387+00:00", "user_id": "alex"}]}
+2026-05-27 20:45:24,302 [INFO] Search returned 5 result(s).
+2026-05-27 20:45:24,302 [INFO] Updating memory 18c2f132-c13a-41eb-8e69-180837b3c4ce to: 'Alex now prefers vegetarian food and tracks calories.'
+2026-05-27 20:45:24,519 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 20:45:24,531 [INFO] Updating memory with data='Alex now prefers vegetarian food and tracks calories.'
+2026-05-27 20:45:26,286 [INFO] Updating memory with ID memory_id='18c2f132-c13a-41eb-8e69-180837b3c4ce' with data='Alex now prefers vegetarian food and tracks calories.'
+2026-05-27 20:45:26,947 [INFO] update() response: {"message": "Memory updated successfully!"}
+2026-05-27 20:45:26,948 [INFO] Deleting memory 8736f0d6-a01c-4f01-b325-007b9738bd97 …
+2026-05-27 20:45:26,951 [INFO] Deleting memory with memory_id='8736f0d6-a01c-4f01-b325-007b9738bd97'
+2026-05-27 20:45:29,193 [INFO] delete() response: {"message": "Memory deleted successfully!"}
+2026-05-27 20:45:29,193 [INFO] Fetching final inventory with get_all(filters={user_id: 'alex'}) …
+2026-05-27 20:45:29,197 [INFO] get_all() raw response: {"results": [{"id": "18c2f132-c13a-41eb-8e69-180837b3c4ce", "memory": "Alex now prefers vegetarian food and tracks calories.", "hash": "8faff1055f7d1cbf49654dd4978cd697", "metadata": {"category": "preferences"}, "created_at": "2026-05-27T20:45:20.274387+00:00", "updated_at": "2026-05-27T20:45:24.533617+00:00", "user_id": "alex"}, {"id": "fd61200f-c096-4186-ad1c-d28b093d3396", "memory": "Alex meditates every morning as part of their routine.", "hash": "6c03c8f0311175ca7756a1f3cbc10626", "metadata": {"category": "preferences"}, "created_at": "2026-05-27T20:45:20.274443+00:00", "updated_at": "2026-05-27T20:45:20.274443+00:00", "user_id": "alex"}, {"id": "58ff5494-2c9d-47eb-a5bd-62e9b2d0622c", "memory": "Alex's favorite hiking trail is the Ridgeline Trail, where they usually pack a vegan lunch and spend the whole morning.", "hash": "060be4df781190516d90e215babfccae", "metadata": {"category": "preferences"}, "created_at": "2026-05-27T20:45:20.274456+00:00", "updated_at": "2026-05-27T20:45:20.274456+00:00", "user_id": "alex"}, {"id": "c069311f-3826-414d-987d-759bf426fee4", "memory": "Hiking is Alex's favorite weekend activity.", "hash": "1f0444fab539dff364a19d57dfccbe6a", "metadata": {"category": "preferences"}, "created_at": "2026-05-27T20:45:20.274467+00:00", "updated_at": "2026-05-27T20:45:20.274467+00:00", "user_id": "alex"}]}
+2026-05-27 20:45:29,197 [INFO] Final memory count: 4
+2026-05-27 20:45:29,197 [INFO] Verifying updated memory via get(memory_id='18c2f132-c13a-41eb-8e69-180837b3c4ce') …
+2026-05-27 20:45:29,199 [INFO] get() response for updated memory: {"id": "18c2f132-c13a-41eb-8e69-180837b3c4ce", "memory": "Alex now prefers vegetarian food and tracks calories.", "hash": "8faff1055f7d1cbf49654dd4978cd697", "metadata": {"category": "preferences"}, "score": null, "created_at": "2026-05-27T20:45:20.274387+00:00", "updated_at": "2026-05-27T20:45:24.533617+00:00", "user_id": "alex"}
+2026-05-27 20:45:29,200 [INFO] result.json written to /home/user/myproject/result.json
+2026-05-27 20:45:29,200 [INFO] ============================================================
+2026-05-27 20:45:29,200 [INFO] Demo completed successfully.
+2026-05-27 20:45:29,200 [INFO] ============================================================

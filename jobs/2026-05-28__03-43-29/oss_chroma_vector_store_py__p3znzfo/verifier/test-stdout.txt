@@ -1,0 +1,156 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: anyio-4.13.0, json-ctrf-0.5.0
+collected 15 items
+
+tests/test_final_state.py ...FF........FF                                [100%]
+
+=================================== FAILURES ===================================
+________________________ test_report_run_id_matches_env ________________________
+
+report = {'added_memory_ids': ['d2c6246d-d04b-4038-8054-e9f3e4dda72c', '3d405688-1fec-4c81-9b3a-387739de7286'], 'collection_name': 'mem0_demo_test_final', 'deleted_memory_id': '3d405688-1fec-4c81-9b3a-387739de7286', 'final_memory_count': 1, ...}
+run_id = 'zr-p3znzfo'
+
+    def test_report_run_id_matches_env(report, run_id):
+>       assert report["run_id"] == run_id, (
+            f"result.json run_id mismatch: report has {report['run_id']!r} "
+            f"but ZEALT_RUN_ID is {run_id!r}."
+        )
+E       AssertionError: result.json run_id mismatch: report has 'test_final' but ZEALT_RUN_ID is 'zr-p3znzfo'.
+E       assert 'test_final' == 'zr-p3znzfo'
+E         - zr-p3znzfo
+E         + test_final
+
+tests/test_final_state.py:67: AssertionError
+_________________________ test_report_collection_name __________________________
+
+report = {'added_memory_ids': ['d2c6246d-d04b-4038-8054-e9f3e4dda72c', '3d405688-1fec-4c81-9b3a-387739de7286'], 'collection_name': 'mem0_demo_test_final', 'deleted_memory_id': '3d405688-1fec-4c81-9b3a-387739de7286', 'final_memory_count': 1, ...}
+run_id = 'zr-p3znzfo'
+
+    def test_report_collection_name(report, run_id):
+        expected = f"mem0_demo_{run_id}"
+>       assert report["collection_name"] == expected, (
+            f"collection_name should be {expected!r}, got {report['collection_name']!r}."
+        )
+E       AssertionError: collection_name should be 'mem0_demo_zr-p3znzfo', got 'mem0_demo_test_final'.
+E       assert 'mem0_demo_test_final' == 'mem0_demo_zr-p3znzfo'
+E         - mem0_demo_zr-p3znzfo
+E         + mem0_demo_test_final
+
+tests/test_final_state.py:75: AssertionError
+________________________ test_mem0_chroma_state_via_sdk ________________________
+
+report = {'added_memory_ids': ['d2c6246d-d04b-4038-8054-e9f3e4dda72c', '3d405688-1fec-4c81-9b3a-387739de7286'], 'collection_name': 'mem0_demo_test_final', 'deleted_memory_id': '3d405688-1fec-4c81-9b3a-387739de7286', 'final_memory_count': 1, ...}
+
+    def test_mem0_chroma_state_via_sdk(report):
+        """Re-open the Chroma-backed Memory and verify functional outcomes."""
+        from mem0 import Memory
+    
+        config = {
+            "vector_store": {
+                "provider": "chroma",
+                "config": {
+                    "collection_name": report["collection_name"],
+                    "path": CHROMA_DIR,
+                },
+            }
+        }
+        m = Memory.from_config(config)
+    
+        # 1. Updated memory has the expected text.
+        updated = m.get(memory_id=report["updated_memory_id"])
+        assert isinstance(updated, dict), (
+            f"m.get() should return a dict for an existing memory, got {type(updated)}."
+        )
+        mem_text = updated.get("memory") or updated.get("text") or ""
+        assert mem_text == EXPECTED_UPDATED_TEXT, (
+            f"Memory {report['updated_memory_id']!r} content should be "
+            f"{EXPECTED_UPDATED_TEXT!r}, got {mem_text!r}."
+        )
+    
+        # 2. get_all() count matches final_memory_count and deleted ID is absent.
+>       all_memories = _normalize_results(m.get_all(user_id="alex"))
+
+tests/test_final_state.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/mem0/memory/main.py:1041: in get_all
+    _reject_top_level_entity_params(kwargs, "get_all")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+kwargs = {'user_id': 'alex'}, method_name = 'get_all'
+
+    def _reject_top_level_entity_params(kwargs: Dict[str, Any], method_name: str) -> None:
+        """Reject top-level entity parameters - must use filters instead."""
+        invalid_keys = ENTITY_PARAMS & set(kwargs.keys())
+        if invalid_keys:
+>           raise ValueError(
+                f"Top-level entity parameters {invalid_keys} are not supported in {method_name}(). "
+                f"Use filters={{'user_id': '...'}} instead."
+            )
+E           ValueError: Top-level entity parameters frozenset({'user_id'}) are not supported in get_all(). Use filters={'user_id': '...'} instead.
+
+usr/local/lib/python3.12/dist-packages/mem0/memory/main.py:107: ValueError
+________________________ test_chroma_collection_exists _________________________
+
+    def test_chroma_collection_exists():
+        """Verify the Chroma collection name directly via the chromadb client."""
+        import chromadb
+    
+>       client = chromadb.PersistentClient(path=CHROMA_DIR)
+
+tests/test_final_state.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/chromadb/__init__.py:228: in PersistentClient
+    return ClientCreator(tenant=tenant, database=database, settings=settings)
+usr/local/lib/python3.12/dist-packages/chromadb/api/client.py:69: in __init__
+    super().__init__(settings=settings)
+usr/local/lib/python3.12/dist-packages/chromadb/api/shared_system_client.py:25: in __init__
+    SharedSystemClient._create_system_if_not_exists(self._identifier, settings)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'chromadb.api.shared_system_client.SharedSystemClient'>
+identifier = '/home/user/myproject/chroma_db'
+settings = Settings(environment='', chroma_api_impl='chromadb.api.rust.RustBindingsAPI', chroma_server_nofile=None, chroma_server...oma_db_impl=None, chroma_collection_assignment_policy_impl='chromadb.ingest.impl.simple_policy.SimpleAssignmentPolicy')
+
+    @classmethod
+    def _create_system_if_not_exists(
+        cls, identifier: str, settings: Settings
+    ) -> System:
+        if identifier not in cls._identifier_to_system:
+            new_system = System(settings)
+            cls._identifier_to_system[identifier] = new_system
+    
+            new_system.instance(ProductTelemetryClient)
+            new_system.instance(ServerAPI)
+    
+            new_system.start()
+        else:
+            previous_system = cls._identifier_to_system[identifier]
+    
+            # For now, the settings must match
+            if previous_system.settings != settings:
+>               raise ValueError(
+                    f"An instance of Chroma already exists for {identifier} with different settings"
+                )
+E               ValueError: An instance of Chroma already exists for /home/user/myproject/chroma_db with different settings
+
+usr/local/lib/python3.12/dist-packages/chromadb/api/shared_system_client.py:45: ValueError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_output_log_exists_and_nonempty
+PASSED tests/test_final_state.py::test_chroma_persistence_files_exist
+PASSED tests/test_final_state.py::test_report_has_required_keys
+PASSED tests/test_final_state.py::test_report_user_id
+PASSED tests/test_final_state.py::test_added_memory_ids_valid
+PASSED tests/test_final_state.py::test_updated_memory_id_is_in_added
+PASSED tests/test_final_state.py::test_deleted_memory_id_is_in_added_and_distinct
+PASSED tests/test_final_state.py::test_updated_memory_text_value
+PASSED tests/test_final_state.py::test_search_query_nonempty
+PASSED tests/test_final_state.py::test_search_result_count_int
+PASSED tests/test_final_state.py::test_final_memory_count_matches_expected
+FAILED tests/test_final_state.py::test_report_run_id_matches_env - AssertionE...
+FAILED tests/test_final_state.py::test_report_collection_name - AssertionErro...
+FAILED tests/test_final_state.py::test_mem0_chroma_state_via_sdk - ValueError...
+FAILED tests/test_final_state.py::test_chroma_collection_exists - ValueError:...
+========================= 4 failed, 11 passed in 2.76s =========================

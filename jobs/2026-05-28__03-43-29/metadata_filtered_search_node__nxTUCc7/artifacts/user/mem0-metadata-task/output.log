@@ -1,0 +1,47 @@
+RUN_ID: zr-nxtucc7
+USER_ID: planner-zr-nxtucc7
+
+[STEP 1] Ingesting five notes...
+  Added note [finance/high]
+  Added note [finance/low]
+  Added note [travel/high]
+  Added note [health/high]
+  Added note [health/low]
+
+[STEP 2] Waiting for Mem0 platform to process memories...
+  Polling attempt 1/20...
+  Finance memories found: 2
+  ✓ Got at least 2 finance memories — proceeding.
+
+[STEP 3] Persisting finance_memories.json...
+FINANCE_COUNT: 2
+
+[STEP 4] Searching for high-priority notes...
+  Search attempt 1/20...
+  High-priority memories found: 3
+  ✓ Got at least 3 high-priority memories — proceeding.
+
+[STEP 5] Persisting high_priority_search.json...
+HIGH_PRIORITY_COUNT: 3
+
+[STEP 6] Identifying finance tax memory...
+  Found tax memory with id: 8840b264-09ca-4374-b10d-41fe453d3523
+
+[STEP 7] Updating finance tax memory...
+  Updated memory 8840b264-09ca-4374-b10d-41fe453d3523
+
+[STEP 8] Fetching memory history...
+  History events found: 2
+  ✓ History has >= 2 entries and includes UPDATE event.
+FINANCE_ID: 8840b264-09ca-4374-b10d-41fe453d3523
+HISTORY_EVENTS: 2
+
+[STEP 9] Identifying and deleting low-priority health memory (multivitamin)...
+  Found multivitamin memory with id: a6cd280d-124d-4c15-ac4c-f3c447fd08d5
+  Deleted memory a6cd280d-124d-4c15-ac4c-f3c447fd08d5
+MULTIVITAMIN_ID: a6cd280d-124d-4c15-ac4c-f3c447fd08d5
+
+[DONE] All steps completed successfully.
+  finance_memories.json  → 2 results
+  high_priority_search.json → 3 results
+  finance_history.json   → 2 history events

@@ -1,0 +1,47 @@
+2026-05-27 20:43:24,741 INFO Starting Mem0 Chroma demo
+2026-05-27 20:43:24,741 INFO Run ID: zr-qqcppbf
+2026-05-27 20:43:24,741 INFO Collection: mem0_demo_zr-qqcppbf
+2026-05-27 20:43:28,751 INFO Adding memories
+2026-05-27 20:43:51,183 INFO Starting Mem0 Chroma demo
+2026-05-27 20:43:51,183 INFO Run ID: zr-qqcppbf
+2026-05-27 20:43:51,183 INFO Collection: mem0_demo_zr-qqcppbf
+2026-05-27 20:43:52,481 INFO Adding memories
+2026-05-27 20:44:47,142 INFO Starting Mem0 Chroma demo
+2026-05-27 20:44:47,142 INFO Run ID: zr-qqcppbf
+2026-05-27 20:44:47,142 INFO Collection: mem0_demo_zr-qqcppbf
+2026-05-27 20:44:50,599 INFO Adding memories
+2026-05-27 20:44:50,600 INFO output_format not supported; using default add() response
+2026-05-27 20:45:05,950 INFO Added memories: ['ea432174-52b3-41cd-af6e-71ecc14bdecf', '3c3d84a9-0f57-44ef-8a90-427e7d2f7640', 'fe4570e5-5e67-4129-bfe5-b8206d287a12', '0b9fa1af-deed-4846-a51b-efd55bed7b91']
+2026-05-27 20:45:05,950 INFO Updating memory ea432174-52b3-41cd-af6e-71ecc14bdecf
+2026-05-27 20:45:43,753 INFO Starting Mem0 Chroma demo
+2026-05-27 20:45:43,753 INFO Run ID: zr-qqcppbf
+2026-05-27 20:45:43,754 INFO Collection: mem0_demo_zr-qqcppbf
+2026-05-27 20:45:45,437 INFO Adding memories
+2026-05-27 20:45:45,438 INFO output_format not supported; using default add() response
+2026-05-27 20:45:51,367 INFO Added memories: []
+2026-05-27 20:46:35,557 INFO Starting Mem0 Chroma demo
+2026-05-27 20:46:35,557 INFO Run ID: zr-qqcppbf
+2026-05-27 20:46:35,558 INFO Collection: mem0_demo_zr-qqcppbf
+2026-05-27 20:46:37,826 INFO Adding memories
+2026-05-27 20:46:37,826 INFO output_format not supported; using default add() response
+2026-05-27 20:46:54,336 INFO Added memories: ['9b3a7d6b-f828-4a26-84ac-4699eaa4eb06', 'a491e936-e22a-4c3b-b15b-f374b0026fc2', '74e9df8c-219f-4e06-8aea-a1121300691c', '5b6e6421-420e-4508-96b5-db5dd6fb2b91', 'c1ebb869-0fa7-4e0f-a3d5-99f10830e8ff']
+2026-05-27 20:46:54,336 INFO Updating memory 9b3a7d6b-f828-4a26-84ac-4699eaa4eb06
+2026-05-27 20:46:57,267 INFO Deleting memory a491e936-e22a-4c3b-b15b-f374b0026fc2
+2026-05-27 20:47:00,370 INFO Searching memories with query: What does Alex prefer to eat now?
+2026-05-27 20:47:00,671 INFO Search returned 1 results
+2026-05-27 20:47:00,672 INFO Fetching final memory inventory
+2026-05-27 20:47:00,679 INFO Final memory count: 1
+2026-05-27 20:47:00,680 INFO Wrote report to /home/user/myproject/result.json
+2026-05-27 20:47:45,451 INFO Starting Mem0 Chroma demo
+2026-05-27 20:47:45,451 INFO Run ID: zr-qqcppbf
+2026-05-27 20:47:45,451 INFO Collection: mem0_demo_zr-qqcppbf
+2026-05-27 20:47:50,914 INFO Adding memories
+2026-05-27 20:47:50,914 INFO output_format not supported; using default add() response
+2026-05-27 20:47:54,424 INFO Added memories: ['c53e81fa-d9a4-4989-922c-a58de7273868', '0c6b78f2-0b74-4c5b-b9be-3775c517832e', '3a70bd62-4cd5-4424-83e6-7c362661ab61', '9d5938d6-7fcc-4a0c-98e4-01bbe2fad545', '2174365d-4451-4ac2-919f-75730cadd472']
+2026-05-27 20:47:54,425 INFO Updating memory c53e81fa-d9a4-4989-922c-a58de7273868
+2026-05-27 20:47:54,909 INFO Deleting memory 0c6b78f2-0b74-4c5b-b9be-3775c517832e
+2026-05-27 20:47:55,271 INFO Searching memories with query: What does Alex prefer to eat now?
+2026-05-27 20:47:55,431 INFO Search returned 4 results
+2026-05-27 20:47:55,431 INFO Fetching final memory inventory
+2026-05-27 20:47:55,438 INFO Final memory count: 4
+2026-05-27 20:47:55,439 INFO Wrote report to /home/user/myproject/result.json

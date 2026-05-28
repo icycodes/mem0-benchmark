@@ -1,0 +1,19 @@
+{
+  "run_id": "zr-pbx2myd",
+  "collection_name": "mem0_demo_zr-pbx2myd",
+  "user_id": "alex",
+  "added_memory_ids": [
+    "18c2f132-c13a-41eb-8e69-180837b3c4ce",
+    "8736f0d6-a01c-4f01-b325-007b9738bd97",
+    "fd61200f-c096-4186-ad1c-d28b093d3396",
+    "58ff5494-2c9d-47eb-a5bd-62e9b2d0622c",
+    "c069311f-3826-414d-987d-759bf426fee4"
+  ],
+  "updated_memory_id": "18c2f132-c13a-41eb-8e69-180837b3c4ce",
+  "updated_memory_text": "Alex now prefers vegetarian food and tracks calories.",
+  "deleted_memory_id": "8736f0d6-a01c-4f01-b325-007b9738bd97",
+  "search_query": "What does Alex eat? Is Alex vegan or vegetarian?",
+  "search_result_count": 5,
+  "final_memory_count": 4,
+  "timestamp": "2026-05-27T20:45:29.199974+00:00"
+}

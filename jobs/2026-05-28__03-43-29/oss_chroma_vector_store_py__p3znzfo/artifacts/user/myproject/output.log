@@ -1,0 +1,25 @@
+2026-05-27 20:42:41,315 - INFO - Starting run with ID: test_final
+2026-05-27 20:42:41,315 - INFO - Collection name: mem0_demo_test_final
+2026-05-27 20:42:41,315 - INFO - DB path: /home/user/myproject/chroma_db
+2026-05-27 20:42:41,315 - INFO - Initializing Memory
+2026-05-27 20:42:45,611 - INFO - Adding conversation to memory
+2026-05-27 20:42:46,364 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 20:42:54,409 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-27 20:42:55,053 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 20:42:55,128 - WARNING - Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 20:42:55,128 - INFO - Inserting 2 vectors into collection mem0_demo_test_final
+2026-05-27 20:42:55,635 - WARNING - Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-05-27 20:42:55,734 - INFO - Add result: {'results': [{'id': 'd2c6246d-d04b-4038-8054-e9f3e4dda72c', 'memory': "User's name is Alex and they are a vegan.", 'event': 'ADD'}, {'id': '3d405688-1fec-4c81-9b3a-387739de7286', 'memory': 'Alex enjoys hiking on weekends.', 'event': 'ADD'}]}
+2026-05-27 20:42:55,734 - INFO - Added memory IDs: ['d2c6246d-d04b-4038-8054-e9f3e4dda72c', '3d405688-1fec-4c81-9b3a-387739de7286']
+2026-05-27 20:42:55,734 - INFO - Searching for: What is Alex's food preference?
+2026-05-27 20:42:55,880 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 20:42:55,895 - INFO - Search result: {'results': [{'id': '3d405688-1fec-4c81-9b3a-387739de7286', 'memory': 'Alex enjoys hiking on weekends.', 'hash': '4cce353592af2c2aa294ab644e90ef87', 'metadata': {'category': 'preferences'}, 'score': 1.0, 'created_at': '2026-05-27T20:42:55.128422+00:00', 'updated_at': '2026-05-27T20:42:55.128422+00:00', 'user_id': 'alex'}, {'id': 'd2c6246d-d04b-4038-8054-e9f3e4dda72c', 'memory': "User's name is Alex and they are a vegan.", 'hash': 'f60d7c18e80e27b981b0cd7a6f602e54', 'metadata': {'category': 'preferences'}, 'score': 0.9061819314956665, 'created_at': '2026-05-27T20:42:55.128338+00:00', 'updated_at': '2026-05-27T20:42:55.128338+00:00', 'user_id': 'alex'}]}
+2026-05-27 20:42:55,895 - INFO - Updating memory d2c6246d-d04b-4038-8054-e9f3e4dda72c
+2026-05-27 20:42:56,045 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-27 20:42:56,056 - INFO - Updating memory with data='Alex now prefers vegetarian food and tracks calories.'
+2026-05-27 20:42:56,496 - INFO - Updating memory with ID memory_id='d2c6246d-d04b-4038-8054-e9f3e4dda72c' with data='Alex now prefers vegetarian food and tracks calories.'
+2026-05-27 20:42:56,662 - INFO - Deleting memory 3d405688-1fec-4c81-9b3a-387739de7286
+2026-05-27 20:42:56,665 - INFO - Deleting memory with memory_id='3d405688-1fec-4c81-9b3a-387739de7286'
+2026-05-27 20:42:57,381 - INFO - Getting all memories for alex
+2026-05-27 20:42:57,384 - INFO - Final memories: {'results': [{'id': 'd2c6246d-d04b-4038-8054-e9f3e4dda72c', 'memory': 'Alex now prefers vegetarian food and tracks calories.', 'hash': '8faff1055f7d1cbf49654dd4978cd697', 'metadata': {'category': 'preferences'}, 'created_at': '2026-05-27T20:42:55.128338+00:00', 'updated_at': '2026-05-27T20:42:56.058751+00:00', 'user_id': 'alex'}]}
+2026-05-27 20:42:57,385 - INFO - Finished successfully

@@ -1,0 +1,20 @@
+import os
+import json
+from mem0 import MemoryClient
+
+def main():
+    api_key = os.environ.get("MEM0_API_KEY")
+    run_id = os.environ.get("ZEALT_RUN_ID", "test_run")
+    user_id = f"harbor-history-{run_id}"
+
+    client = MemoryClient(api_key=api_key)
+
+    messages = [
+        {"role": "user", "content": "Hi, I just started my new job as a junior engineer at TechCorp today!"}
+    ]
+
+    add_response = client.add(messages, user_id=user_id)
+    print("Add response:", json.dumps(add_response, indent=2))
+
+if __name__ == "__main__":
+    main()

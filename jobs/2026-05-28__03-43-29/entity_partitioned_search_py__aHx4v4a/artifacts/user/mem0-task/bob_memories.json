@@ -1,0 +1,44 @@
+{
+  "user_id": "bob-zr-ahx4v4a",
+  "agent_id": "travel-agent-zr-ahx4v4a",
+  "app_id": "concierge-zr-ahx4v4a",
+  "run_id": "trip-zr-ahx4v4a",
+  "results": [
+    {
+      "id": "1d61cb3b-5221-4419-9a88-f59af3649203",
+      "memory": "User has a shellfish allergy, which they have noted for health considerations and avoids consuming it.",
+      "user_id": "bob-zr-ahx4v4a",
+      "agent_id": "travel-agent-zr-ahx4v4a",
+      "app_id": "concierge-zr-ahx4v4a",
+      "run_id": "trip-zr-ahx4v4a",
+      "score": 0.1971,
+      "score_breakdown": {
+        "semantic": 0.4927,
+        "bm25": 0.0,
+        "entity": 0.0
+      },
+      "metadata": {},
+      "categories": [],
+      "created_at": "2026-05-27T20:21:30+00:00",
+      "updated_at": "2026-05-27T20:21:38+00:00"
+    },
+    {
+      "id": "716dc793-1aa3-4f05-9bf0-d6dfd51da87e",
+      "memory": "User prefers ski resorts in Hokkaido for vacations, favoring the region's powder snow and scenic mountain views.",
+      "user_id": "bob-zr-ahx4v4a",
+      "agent_id": "travel-agent-zr-ahx4v4a",
+      "app_id": "concierge-zr-ahx4v4a",
+      "run_id": "trip-zr-ahx4v4a",
+      "score": 0.1845,
+      "score_breakdown": {
+        "semantic": 0.4612,
+        "bm25": 0.0,
+        "entity": 0.0
+      },
+      "metadata": {},
+      "categories": [],
+      "created_at": "2026-05-27T20:21:30+00:00",
+      "updated_at": "2026-05-27T20:21:38+00:00"
+    }
+  ]
+}

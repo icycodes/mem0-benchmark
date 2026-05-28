@@ -1,0 +1,25 @@
+{
+  "userId": "alice-zr-xqkcf7y",
+  "results": [
+    {
+      "id": "8c4ffb3b-c90c-404a-88c7-c86b18817273",
+      "memory": "User is vegetarian and loves sourdough bread.",
+      "hash": "c956196cfee8c5af08c00bc158759c7c",
+      "createdAt": "2026-05-27T20:24:37.643Z",
+      "updatedAt": "2026-05-27T20:24:37.643Z",
+      "score": 0.46895259772855624,
+      "metadata": {},
+      "user_id": "alice-zr-xqkcf7y"
+    },
+    {
+      "id": "300a2d52-544c-4a28-9671-e351a380d7b6",
+      "memory": "User keeps a strict no-nuts kitchen for their partner.",
+      "hash": "363e0a7b2600f560324a1efbd1ef891b",
+      "createdAt": "2026-05-27T20:24:37.644Z",
+      "updatedAt": "2026-05-27T20:24:37.644Z",
+      "score": 0.45015458025294675,
+      "metadata": {},
+      "user_id": "alice-zr-xqkcf7y"
+    }
+  ]
+}

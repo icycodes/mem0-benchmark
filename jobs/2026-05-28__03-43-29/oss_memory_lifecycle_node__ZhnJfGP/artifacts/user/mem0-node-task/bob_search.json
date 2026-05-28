@@ -1,0 +1,35 @@
+{
+  "userId": "bob-zr-zhnjfgp",
+  "results": [
+    {
+      "id": "de1694fb-177f-4a5b-974d-75312f687b4c",
+      "memory": "User has a shellfish allergy and informed the assistant about it on May 27, 2026; this is an important dietary restriction to consider for their cooking and meal planning.",
+      "hash": "7e6e5e1967f10286e54d87b7e2161eed",
+      "createdAt": "2026-05-27T20:37:03.551Z",
+      "updatedAt": "2026-05-27T20:37:03.551Z",
+      "score": 0.34218972696358846,
+      "metadata": {},
+      "user_id": "bob-zr-zhnjfgp"
+    },
+    {
+      "id": "62791fcc-9d61-40a6-9f88-117b6f485dbb",
+      "memory": "User frequently cooks Thai green curry and said they 'cook a lot' of it when telling the assistant on May 27, 2026, indicating a strong cooking preference and habitual dish.",
+      "hash": "fa9988d736be19a32542eecaa4fc5a13",
+      "createdAt": "2026-05-27T20:37:03.551Z",
+      "updatedAt": "2026-05-27T20:37:03.551Z",
+      "score": 0.3333501046103682,
+      "metadata": {},
+      "user_id": "bob-zr-zhnjfgp"
+    },
+    {
+      "id": "a301292b-7e35-4051-adc3-f4b4efd027eb",
+      "memory": "User always uses jasmine rice as the side with their Thai green curry, a stated serving preference the user shared on May 27, 2026.",
+      "hash": "66b888a5fb52861c159b1bff57f5ccdf",
+      "createdAt": "2026-05-27T20:37:03.551Z",
+      "updatedAt": "2026-05-27T20:37:03.551Z",
+      "score": 0.26639844931395773,
+      "metadata": {},
+      "user_id": "bob-zr-zhnjfgp"
+    }
+  ]
+}

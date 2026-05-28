@@ -1,0 +1,74 @@
+{
+  "user_id": "planner-zr-bvkazxa",
+  "filter_category": "finance",
+  "results": [
+    {
+      "id": "31773a3d-0b21-4ff7-b955-81536bfef7e1",
+      "memory": "Files quarterly tax estimates in March and September with the accountant",
+      "userId": "planner-zr-bvkazxa",
+      "metadata": {
+        "category": "finance",
+        "priority": "high"
+      },
+      "categories": null,
+      "createdAt": "2026-05-27T12:54:41-07:00",
+      "updatedAt": "2026-05-27T12:54:58-07:00",
+      "expirationDate": null,
+      "structuredAttributes": {
+        "year": 2026,
+        "month": 5,
+        "day": 27,
+        "hour": 19,
+        "minute": 54,
+        "dayOfWeek": "wednesday",
+        "weekOfYear": 22,
+        "dayOfYear": 147,
+        "quarter": 2,
+        "isWeekend": false
+      },
+      "eventDate": null,
+      "eventStart": null,
+      "eventEnd": null,
+      "timePrecision": null,
+      "timezone": null,
+      "stateKey": null,
+      "polarity": null,
+      "temporalRelation": null,
+      "planStatus": null
+    },
+    {
+      "id": "5edf8742-651b-44e7-9db6-24bebbed7ec8",
+      "memory": "User maxes out their 401(k) contributions early each year",
+      "userId": "planner-zr-bvkazxa",
+      "metadata": {
+        "category": "finance",
+        "priority": "low"
+      },
+      "categories": null,
+      "createdAt": "2026-05-27T12:54:41-07:00",
+      "updatedAt": "2026-05-27T12:54:48-07:00",
+      "expirationDate": null,
+      "structuredAttributes": {
+        "year": 2026,
+        "month": 5,
+        "day": 27,
+        "hour": 19,
+        "minute": 54,
+        "dayOfWeek": "wednesday",
+        "weekOfYear": 22,
+        "dayOfYear": 147,
+        "quarter": 2,
+        "isWeekend": false
+      },
+      "eventDate": null,
+      "eventStart": null,
+      "eventEnd": null,
+      "timePrecision": null,
+      "timezone": null,
+      "stateKey": null,
+      "polarity": null,
+      "temporalRelation": null,
+      "planStatus": null
+    }
+  ]
+}

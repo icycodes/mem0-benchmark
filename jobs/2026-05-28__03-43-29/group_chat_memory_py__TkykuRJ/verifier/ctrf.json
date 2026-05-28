@@ -1,0 +1,82 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 1,
+            "failed": 4,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1779913500608,
+            "stop": 1779913501631
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_log_file_session_line",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779913500626,
+                "stop": 1779913500627,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_user_memory_lines",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 13,
+                "start": 1779913500627,
+                "stop": 1779913500640,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_file_user_memory_lines():\n        run_id = _run_id()\n        _, user_matches, _ = _parse_log()\n>       assert len(user_matches) >= 3, (\n            f\"Expected at least 3 'User memory:' lines (one per participant), got {len(user_matches)}.\"\n        )\nE       AssertionError: Expected at least 3 'User memory:' lines (one per participant), got 0.\nE       assert 0 >= 3\nE        +  where 0 = len([])\n\ntests/test_final_state.py:58: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_agent_memory_line",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 3,
+                "start": 1779913500640,
+                "stop": 1779913500643,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_file_agent_memory_line():\n        run_id = _run_id()\n        _, _, agent_matches = _parse_log()\n>       assert len(agent_matches) >= 1, (\n            f\"Expected at least 1 'Agent memory:' line in {LOG_FILE}, found {len(agent_matches)}.\"\n        )\nE       AssertionError: Expected at least 1 'Agent memory:' line in /home/user/group_chat/output.log, found 0.\nE       assert 0 >= 1\nE        +  where 0 = len([])\n\ntests/test_final_state.py:80: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_memories_attributed_to_each_user_on_platform",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 984,
+                "start": 1779913500643,
+                "stop": 1779913501627,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_memories_attributed_to_each_user_on_platform():\n        pytest.importorskip(\"mem0\")\n        from mem0 import MemoryClient\n    \n        api_key = os.environ.get(\"MEM0_API_KEY\")\n        assert api_key, \"MEM0_API_KEY env var must be set for verification.\"\n    \n        _, user_matches, _ = _parse_log()\n        user_ids = sorted({m.group(\"uid\") for m in user_matches})\n>       assert user_ids, \"No user_ids parsed from log file.\"\nE       AssertionError: No user_ids parsed from log file.\nE       assert []\n\ntests/test_final_state.py:125: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_memory_attributed_to_assistant_on_platform",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1779913501627,
+                "stop": 1779913501631,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_memory_attributed_to_assistant_on_platform():\n        pytest.importorskip(\"mem0\")\n        from mem0 import MemoryClient\n    \n        api_key = os.environ.get(\"MEM0_API_KEY\")\n        assert api_key, \"MEM0_API_KEY env var must be set for verification.\"\n    \n        _, _, agent_matches = _parse_log()\n        agent_ids = sorted({m.group(\"aid\") for m in agent_matches})\n>       assert agent_ids, \"No agent_ids parsed from log file.\"\nE       AssertionError: No agent_ids parsed from log file.\nE       assert []\n\ntests/test_final_state.py:155: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

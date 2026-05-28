@@ -1,0 +1,79 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: json-ctrf-0.5.0
+collected 7 items
+
+tests/test_final_state.py ..FF.F.                                        [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_alice_search_artifact_shape _______________________
+
+    def test_alice_search_artifact_shape():
+        run_id = _run_id()
+        data = _load_json(ALICE_SEARCH)
+        assert isinstance(data, dict), f"{ALICE_SEARCH} must be a JSON object, got {type(data).__name__}."
+>       assert data.get("userId") == f"alice-{run_id}", (
+            f"Expected `userId` in {ALICE_SEARCH} to be 'alice-{run_id}', got {data.get('userId')!r}."
+        )
+E       AssertionError: Expected `userId` in /home/user/mem0-node-task/alice_search.json to be 'alice-zr-hmsqaj5', got 'alice-test-run-001'.
+E       assert 'alice-test-run-001' == 'alice-zr-hmsqaj5'
+E         - alice-zr-hmsqaj5
+E         + alice-test-run-001
+
+tests/test_final_state.py:56: AssertionError
+________________________ test_bob_search_artifact_shape ________________________
+
+    def test_bob_search_artifact_shape():
+        run_id = _run_id()
+        data = _load_json(BOB_SEARCH)
+        assert isinstance(data, dict), f"{BOB_SEARCH} must be a JSON object, got {type(data).__name__}."
+>       assert data.get("userId") == f"bob-{run_id}", (
+            f"Expected `userId` in {BOB_SEARCH} to be 'bob-{run_id}', got {data.get('userId')!r}."
+        )
+E       AssertionError: Expected `userId` in /home/user/mem0-node-task/bob_search.json to be 'bob-zr-hmsqaj5', got 'bob-test-run-001'.
+E       assert 'bob-test-run-001' == 'bob-zr-hmsqaj5'
+E         - bob-zr-hmsqaj5
+E         + bob-test-run-001
+
+tests/test_final_state.py:77: AssertionError
+___________________ test_output_log_contains_required_lines ____________________
+
+    def test_output_log_contains_required_lines():
+        assert os.path.isfile(OUTPUT_LOG), f"Expected stdout log at {OUTPUT_LOG} to exist."
+    
+        with open(OUTPUT_LOG, "r", encoding="utf-8") as f:
+            log = f.read()
+    
+        run_id = _run_id()
+        expected_run_line = f"RUN_ID: {run_id}"
+>       assert any(line.strip() == expected_run_line for line in log.splitlines()), (
+            f"Expected a line exactly equal to '{expected_run_line}' in {OUTPUT_LOG}.\nLog content:\n{log}"
+        )
+E       AssertionError: Expected a line exactly equal to 'RUN_ID: zr-hmsqaj5' in /home/user/mem0-node-task/output.log.
+E         Log content:
+E         RUN_ID: test-run-001
+E         Ingesting Alice's conversation...
+E         Ingesting Bob's conversation...
+E         Searching Alice's memories...
+E         Searching Bob's memories...
+E         ALICE_RESULTS: 2
+E         BOB_RESULTS: 3
+E         Found vegetarian memory: id=3baa3cec-76e8-4c60-91b7-68b3a749e4e5, text="User is vegetarian and loves sourdough bread"
+E         UPDATED_MEMORY_ID: 3baa3cec-76e8-4c60-91b7-68b3a749e4e5
+E         HISTORY_EVENTS: 2
+E         
+E       assert False
+E        +  where False = any(<generator object test_output_log_contains_required_lines.<locals>.<genexpr> at 0x7f291b415220>)
+
+tests/test_final_state.py:142: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_package_json_is_esm_with_mem0ai_dependency
+PASSED tests/test_final_state.py::test_mem0ai_node_module_installed
+PASSED tests/test_final_state.py::test_alice_history_artifact_shape
+PASSED tests/test_final_state.py::test_scope_isolation_keywords
+FAILED tests/test_final_state.py::test_alice_search_artifact_shape - Assertio...
+FAILED tests/test_final_state.py::test_bob_search_artifact_shape - AssertionE...
+FAILED tests/test_final_state.py::test_output_log_contains_required_lines - A...
+========================= 3 failed, 4 passed in 0.05s ==========================

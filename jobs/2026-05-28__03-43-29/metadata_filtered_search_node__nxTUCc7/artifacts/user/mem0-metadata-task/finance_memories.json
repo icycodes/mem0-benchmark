@@ -1,0 +1,74 @@
+{
+  "user_id": "planner-zr-nxtucc7",
+  "filter_category": "finance",
+  "results": [
+    {
+      "id": "8840b264-09ca-4374-b10d-41fe453d3523",
+      "memory": "User files quarterly tax estimates with their accountant each March as part of their annual tax planning routine",
+      "userId": "planner-zr-nxtucc7",
+      "metadata": {
+        "category": "finance",
+        "priority": "high"
+      },
+      "categories": null,
+      "createdAt": "2026-05-27T12:56:41-07:00",
+      "updatedAt": "2026-05-27T12:56:44-07:00",
+      "expirationDate": null,
+      "structuredAttributes": {
+        "year": 2026,
+        "month": 5,
+        "day": 27,
+        "hour": 19,
+        "minute": 56,
+        "dayOfWeek": "wednesday",
+        "weekOfYear": 22,
+        "dayOfYear": 147,
+        "quarter": 2,
+        "isWeekend": false
+      },
+      "eventDate": null,
+      "eventStart": null,
+      "eventEnd": null,
+      "timePrecision": null,
+      "timezone": null,
+      "stateKey": null,
+      "polarity": null,
+      "temporalRelation": null,
+      "planStatus": null
+    },
+    {
+      "id": "e3f0c4f2-3a65-4a25-b69e-665d7ef46f29",
+      "memory": "User maxes out their 401(k) contributions early each year",
+      "userId": "planner-zr-nxtucc7",
+      "metadata": {
+        "category": "finance",
+        "priority": "low"
+      },
+      "categories": null,
+      "createdAt": "2026-05-27T12:56:41-07:00",
+      "updatedAt": "2026-05-27T12:56:48-07:00",
+      "expirationDate": null,
+      "structuredAttributes": {
+        "year": 2026,
+        "month": 5,
+        "day": 27,
+        "hour": 19,
+        "minute": 56,
+        "dayOfWeek": "wednesday",
+        "weekOfYear": 22,
+        "dayOfYear": 147,
+        "quarter": 2,
+        "isWeekend": false
+      },
+      "eventDate": null,
+      "eventStart": null,
+      "eventEnd": null,
+      "timePrecision": null,
+      "timezone": null,
+      "stateKey": null,
+      "polarity": null,
+      "temporalRelation": null,
+      "planStatus": null
+    }
+  ]
+}

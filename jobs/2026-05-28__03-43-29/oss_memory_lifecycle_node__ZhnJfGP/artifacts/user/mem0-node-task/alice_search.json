@@ -1,0 +1,35 @@
+{
+  "userId": "alice-zr-zhnjfgp",
+  "results": [
+    {
+      "id": "0f41683f-ba91-4b2a-9947-30af3beffa92",
+      "memory": "Assistant committed to saving the user's dietary preferences: that the user is vegetarian and prefers sourdough bread.",
+      "hash": "84231b9819a6851aaaef8bdc35290dc0",
+      "createdAt": "2026-05-27T20:35:04.590Z",
+      "updatedAt": "2026-05-27T20:35:04.590Z",
+      "score": 0.4362125479543118,
+      "metadata": {},
+      "user_id": "alice-zr-zhnjfgp"
+    },
+    {
+      "id": "832332ab-7220-427b-a0c5-640b12d946a1",
+      "memory": "User follows a vegetarian diet and especially enjoys sourdough bread, indicating a clear food preference for sourdough in their meals.",
+      "hash": "cd68b7b2c1dc0934a2538cf6c4b6a83c",
+      "createdAt": "2026-05-27T20:35:04.590Z",
+      "updatedAt": "2026-05-27T20:35:04.590Z",
+      "score": 0.32148774946498965,
+      "metadata": {},
+      "user_id": "alice-zr-zhnjfgp"
+    },
+    {
+      "id": "02bcabb1-a657-45f8-b2ae-f73d5de74007",
+      "memory": "User maintains a strict no-nuts kitchen to protect their partner, enforcing a nut-free environment in their home.",
+      "hash": "d4c395fc7a3495aec30f80c642505261",
+      "createdAt": "2026-05-27T20:35:04.590Z",
+      "updatedAt": "2026-05-27T20:35:04.590Z",
+      "score": 0.1771039383978729,
+      "metadata": {},
+      "user_id": "alice-zr-zhnjfgp"
+    }
+  ]
+}

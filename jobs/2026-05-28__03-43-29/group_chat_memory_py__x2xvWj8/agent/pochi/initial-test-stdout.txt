@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /bootstrap
+plugins: anyio-4.13.0, json-ctrf-0.5.0
+collected 4 items
+
+bootstrap/test_initial_state.py::test_project_directory_exists PASSED
+bootstrap/test_initial_state.py::test_mem0_python_sdk_importable PASSED
+bootstrap/test_initial_state.py::test_mem0_api_key_env_present PASSED
+bootstrap/test_initial_state.py::test_zealt_run_id_env_present PASSED
+
+============================== 4 passed in 1.04s ===============================

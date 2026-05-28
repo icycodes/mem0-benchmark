@@ -1,0 +1,84 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: anyio-4.13.0, json-ctrf-0.5.0
+collected 5 items
+
+tests/test_final_state.py F.F..                                          [100%]
+
+=================================== FAILURES ===================================
+______________________ test_log_user_id_matches_run_scope ______________________
+
+log_lines = ['User ID: harbor-history-test_run_123', 'Memory ID: 7cafa143-a7ec-4b5a-9516-ba967ab82b62', 'Events JSON: [{"id": "f8d...12,-0.014999352395534515,-0.03494136780500412]", "metadata": null, "updated_at": "2026-05-27T12:51:49.415761-07:00"}]']
+expected_user_id = 'harbor-history-zr-yecpabd'
+
+    def test_log_user_id_matches_run_scope(log_lines, expected_user_id):
+        value = _extract_value(log_lines, "User ID:")
+        assert value, "Log file must contain a 'User ID: <id>' line."
+>       assert value == expected_user_id, (
+            f"Expected log User ID to be '{expected_user_id}', got '{value}'."
+        )
+E       AssertionError: Expected log User ID to be 'harbor-history-zr-yecpabd', got 'harbor-history-test_run_123'.
+E       assert 'harbor-history-test_run_123' == 'harbor-history-zr-yecpabd'
+E         - harbor-history-zr-yecpabd
+E         + harbor-history-test_run_123
+
+tests/test_final_state.py:96: AssertionError
+___________________ test_memory_exists_on_platform_for_user ____________________
+
+mem0_client = <mem0.client.main.MemoryClient object at 0x7bceed4f8470>
+expected_user_id = 'harbor-history-zr-yecpabd'
+logged_memory_id = '7cafa143-a7ec-4b5a-9516-ba967ab82b62'
+
+    def test_memory_exists_on_platform_for_user(
+        mem0_client, expected_user_id, logged_memory_id
+    ):
+>       memories = mem0_client.get_all(user_id=expected_user_id)
+
+tests/test_final_state.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+usr/local/lib/python3.12/dist-packages/mem0/client/utils.py:38: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <mem0.client.main.MemoryClient object at 0x7bceed4f8470>, options = None
+kwargs = {'user_id': 'harbor-history-zr-yecpabd'}
+invalid_keys = frozenset({'user_id'})
+
+    @api_error_handler
+    def get_all(self, options: Optional[GetAllMemoryOptions] = None, **kwargs) -> Dict[str, Any]:
+        """Retrieve all memories, with optional filtering.
+    
+        Args:
+            options: Typed options for the get_all operation (GetAllMemoryOptions).
+            **kwargs: Optional parameters for filtering (filters, page, page_size).
+    
+        Returns:
+            A paginated dict: {"count": int, "next": str | None, "previous": str | None, "results": [...]}
+    
+        Raises:
+            ValidationError: If the input data is invalid.
+            AuthenticationError: If authentication fails.
+            RateLimitError: If rate limits are exceeded.
+            MemoryQuotaExceededError: If memory quota is exceeded.
+            NetworkError: If network connectivity issues occur.
+            MemoryNotFoundError: If the memory doesn't exist (for updates/deletes).
+        """
+        # Reject top-level entity params - must use filters instead
+        invalid_keys = ENTITY_PARAMS & set(kwargs.keys())
+        if invalid_keys:
+>           raise ValueError(
+                f"Top-level entity parameters {invalid_keys} are not supported in get_all(). "
+                f"Use filters={{'user_id': '...'}} instead."
+            )
+E           ValueError: Top-level entity parameters frozenset({'user_id'}) are not supported in get_all(). Use filters={'user_id': '...'} instead.
+
+usr/local/lib/python3.12/dist-packages/mem0/client/main.py:250: ValueError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_log_events_contain_add_and_update
+PASSED tests/test_final_state.py::test_updated_memory_text_mentions_senior
+PASSED tests/test_final_state.py::test_platform_history_contains_add_and_update
+FAILED tests/test_final_state.py::test_log_user_id_matches_run_scope - Assert...
+FAILED tests/test_final_state.py::test_memory_exists_on_platform_for_user - V...
+========================= 2 failed, 3 passed in 3.36s ==========================

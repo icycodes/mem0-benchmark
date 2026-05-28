@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /bootstrap
+plugins: json-ctrf-0.5.0
+collected 6 items
+
+bootstrap/test_initial_state.py::test_node_binary_available PASSED
+bootstrap/test_initial_state.py::test_npm_binary_available PASSED
+bootstrap/test_initial_state.py::test_node_major_version_at_least_18 PASSED
+bootstrap/test_initial_state.py::test_project_directory_exists PASSED
+bootstrap/test_initial_state.py::test_openai_api_key_env_var_present PASSED
+bootstrap/test_initial_state.py::test_zealt_run_id_env_var_present PASSED
+
+============================== 6 passed in 0.02s ===============================

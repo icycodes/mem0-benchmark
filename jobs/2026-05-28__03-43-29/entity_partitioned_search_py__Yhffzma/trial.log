@@ -1,0 +1,9 @@
+Skipping image OS validation for hb__entity_partitioned_search_py: docker inspect returned 1
+Running command: apt-get update && apt-get install -y curl ripgrep
+Command outputs captured
+Running command: set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.12 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+Command failed
+Trial entity_partitioned_search_py__Yhffzma failed: Command failed (exit 28): set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.12 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version
+stdout: curl: (28) SSL connection timeout
+
+stderr: None

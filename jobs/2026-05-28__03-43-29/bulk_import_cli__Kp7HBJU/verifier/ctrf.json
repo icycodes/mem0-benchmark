@@ -1,0 +1,88 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1779912285371,
+            "stop": 1779912289440
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_mem0_cli_binary_available",
+                "status": "passed",
+                "duration": 131,
+                "start": 1779912285390,
+                "stop": 1779912285521,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_exists",
+                "status": "passed",
+                "duration": 2,
+                "start": 1779912285522,
+                "stop": 1779912285524,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_user_and_count",
+                "status": "passed",
+                "duration": 3,
+                "start": 1779912285524,
+                "stop": 1779912285527,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_search_hits_non_negative",
+                "status": "passed",
+                "duration": 1,
+                "start": 1779912285527,
+                "stop": 1779912285528,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_each_logged_memory_exists_on_platform",
+                "status": "passed",
+                "duration": 3173,
+                "start": 1779912285529,
+                "stop": 1779912288702,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_get_all_contains_all_logged_ids",
+                "status": "passed",
+                "duration": 350,
+                "start": 1779912288703,
+                "stop": 1779912289053,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_dietary_search_finds_vegetarian_or_peanut",
+                "status": "passed",
+                "duration": 385,
+                "start": 1779912289054,
+                "stop": 1779912289439,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

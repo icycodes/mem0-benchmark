@@ -1,0 +1,103 @@
+{
+    "id": "699bc7a2-9ff5-4621-9240-22a1b06a01c7",
+    "task_name": "entity_partitioned_search_py",
+    "trial_name": "entity_partitioned_search_py__Yhffzma",
+    "trial_uri": "file:///home/icy/github/benchmark-run/jobs/2026-05-28__03-43-29/entity_partitioned_search_py__Yhffzma",
+    "task_id": {
+        "path": "/home/icy/github/benchmark-run/local-scripts/../tasks/entity_partitioned_search_py"
+    },
+    "source": "tasks",
+    "task_checksum": "7ae284158a653e86baaf1ae5f8e6a3eaef5dcd5661d9a3e31c7379ce77935614",
+    "config": {
+        "task": {
+            "path": "/home/icy/github/benchmark-run/local-scripts/../tasks/entity_partitioned_search_py",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "entity_partitioned_search_py__Yhffzma",
+        "trials_dir": "/home/icy/github/benchmark-run/local-scripts/../jobs/2026-05-28__03-43-29",
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "agents.pochi:Pochi",
+            "model_name": "anthropic/claude-4-6-sonnet",
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {},
+            "env": {},
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts": [
+                {
+                    "type": "bind",
+                    "source": "test_initial_state.py",
+                    "target": "/bootstrap/test_initial_state.py"
+                }
+            ],
+            "extra_docker_compose": [],
+            "env": {},
+            "kwargs": {}
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+        },
+        "artifacts": [
+            "/home/user"
+        ],
+        "extra_instruction_paths": [],
+        "job_id": "65727fcd-878d-45c6-89cc-1d87bb59f573"
+    },
+    "agent_info": {
+        "name": "pochi",
+        "version": "unknown",
+        "model_info": {
+            "name": "claude-4-6-sonnet",
+            "provider": "anthropic"
+        }
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "NonZeroAgentExitCodeError",
+        "exception_message": "Command failed (exit 28): set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.12 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version\nstdout: curl: (28) SSL connection timeout\n\nstderr: None",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/home/icy/github/benchmark-run/.venv/lib/python3.14/site-packages/harbor/trial/trial.py\", line 160, in run\n    await self._prepare()\n  File \"/home/icy/github/benchmark-run/.venv/lib/python3.14/site-packages/harbor/trial/trial.py\", line 191, in _prepare\n    await self._setup_agent()\n  File \"/home/icy/github/benchmark-run/.venv/lib/python3.14/site-packages/harbor/trial/trial.py\", line 647, in _setup_agent\n    await asyncio.wait_for(\n    ...<2 lines>...\n    )\n  File \"/usr/lib/python3.14/asyncio/tasks.py\", line 488, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/home/icy/github/benchmark-run/.venv/lib/python3.14/site-packages/harbor/agents/installed/base.py\", line 380, in setup\n    await self.install(environment)\n  File \"/home/icy/github/benchmark-run/agents/pochi.py\", line 69, in install\n    await self.exec_as_agent(\n    ...<7 lines>...\n    )\n  File \"/home/icy/github/benchmark-run/.venv/lib/python3.14/site-packages/harbor/agents/installed/base.py\", line 354, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n        environment, command, env=env, cwd=cwd, timeout_sec=timeout_sec\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/icy/github/benchmark-run/.venv/lib/python3.14/site-packages/harbor/agents/installed/base.py\", line 317, in _exec\n    raise NonZeroAgentExitCodeError(\n    ...<3 lines>...\n    )\nharbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 28): set -euo pipefail; curl -fsSL https://getpochi.com/install.sh | bash -x -s -- pochi-v0.6.12 && mkdir -p /logs/agent/pochi && ~/.pochi/bin/pochi --version\nstdout: curl: (28) SSL connection timeout\n\nstderr: None\n",
+        "occurred_at": "2026-05-28T04:26:18.960530"
+    },
+    "started_at": "2026-05-27T20:20:11.094640Z",
+    "finished_at": "2026-05-27T20:26:37.915911Z",
+    "environment_setup": {
+        "started_at": "2026-05-27T20:20:11.183108Z",
+        "finished_at": "2026-05-27T20:21:01.901677Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-05-27T20:21:01.901724Z",
+        "finished_at": "2026-05-27T20:26:18.957521Z"
+    },
+    "agent_execution": null,
+    "verifier": null,
+    "step_results": null
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "zr-qqcppbf",
+  "collection_name": "mem0_demo_zr-qqcppbf",
+  "user_id": "alex",
+  "added_memory_ids": [
+    "c53e81fa-d9a4-4989-922c-a58de7273868",
+    "0c6b78f2-0b74-4c5b-b9be-3775c517832e",
+    "3a70bd62-4cd5-4424-83e6-7c362661ab61",
+    "9d5938d6-7fcc-4a0c-98e4-01bbe2fad545",
+    "2174365d-4451-4ac2-919f-75730cadd472"
+  ],
+  "updated_memory_id": "c53e81fa-d9a4-4989-922c-a58de7273868",
+  "updated_memory_text": "Alex now prefers vegetarian food and tracks calories.",
+  "deleted_memory_id": "0c6b78f2-0b74-4c5b-b9be-3775c517832e",
+  "search_query": "What does Alex prefer to eat now?",
+  "search_result_count": 4,
+  "final_memory_count": 4,
+  "created_at": "2026-05-27T20:47:55.438593Z"
+}

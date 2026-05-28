@@ -1,0 +1,26 @@
+{
+  "memoryId": "832332ab-7220-427b-a0c5-640b12d946a1",
+  "updatedText": "Alice is vegan and avoids all animal products",
+  "history": [
+    {
+      "id": 7,
+      "memory_id": "832332ab-7220-427b-a0c5-640b12d946a1",
+      "previous_value": "User follows a vegetarian diet and especially enjoys sourdough bread, indicating a clear food preference for sourdough in their meals.",
+      "new_value": "Alice is vegan and avoids all animal products",
+      "action": "UPDATE",
+      "created_at": "2026-05-27T20:35:04.590Z",
+      "updated_at": "2026-05-27T20:39:27.578Z",
+      "is_deleted": 0
+    },
+    {
+      "id": 1,
+      "memory_id": "832332ab-7220-427b-a0c5-640b12d946a1",
+      "previous_value": null,
+      "new_value": "User follows a vegetarian diet and especially enjoys sourdough bread, indicating a clear food preference for sourdough in their meals.",
+      "action": "ADD",
+      "created_at": "2026-05-27T20:35:04.590Z",
+      "updated_at": null,
+      "is_deleted": 0
+    }
+  ]
+}
