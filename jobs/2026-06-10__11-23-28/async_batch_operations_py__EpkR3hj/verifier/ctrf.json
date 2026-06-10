@@ -1,0 +1,143 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-06-10T03:42:48.314923+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 10,
+            "passed": 2,
+            "failed": 8,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1781062966018,
+            "stop": 1781062968314
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_log_contains_run_id",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 14,
+                "start": 1781062966049,
+                "stop": 1781062966063,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_contains_run_id():\n        rid = _run_id()\n        log = _read_log()\n>       assert re.search(rf\"^RUN_ID:\\s*{re.escape(rid)}\\s*$\", log, re.MULTILINE), (\n            f\"Log must contain a line 'RUN_ID: {rid}'. Log content:\\n{log}\"\n        )\nE       AssertionError: Log must contain a line 'RUN_ID: zr-epkr3hj'. Log content:\nE         \nE       assert None\nE        +  where None = <function search at 0x747e88607ba0>('^RUN_ID:\\\\s*zr\\\\-epkr3hj\\\\s*$', '', re.MULTILINE)\nE        +    where <function search at 0x747e88607ba0> = re.search\nE        +    and   re.MULTILINE = re.MULTILINE\n\ntests/test_final_state.py:63: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_total_memories",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 3,
+                "start": 1781062966064,
+                "stop": 1781062966067,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_contains_total_memories():\n        log = _read_log()\n        match = re.search(r\"^TOTAL_MEMORIES:\\s*(\\d+)\\s*$\", log, re.MULTILINE)\n>       assert match, f\"Log must contain 'TOTAL_MEMORIES: <int>'. Log:\\n{log}\"\nE       AssertionError: Log must contain 'TOTAL_MEMORIES: <int>'. Log:\nE         \nE       assert None\n\ntests/test_final_state.py:71: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_memory_ids",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 3,
+                "start": 1781062966068,
+                "stop": 1781062966071,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_contains_memory_ids():\n        log = _read_log()\n        for key in (\"BARBELL_ID\", \"NUTRITION_ID\", \"HEART_ID\"):\n            match = re.search(rf\"^{key}:\\s*(\\S+)\\s*$\", log, re.MULTILINE)\n>           assert match, f\"Log must contain '{key}: <non-empty id>'. Log:\\n{log}\"\nE           AssertionError: Log must contain 'BARBELL_ID: <non-empty id>'. Log:\nE             \nE           assert None\n\ntests/test_final_state.py:81: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_batch_counts",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 3,
+                "start": 1781062966072,
+                "stop": 1781062966075,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_contains_batch_counts():\n        log = _read_log()\n>       assert re.search(r\"^BATCH_UPDATE_COUNT:\\s*2\\s*$\", log, re.MULTILINE), (\n            f\"Log must contain literal line 'BATCH_UPDATE_COUNT: 2'. Log:\\n{log}\"\n        )\nE       AssertionError: Log must contain literal line 'BATCH_UPDATE_COUNT: 2'. Log:\nE         \nE       assert None\nE        +  where None = <function search at 0x747e88607ba0>('^BATCH_UPDATE_COUNT:\\\\s*2\\\\s*$', '', re.MULTILINE)\nE        +    where <function search at 0x747e88607ba0> = re.search\nE        +    and   re.MULTILINE = re.MULTILINE\n\ntests/test_final_state.py:87: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_log_contains_history_events",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 3,
+                "start": 1781062966076,
+                "stop": 1781062966079,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_contains_history_events():\n        log = _read_log()\n        match = re.search(r\"^HISTORY_EVENTS:\\s*(\\d+)\\s*$\", log, re.MULTILINE)\n>       assert match, f\"Log must contain 'HISTORY_EVENTS: <int>'. Log:\\n{log}\"\nE       AssertionError: Log must contain 'HISTORY_EVENTS: <int>'. Log:\nE         \nE       assert None\n\ntests/test_final_state.py:98: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_all_memories_artifact_shape",
+                "status": "passed",
+                "duration": 1,
+                "start": 1781062966079,
+                "stop": 1781062966080,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_batch_update_response_artifact",
+                "status": "passed",
+                "duration": 1,
+                "start": 1781062966080,
+                "stop": 1781062966081,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_batch_delete_response_artifact",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 5,
+                "start": 1781062966081,
+                "stop": 1781062966086,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_batch_delete_response_artifact():\n>       data = _load_json(BATCH_DELETE_FILE)\n\ntests/test_final_state.py:142: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npath = '/home/user/mem0-async-task/batch_delete_response.json'\n\n    def _load_json(path: str):\n>       assert os.path.isfile(path), f\"Expected artifact does not exist: {path}.\"\nE       AssertionError: Expected artifact does not exist: /home/user/mem0-async-task/batch_delete_response.json.\nE       assert False\nE        +  where False = <function isfile at 0x747e8857c220>('/home/user/mem0-async-task/batch_delete_response.json')\nE        +    where <function isfile at 0x747e8857c220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:39: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_barbell_history_artifact",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 5,
+                "start": 1781062966086,
+                "stop": 1781062966091,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_barbell_history_artifact():\n>       data = _load_json(HISTORY_FILE)\n\ntests/test_final_state.py:154: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npath = '/home/user/mem0-async-task/barbell_history.json'\n\n    def _load_json(path: str):\n>       assert os.path.isfile(path), f\"Expected artifact does not exist: {path}.\"\nE       AssertionError: Expected artifact does not exist: /home/user/mem0-async-task/barbell_history.json.\nE       assert False\nE        +  where False = <function isfile at 0x747e8857c220>('/home/user/mem0-async-task/barbell_history.json')\nE        +    where <function isfile at 0x747e8857c220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:39: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_server_state_after_batch_operations",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 2223,
+                "start": 1781062966091,
+                "stop": 1781062968314,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_server_state_after_batch_operations():\n        pytest.importorskip(\"mem0\")\n        api_key = os.environ.get(\"MEM0_API_KEY\")\n        assert api_key, \"MEM0_API_KEY required for server-side verification.\"\n    \n        memories = _fetch_all_memories()\n        assert isinstance(memories, list), (\n            f\"Server response should be a list, got {type(memories).__name__}.\"\n        )\n        texts = [_memory_text(m).lower() for m in memories]\n    \n>       assert any(\"dumbbells\" in t for t in texts), (\n            f\"Expected the batch-updated barbell memory to contain 'dumbbells'. Texts: {texts}\"\n        )\nE       AssertionError: Expected the batch-updated barbell memory to contain 'dumbbells'. Texts: []\nE       assert False\nE        +  where False = any(<generator object test_server_state_after_batch_operations.<locals>.<genexpr> at 0x747e4b2f0ee0>)\n\ntests/test_final_state.py:230: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

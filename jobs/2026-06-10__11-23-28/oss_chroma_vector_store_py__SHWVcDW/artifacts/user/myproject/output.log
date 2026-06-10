@@ -1,0 +1,108 @@
+2026-06-10 03:56:49,097 [INFO] Starting Mem0 Chroma Demo execution
+2026-06-10 03:56:49,097 [INFO] Using ZEALT_RUN_ID: zr-shwvcdw
+2026-06-10 03:56:49,097 [INFO] Chroma Collection Name: mem0_demo_zr-shwvcdw
+2026-06-10 03:56:49,097 [INFO] Cleaning up existing Chroma DB directory at /home/user/myproject/chroma_db for a clean, reproducible run...
+2026-06-10 03:56:49,098 [INFO] Initializing Memory instance from config...
+2026-06-10 03:56:55,088 [INFO] Memory instance successfully initialized.
+2026-06-10 03:56:55,088 [INFO] Ingesting conversation into Mem0...
+2026-06-10 03:56:55,701 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-10 03:57:00,625 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-10 03:57:00,816 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-10 03:57:00,909 [WARNING] Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-06-10 03:57:00,909 [INFO] Inserting 3 vectors into collection mem0_demo_zr-shwvcdw
+2026-06-10 03:57:04,248 [WARNING] Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+2026-06-10 03:57:04,919 [INFO] Ingestion complete. Response: {
+  "results": [
+    {
+      "id": "267e4b17-8646-4043-9dbd-cc55a0e118a8",
+      "memory": "User's name is Alex and they are vegan.",
+      "event": "ADD"
+    },
+    {
+      "id": "7e380e07-be38-4e43-aad1-f2a7476373e8",
+      "memory": "Alex loves hiking on weekends.",
+      "event": "ADD"
+    },
+    {
+      "id": "3a2d9cd4-857f-40c0-8d76-2ec486cbb296",
+      "memory": "Alex's favorite color is blue.",
+      "event": "ADD"
+    }
+  ]
+}
+2026-06-10 03:57:04,919 [INFO] Added memory IDs: ['267e4b17-8646-4043-9dbd-cc55a0e118a8', '7e380e07-be38-4e43-aad1-f2a7476373e8', '3a2d9cd4-857f-40c0-8d76-2ec486cbb296']
+2026-06-10 03:57:04,919 [INFO] Selected updated_memory_id: 7e380e07-be38-4e43-aad1-f2a7476373e8
+2026-06-10 03:57:04,919 [INFO] Selected deleted_memory_id: 3a2d9cd4-857f-40c0-8d76-2ec486cbb296
+2026-06-10 03:57:04,919 [INFO] Updating memory ID 7e380e07-be38-4e43-aad1-f2a7476373e8 to: 'Alex now prefers vegetarian food and tracks calories.'
+2026-06-10 03:57:05,075 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-10 03:57:05,087 [INFO] Updating memory with data='Alex now prefers vegetarian food and tracks calories.'
+2026-06-10 03:57:07,012 [INFO] Updating memory with ID memory_id='7e380e07-be38-4e43-aad1-f2a7476373e8' with data='Alex now prefers vegetarian food and tracks calories.'
+2026-06-10 03:57:07,765 [INFO] Update response: {'message': 'Memory updated successfully!'}
+2026-06-10 03:57:07,765 [INFO] Deleting memory ID 3a2d9cd4-857f-40c0-8d76-2ec486cbb296
+2026-06-10 03:57:07,768 [INFO] Deleting memory with memory_id='3a2d9cd4-857f-40c0-8d76-2ec486cbb296'
+2026-06-10 03:57:10,724 [INFO] Delete response: {'message': 'Memory deleted successfully!'}
+2026-06-10 03:57:10,724 [INFO] Retrieving final memory inventory...
+2026-06-10 03:57:10,728 [INFO] Final memory inventory: {
+  "results": [
+    {
+      "id": "267e4b17-8646-4043-9dbd-cc55a0e118a8",
+      "memory": "User's name is Alex and they are vegan.",
+      "hash": "048cf576e3fcaaf424ce09b294feca75",
+      "metadata": {
+        "category": "preferences"
+      },
+      "created_at": "2026-06-10T03:57:00.909697+00:00",
+      "updated_at": "2026-06-10T03:57:00.909697+00:00",
+      "user_id": "alex"
+    },
+    {
+      "id": "7e380e07-be38-4e43-aad1-f2a7476373e8",
+      "memory": "Alex now prefers vegetarian food and tracks calories.",
+      "hash": "8faff1055f7d1cbf49654dd4978cd697",
+      "metadata": {
+        "category": "preferences"
+      },
+      "created_at": "2026-06-10T03:57:00.909759+00:00",
+      "updated_at": "2026-06-10T03:57:05.089903+00:00",
+      "user_id": "alex"
+    }
+  ]
+}
+2026-06-10 03:57:10,728 [INFO] Final memory count: 2
+2026-06-10 03:57:10,728 [INFO] Performing semantic search with query: 'What are Alex's food preferences?'
+2026-06-10 03:57:11,039 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-10 03:57:11,057 [INFO] Search results: {
+  "results": [
+    {
+      "id": "267e4b17-8646-4043-9dbd-cc55a0e118a8",
+      "memory": "User's name is Alex and they are vegan.",
+      "hash": "048cf576e3fcaaf424ce09b294feca75",
+      "metadata": {
+        "category": "preferences"
+      },
+      "score": 0.8908830881118774,
+      "created_at": "2026-06-10T03:57:00.909697+00:00",
+      "updated_at": "2026-06-10T03:57:00.909697+00:00",
+      "user_id": "alex"
+    },
+    {
+      "id": "7e380e07-be38-4e43-aad1-f2a7476373e8",
+      "memory": "Alex now prefers vegetarian food and tracks calories.",
+      "hash": "8faff1055f7d1cbf49654dd4978cd697",
+      "metadata": {
+        "category": "preferences"
+      },
+      "score": 0.705829381942749,
+      "created_at": "2026-06-10T03:57:00.909759+00:00",
+      "updated_at": "2026-06-10T03:57:05.089903+00:00",
+      "user_id": "alex"
+    }
+  ]
+}
+2026-06-10 03:57:11,057 [INFO] Search result count: 2
+2026-06-10 03:57:11,057 [INFO] Writing structured JSON report to /home/user/myproject/result.json
+2026-06-10 03:57:11,057 [INFO] JSON report written successfully.
+2026-06-10 03:57:11,058 [INFO] Performing self-verification of functional outcomes...
+2026-06-10 03:57:11,060 [INFO] Retrieved updated memory: {'id': '7e380e07-be38-4e43-aad1-f2a7476373e8', 'memory': 'Alex now prefers vegetarian food and tracks calories.', 'hash': '8faff1055f7d1cbf49654dd4978cd697', 'metadata': {'category': 'preferences'}, 'score': None, 'created_at': '2026-06-10T03:57:00.909759+00:00', 'updated_at': '2026-06-10T03:57:05.089903+00:00', 'user_id': 'alex'}
+2026-06-10 03:57:11,060 [INFO] Self-verification PASSED successfully!
+2026-06-10 03:57:11,060 [INFO] Execution finished successfully.

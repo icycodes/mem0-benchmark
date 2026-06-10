@@ -1,0 +1,12 @@
+{
+  "name": "mem0-node-task",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mem0ai": "^2.4.6"
+  }
+}

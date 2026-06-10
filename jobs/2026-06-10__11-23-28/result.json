@@ -1,0 +1,129 @@
+{
+    "id": "02392c8f-dc54-4538-9ef9-fd8c2426ebe5",
+    "started_at": "2026-06-10T11:23:28.211005",
+    "updated_at": "2026-06-10T12:02:09.526466",
+    "finished_at": "2026-06-10T12:02:09.526466",
+    "n_total_trials": 30,
+    "stats": {
+        "n_completed_trials": 30,
+        "n_errored_trials": 12,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "pochi__gemini-3.5-flash__tasks": {
+                "n_trials": 10,
+                "n_errors": 4,
+                "metrics": [
+                    {
+                        "mean": 0.3
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "memory_feedback_py__kZMni5R",
+                            "metadata_filtered_search_node__XSHzDCX",
+                            "bulk_import_cli__MYzz4Zh"
+                        ],
+                        "0.0": [
+                            "memory_history_audit_py__LiQKwNN",
+                            "async_batch_operations_py__osRdon7",
+                            "group_chat_memory_py__7hyT7TW",
+                            "entity_partitioned_search_py__oxVhtBX",
+                            "oss_memory_lifecycle_node__RyKdpVG",
+                            "memory_export_py__iavKPAi",
+                            "oss_chroma_vector_store_py__SHWVcDW"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "AgentTimeoutError": [
+                        "async_batch_operations_py__osRdon7",
+                        "group_chat_memory_py__7hyT7TW",
+                        "entity_partitioned_search_py__oxVhtBX",
+                        "memory_export_py__iavKPAi"
+                    ]
+                }
+            },
+            "pochi__gpt-5.5__tasks": {
+                "n_trials": 10,
+                "n_errors": 3,
+                "metrics": [
+                    {
+                        "mean": 0.4
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "memory_feedback_py__pT347GK",
+                            "metadata_filtered_search_node__NiQQMC7",
+                            "bulk_import_cli__NC93rEc",
+                            "oss_memory_lifecycle_node__XotniP7"
+                        ],
+                        "0.0": [
+                            "memory_history_audit_py__4EkDs9y",
+                            "async_batch_operations_py__EpkR3hj",
+                            "group_chat_memory_py__mfrq2Pi",
+                            "entity_partitioned_search_py__aMRWvsd",
+                            "memory_export_py__P5UXVLT",
+                            "oss_chroma_vector_store_py__8iEjYsu"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "AgentTimeoutError": [
+                        "async_batch_operations_py__EpkR3hj",
+                        "group_chat_memory_py__mfrq2Pi",
+                        "memory_export_py__P5UXVLT"
+                    ]
+                }
+            },
+            "pochi__deepseek-4-pro__tasks": {
+                "n_trials": 10,
+                "n_errors": 5,
+                "metrics": [
+                    {
+                        "mean": 0.4
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "1.0": [
+                            "memory_feedback_py__vLrByQj",
+                            "metadata_filtered_search_node__ZJGEg3N",
+                            "bulk_import_cli__t9RB5S9",
+                            "oss_memory_lifecycle_node__cHfG8xg"
+                        ],
+                        "0.0": [
+                            "memory_history_audit_py__iw7hrch",
+                            "async_batch_operations_py__hrnMXn3",
+                            "group_chat_memory_py__LXrqQiT",
+                            "entity_partitioned_search_py__94Tp4Gv",
+                            "memory_export_py__idLvrwD",
+                            "oss_chroma_vector_store_py__GvYDjKb"
+                        ]
+                    }
+                },
+                "exception_stats": {
+                    "AgentTimeoutError": [
+                        "async_batch_operations_py__hrnMXn3",
+                        "group_chat_memory_py__LXrqQiT",
+                        "entity_partitioned_search_py__94Tp4Gv",
+                        "memory_export_py__idLvrwD",
+                        "oss_chroma_vector_store_py__GvYDjKb"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": 0,
+        "n_cache_tokens": 0,
+        "n_output_tokens": 1209162,
+        "cost_usd": null
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-06-10T03:49:58.513205+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 5,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1781063346717,
+            "stop": 1781063398512
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_alice_artifact_exists_and_valid",
+                "status": "passed",
+                "duration": 541,
+                "start": 1781063347715,
+                "stop": 1781063348256,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bob_artifact_exists_and_valid",
+                "status": "passed",
+                "duration": 2,
+                "start": 1781063348256,
+                "stop": 1781063348258,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_contents",
+                "status": "passed",
+                "duration": 3,
+                "start": 1781063348259,
+                "stop": 1781063348262,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_server_side_alice_has_vegetarian_memory",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 12288,
+                "start": 1781063348263,
+                "stop": 1781063360551,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "client = <mem0.client.main.MemoryClient object at 0x7ff208f17200>\n\n    def test_server_side_alice_has_vegetarian_memory(client):\n        ids = _ids()\n        results = _search_scope(\n            client,\n            ids[\"alice_user\"],\n            ids[\"agent\"],\n            ids[\"app\"],\n            ids[\"run\"],\n            \"vegetarian Lisbon hotels and seat preferences\",\n        )\n>       assert results, \"Expected at least one Alice-scoped memory on the server.\"\nE       AssertionError: Expected at least one Alice-scoped memory on the server.\nE       assert []\n\ntests/test_final_state.py:174: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_server_side_bob_has_shellfish_memory",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 13033,
+                "start": 1781063360552,
+                "stop": 1781063373585,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "client = <mem0.client.main.MemoryClient object at 0x7ff208f17200>\n\n    def test_server_side_bob_has_shellfish_memory(client):\n        ids = _ids()\n        results = _search_scope(\n            client,\n            ids[\"bob_user\"],\n            ids[\"agent\"],\n            ids[\"app\"],\n            ids[\"run\"],\n            \"shellfish allergy ski Hokkaido seat preference\",\n        )\n>       assert results, \"Expected at least one Bob-scoped memory on the server.\"\nE       AssertionError: Expected at least one Bob-scoped memory on the server.\nE       assert []\n\ntests/test_final_state.py:191: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_cross_isolation_alice_not_seeing_bob",
+                "status": "passed",
+                "duration": 12116,
+                "start": 1781063373585,
+                "stop": 1781063385701,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_cross_isolation_bob_not_seeing_alice",
+                "status": "passed",
+                "duration": 12809,
+                "start": 1781063385702,
+                "stop": 1781063398511,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-06-10T03:46:04.310133+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 3,
+            "failed": 2,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1781063040315,
+            "stop": 1781063164309
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_log_file_session_line",
+                "status": "passed",
+                "duration": 1,
+                "start": 1781063040333,
+                "stop": 1781063040334,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_user_memory_lines",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781063040334,
+                "stop": 1781063040334,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_agent_memory_line",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781063040335,
+                "stop": 1781063040335,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_memories_attributed_to_each_user_on_platform",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 62155,
+                "start": 1781063040335,
+                "stop": 1781063102490,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_memories_attributed_to_each_user_on_platform():\n        pytest.importorskip(\"mem0\")\n        from mem0 import MemoryClient\n    \n        api_key = os.environ.get(\"MEM0_API_KEY\")\n        assert api_key, \"MEM0_API_KEY env var must be set for verification.\"\n    \n        _, user_matches, _ = _parse_log()\n        user_ids = sorted({m.group(\"uid\") for m in user_matches})\n        assert user_ids, \"No user_ids parsed from log file.\"\n    \n        client = MemoryClient(api_key=api_key)\n    \n        discovered_memories = {}\n        for uid in user_ids:\n            memories = _wait_for_memories(client, {\"user_id\": uid})\n>           assert memories, (\n                f\"Expected at least one memory attributed to user_id={uid!r} on the Mem0 Platform, \"\n                \"but none were returned by client.get_all(...).\"\n            )\nE           AssertionError: Expected at least one memory attributed to user_id='alice-zr-7hyt7tw' on the Mem0 Platform, but none were returned by client.get_all(...).\nE           assert []\n\ntests/test_final_state.py:132: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_memory_attributed_to_assistant_on_platform",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 61819,
+                "start": 1781063102490,
+                "stop": 1781063164309,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_memory_attributed_to_assistant_on_platform():\n        pytest.importorskip(\"mem0\")\n        from mem0 import MemoryClient\n    \n        api_key = os.environ.get(\"MEM0_API_KEY\")\n        assert api_key, \"MEM0_API_KEY env var must be set for verification.\"\n    \n        _, _, agent_matches = _parse_log()\n        agent_ids = sorted({m.group(\"aid\") for m in agent_matches})\n        assert agent_ids, \"No agent_ids parsed from log file.\"\n    \n        client = MemoryClient(api_key=api_key)\n    \n        for aid in agent_ids:\n            memories = _wait_for_memories(client, {\"agent_id\": aid})\n>           assert memories, (\n                f\"Expected at least one memory attributed to agent_id={aid!r} on the Mem0 Platform, \"\n                \"but none were returned by client.get_all(...).\"\n            )\nE           AssertionError: Expected at least one memory attributed to agent_id='facilitator-zr-7hyt7tw' on the Mem0 Platform, but none were returned by client.get_all(...).\nE           assert []\n\ntests/test_final_state.py:161: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

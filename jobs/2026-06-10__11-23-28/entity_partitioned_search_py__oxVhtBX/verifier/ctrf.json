@@ -1,0 +1,107 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-06-10T03:49:33.012291+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 2,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1781063321711,
+            "stop": 1781063373012
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_alice_artifact_exists_and_valid",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 606,
+                "start": 1781063322865,
+                "stop": 1781063323471,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_alice_artifact_exists_and_valid():\n>       assert os.path.isfile(ALICE_FILE), f\"Expected artifact {ALICE_FILE} to exist.\"\nE       AssertionError: Expected artifact /home/user/mem0-task/alice_memories.json to exist.\nE       assert False\nE        +  where False = <function isfile at 0x7e4575530220>('/home/user/mem0-task/alice_memories.json')\nE        +    where <function isfile at 0x7e4575530220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:66: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_bob_artifact_exists_and_valid",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1781063323471,
+                "stop": 1781063323475,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_bob_artifact_exists_and_valid():\n>       assert os.path.isfile(BOB_FILE), f\"Expected artifact {BOB_FILE} to exist.\"\nE       AssertionError: Expected artifact /home/user/mem0-task/bob_memories.json to exist.\nE       assert False\nE        +  where False = <function isfile at 0x7e4575530220>('/home/user/mem0-task/bob_memories.json')\nE        +    where <function isfile at 0x7e4575530220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:93: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_log_file_contents",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 5,
+                "start": 1781063323475,
+                "stop": 1781063323480,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_log_file_contents():\n        assert os.path.isfile(LOG_FILE), f\"Expected log file {LOG_FILE} to exist.\"\n        with open(LOG_FILE) as f:\n            content = f.read()\n    \n        rid = _run_id()\n        # RUN_ID line exactly matches\n>       assert re.search(rf\"^RUN_ID:\\s*{re.escape(rid)}\\s*$\", content, re.MULTILINE), (\n            f\"Log must contain a line 'RUN_ID: {rid}'. Got:\\n{content}\"\n        )\nE       AssertionError: Log must contain a line 'RUN_ID: zr-oxvhtbx'. Got:\nE         \nE       assert None\nE        +  where None = <function search at 0x7e45755bbba0>('^RUN_ID:\\\\s*zr\\\\-oxvhtbx\\\\s*$', '', re.MULTILINE)\nE        +    where <function search at 0x7e45755bbba0> = re.search\nE        +    and   re.MULTILINE = re.MULTILINE\n\ntests/test_final_state.py:120: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_server_side_alice_has_vegetarian_memory",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 12528,
+                "start": 1781063323480,
+                "stop": 1781063336008,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "client = <mem0.client.main.MemoryClient object at 0x7e4538a1e750>\n\n    def test_server_side_alice_has_vegetarian_memory(client):\n        ids = _ids()\n        results = _search_scope(\n            client,\n            ids[\"alice_user\"],\n            ids[\"agent\"],\n            ids[\"app\"],\n            ids[\"run\"],\n            \"vegetarian Lisbon hotels and seat preferences\",\n        )\n>       assert results, \"Expected at least one Alice-scoped memory on the server.\"\nE       AssertionError: Expected at least one Alice-scoped memory on the server.\nE       assert []\n\ntests/test_final_state.py:174: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_server_side_bob_has_shellfish_memory",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 12214,
+                "start": 1781063336008,
+                "stop": 1781063348222,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "client = <mem0.client.main.MemoryClient object at 0x7e4538a1e750>\n\n    def test_server_side_bob_has_shellfish_memory(client):\n        ids = _ids()\n        results = _search_scope(\n            client,\n            ids[\"bob_user\"],\n            ids[\"agent\"],\n            ids[\"app\"],\n            ids[\"run\"],\n            \"shellfish allergy ski Hokkaido seat preference\",\n        )\n>       assert results, \"Expected at least one Bob-scoped memory on the server.\"\nE       AssertionError: Expected at least one Bob-scoped memory on the server.\nE       assert []\n\ntests/test_final_state.py:191: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_cross_isolation_alice_not_seeing_bob",
+                "status": "passed",
+                "duration": 12145,
+                "start": 1781063348223,
+                "stop": 1781063360368,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_cross_isolation_bob_not_seeing_alice",
+                "status": "passed",
+                "duration": 12642,
+                "start": 1781063360369,
+                "stop": 1781063373011,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

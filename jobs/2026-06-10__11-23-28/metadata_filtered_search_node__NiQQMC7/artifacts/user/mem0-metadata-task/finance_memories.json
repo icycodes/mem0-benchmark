@@ -1,0 +1,56 @@
+{
+  "user_id": "planner-zr-niqqmc7",
+  "filter_category": "finance",
+  "results": [
+    {
+      "id": "df35bf6b-ace2-4fcf-920b-456d72370488",
+      "memory": "User maxes out their 401(k) contributions early each year as part of their retirement savings strategy",
+      "userId": "planner-zr-niqqmc7",
+      "metadata": {
+        "category": "finance",
+        "priority": "low"
+      },
+      "categories": null,
+      "createdAt": "2026-06-09T20:28:51-07:00",
+      "updatedAt": "2026-06-09T20:28:59-07:00",
+      "expirationDate": null,
+      "structuredAttributes": {
+        "year": 2026,
+        "month": 6,
+        "day": 10,
+        "hour": 3,
+        "minute": 28,
+        "dayOfWeek": "wednesday",
+        "weekOfYear": 24,
+        "dayOfYear": 161,
+        "quarter": 2,
+        "isWeekend": false
+      }
+    },
+    {
+      "id": "53a97095-1a76-4fb5-8f31-6a579058dcdb",
+      "memory": "User files quarterly tax estimates with their accountant each March as part of their regular financial routine",
+      "userId": "planner-zr-niqqmc7",
+      "metadata": {
+        "category": "finance",
+        "priority": "high"
+      },
+      "categories": null,
+      "createdAt": "2026-06-09T20:28:50-07:00",
+      "updatedAt": "2026-06-09T20:28:55-07:00",
+      "expirationDate": null,
+      "structuredAttributes": {
+        "year": 2026,
+        "month": 6,
+        "day": 10,
+        "hour": 3,
+        "minute": 28,
+        "dayOfWeek": "wednesday",
+        "weekOfYear": 24,
+        "dayOfYear": 161,
+        "quarter": 2,
+        "isWeekend": false
+      }
+    }
+  ]
+}

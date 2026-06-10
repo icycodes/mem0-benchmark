@@ -1,0 +1,35 @@
+{
+  "userId": "bob-run_test_123",
+  "results": [
+    {
+      "id": "f9a331b5-0f6a-4ed3-8e7f-71fc2ada8564",
+      "memory": "User cooks a lot of Thai green curry.",
+      "hash": "6205f2aca4c4ff55167d47dfae37a8f8",
+      "createdAt": "2026-06-10T03:48:35.168Z",
+      "updatedAt": "2026-06-10T03:48:35.168Z",
+      "score": 0.30863978772523215,
+      "metadata": {},
+      "user_id": "bob-run_test_123"
+    },
+    {
+      "id": "e79558f7-6116-41d0-99d5-b25500953441",
+      "memory": "User always uses jasmine rice as a side dish when cooking.",
+      "hash": "0c8178089f68fa0ef3d84019aef86953",
+      "createdAt": "2026-06-10T03:48:35.168Z",
+      "updatedAt": "2026-06-10T03:48:35.168Z",
+      "score": 0.27191904268427936,
+      "metadata": {},
+      "user_id": "bob-run_test_123"
+    },
+    {
+      "id": "aab11f49-e245-42bc-9f67-b08f7f2bca05",
+      "memory": "User has a shellfish allergy.",
+      "hash": "31670be3f6485cd14fbb1f74c2ebe084",
+      "createdAt": "2026-06-10T03:48:35.168Z",
+      "updatedAt": "2026-06-10T03:48:35.168Z",
+      "score": 0.17321695013846644,
+      "metadata": {},
+      "user_id": "bob-run_test_123"
+    }
+  ]
+}

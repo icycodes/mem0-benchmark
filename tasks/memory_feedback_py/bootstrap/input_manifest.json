@@ -1,0 +1,7 @@
+{
+  "library_name": "mem0ai",
+  "task_name": "memory_feedback_py",
+  "complexity_level": "simple set of 2-5 commands",
+  "research_plan_path": "plan.md",
+  "output_dir": "tasks/"
+}

@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: anyio-4.13.0, json-ctrf-0.5.2
+collected 7 items
+
+tests/test_final_state.py ...FF..                                        [100%]
+
+=================================== FAILURES ===================================
+_________________ test_server_side_alice_has_vegetarian_memory _________________
+
+client = <mem0.client.main.MemoryClient object at 0x7ff208f17200>
+
+    def test_server_side_alice_has_vegetarian_memory(client):
+        ids = _ids()
+        results = _search_scope(
+            client,
+            ids["alice_user"],
+            ids["agent"],
+            ids["app"],
+            ids["run"],
+            "vegetarian Lisbon hotels and seat preferences",
+        )
+>       assert results, "Expected at least one Alice-scoped memory on the server."
+E       AssertionError: Expected at least one Alice-scoped memory on the server.
+E       assert []
+
+tests/test_final_state.py:174: AssertionError
+__________________ test_server_side_bob_has_shellfish_memory ___________________
+
+client = <mem0.client.main.MemoryClient object at 0x7ff208f17200>
+
+    def test_server_side_bob_has_shellfish_memory(client):
+        ids = _ids()
+        results = _search_scope(
+            client,
+            ids["bob_user"],
+            ids["agent"],
+            ids["app"],
+            ids["run"],
+            "shellfish allergy ski Hokkaido seat preference",
+        )
+>       assert results, "Expected at least one Bob-scoped memory on the server."
+E       AssertionError: Expected at least one Bob-scoped memory on the server.
+E       assert []
+
+tests/test_final_state.py:191: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_alice_artifact_exists_and_valid
+PASSED tests/test_final_state.py::test_bob_artifact_exists_and_valid
+PASSED tests/test_final_state.py::test_log_file_contents
+PASSED tests/test_final_state.py::test_cross_isolation_alice_not_seeing_bob
+PASSED tests/test_final_state.py::test_cross_isolation_bob_not_seeing_alice
+FAILED tests/test_final_state.py::test_server_side_alice_has_vegetarian_memory
+FAILED tests/test_final_state.py::test_server_side_bob_has_shellfish_memory
+========================= 2 failed, 5 passed in 51.79s =========================

@@ -1,0 +1,97 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 4,
+            "failed": 3,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1781063402643,
+            "stop": 1781063402764
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_package_json_is_esm_with_mem0ai_dependency",
+                "status": "passed",
+                "duration": 2,
+                "start": 1781063402722,
+                "stop": 1781063402724,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_mem0ai_node_module_installed",
+                "status": "passed",
+                "duration": 2,
+                "start": 1781063402724,
+                "stop": 1781063402726,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_alice_search_artifact_shape",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 26,
+                "start": 1781063402726,
+                "stop": 1781063402752,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_alice_search_artifact_shape():\n        run_id = _run_id()\n        data = _load_json(ALICE_SEARCH)\n        assert isinstance(data, dict), f\"{ALICE_SEARCH} must be a JSON object, got {type(data).__name__}.\"\n>       assert data.get(\"userId\") == f\"alice-{run_id}\", (\n            f\"Expected `userId` in {ALICE_SEARCH} to be 'alice-{run_id}', got {data.get('userId')!r}.\"\n        )\nE       AssertionError: Expected `userId` in /home/user/mem0-node-task/alice_search.json to be 'alice-zr-rykdpvg', got 'alice-run_test_123'.\nE       assert 'alice-run_test_123' == 'alice-zr-rykdpvg'\nE         - alice-zr-rykdpvg\nE         + alice-run_test_123\n\ntests/test_final_state.py:56: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_bob_search_artifact_shape",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 6,
+                "start": 1781063402752,
+                "stop": 1781063402758,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_bob_search_artifact_shape():\n        run_id = _run_id()\n        data = _load_json(BOB_SEARCH)\n        assert isinstance(data, dict), f\"{BOB_SEARCH} must be a JSON object, got {type(data).__name__}.\"\n>       assert data.get(\"userId\") == f\"bob-{run_id}\", (\n            f\"Expected `userId` in {BOB_SEARCH} to be 'bob-{run_id}', got {data.get('userId')!r}.\"\n        )\nE       AssertionError: Expected `userId` in /home/user/mem0-node-task/bob_search.json to be 'bob-zr-rykdpvg', got 'bob-run_test_123'.\nE       assert 'bob-run_test_123' == 'bob-zr-rykdpvg'\nE         - bob-zr-rykdpvg\nE         + bob-run_test_123\n\ntests/test_final_state.py:77: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_alice_history_artifact_shape",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781063402758,
+                "stop": 1781063402758,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_required_lines",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 4,
+                "start": 1781063402759,
+                "stop": 1781063402763,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_output_log_contains_required_lines():\n        assert os.path.isfile(OUTPUT_LOG), f\"Expected stdout log at {OUTPUT_LOG} to exist.\"\n    \n        with open(OUTPUT_LOG, \"r\", encoding=\"utf-8\") as f:\n            log = f.read()\n    \n        run_id = _run_id()\n        expected_run_line = f\"RUN_ID: {run_id}\"\n>       assert any(line.strip() == expected_run_line for line in log.splitlines()), (\n            f\"Expected a line exactly equal to '{expected_run_line}' in {OUTPUT_LOG}.\\nLog content:\\n{log}\"\n        )\nE       AssertionError: Expected a line exactly equal to 'RUN_ID: zr-rykdpvg' in /home/user/mem0-node-task/output.log.\nE         Log content:\nE         RUN_ID: run_test_123\nE         ALICE_RESULTS: 2\nE         BOB_RESULTS: 3\nE         UPDATED_MEMORY_ID: 2cc6cce3-f87d-4c66-bada-f5cbc59ed45e\nE         HISTORY_EVENTS: 2\nE         \nE       assert False\nE        +  where False = any(<generator object test_output_log_contains_required_lines.<locals>.<genexpr> at 0x73c467d31220>)\n\ntests/test_final_state.py:142: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_final_state.py::test_scope_isolation_keywords",
+                "status": "passed",
+                "duration": 1,
+                "start": 1781063402763,
+                "stop": 1781063402764,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

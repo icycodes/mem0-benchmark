@@ -1,0 +1,69 @@
+{
+  "user_id": "planner-zr-niqqmc7",
+  "filter_priority": "high",
+  "results": [
+    {
+      "id": "a5a5e75d-6136-43fb-a9e0-a9ffac9d2ef7",
+      "memory": "User prefers aisle seats on long‑haul flights and seeks direct flight routes when traveling to Tokyo",
+      "userId": "planner-zr-niqqmc7",
+      "agentId": null,
+      "appId": null,
+      "runId": null,
+      "score": 0.1969,
+      "scoreBreakdown": {
+        "semantic": 0.4922,
+        "bm25": 0,
+        "entity": 0
+      },
+      "metadata": {
+        "category": "travel",
+        "priority": "high"
+      },
+      "categories": [],
+      "createdAt": "2026-06-10T03:28:51+00:00",
+      "updatedAt": "2026-06-10T03:29:04+00:00"
+    },
+    {
+      "id": "53a97095-1a76-4fb5-8f31-6a579058dcdb",
+      "memory": "User files quarterly tax estimates with their accountant each March as part of their regular financial routine",
+      "userId": "planner-zr-niqqmc7",
+      "agentId": null,
+      "appId": null,
+      "runId": null,
+      "score": 0.178,
+      "scoreBreakdown": {
+        "semantic": 0.445,
+        "bm25": 0,
+        "entity": 0
+      },
+      "metadata": {
+        "category": "finance",
+        "priority": "high"
+      },
+      "categories": [],
+      "createdAt": "2026-06-10T03:28:50+00:00",
+      "updatedAt": "2026-06-10T03:29:04.322907+00:00"
+    },
+    {
+      "id": "95db4eff-5b20-4e99-9b4f-0e0c0aa74500",
+      "memory": "User runs interval workouts on a treadmill three times per week as part of their regular exercise routine",
+      "userId": "planner-zr-niqqmc7",
+      "agentId": null,
+      "appId": null,
+      "runId": null,
+      "score": 0.1311,
+      "scoreBreakdown": {
+        "semantic": 0.3277,
+        "bm25": 0,
+        "entity": 0
+      },
+      "metadata": {
+        "category": "health",
+        "priority": "high"
+      },
+      "categories": [],
+      "createdAt": "2026-06-10T03:28:51+00:00",
+      "updatedAt": "2026-06-10T03:29:09+00:00"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-06-10T04:01:55.498929+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 15,
+            "passed": 2,
+            "failed": 13,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1781064114345,
+            "stop": 1781064115498
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_output_log_exists_and_nonempty",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781064114368,
+                "stop": 1781064114368,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_chroma_persistence_files_exist",
+                "status": "passed",
+                "duration": 1,
+                "start": 1781064114368,
+                "stop": 1781064114369,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_report_has_required_keys",
+                "status": "failed",
+                "duration": 12,
+                "start": 1781064114369,
+                "stop": 1781064114381,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_report_run_id_matches_env",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114382,
+                "stop": 1781064114385,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_report_collection_name",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114385,
+                "stop": 1781064114388,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_report_user_id",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114388,
+                "stop": 1781064114391,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_added_memory_ids_valid",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114391,
+                "stop": 1781064114394,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_updated_memory_id_is_in_added",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114394,
+                "stop": 1781064114397,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_deleted_memory_id_is_in_added_and_distinct",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114397,
+                "stop": 1781064114400,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_updated_memory_text_value",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114400,
+                "stop": 1781064114403,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_search_query_nonempty",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114403,
+                "stop": 1781064114406,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_search_result_count_int",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114406,
+                "stop": 1781064114409,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_final_memory_count_matches_expected",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114410,
+                "stop": 1781064114413,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_mem0_chroma_state_via_sdk",
+                "status": "failed",
+                "duration": 3,
+                "start": 1781064114413,
+                "stop": 1781064114416,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "@pytest.fixture(scope=\"session\")\n    def report():\n>       assert os.path.isfile(RESULT_JSON), f\"Result file not found at {RESULT_JSON}.\"\nE       AssertionError: Result file not found at /home/user/myproject/result.json.\nE       assert False\nE        +  where False = <function isfile at 0x7843125d4220>('/home/user/myproject/result.json')\nE        +    where <function isfile at 0x7843125d4220> = <module 'posixpath' (frozen)>.isfile\nE        +      where <module 'posixpath' (frozen)> = os.path\n\ntests/test_final_state.py:17: AssertionError"
+            },
+            {
+                "name": "test_final_state.py::test_chroma_collection_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 1082,
+                "start": 1781064114416,
+                "stop": 1781064115498,
+                "retries": 0,
+                "file_path": "test_final_state.py",
+                "trace": "def test_chroma_collection_exists():\n        \"\"\"Verify the Chroma collection name directly via the chromadb client.\"\"\"\n        import chromadb\n    \n        client = chromadb.PersistentClient(path=CHROMA_DIR)\n        collections = client.list_collections()\n        names = []\n        for c in collections:\n            # Different chromadb versions return Collection objects or dicts.\n            name = getattr(c, \"name\", None) or (c.get(\"name\") if isinstance(c, dict) else None)\n            if name:\n                names.append(name)\n    \n>       with open(RESULT_JSON, \"r\", encoding=\"utf-8\") as f:\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/user/myproject/result.json'\n\ntests/test_final_state.py:206: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}

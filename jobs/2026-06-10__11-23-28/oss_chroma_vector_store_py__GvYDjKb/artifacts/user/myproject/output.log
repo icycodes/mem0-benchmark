@@ -1,0 +1,12 @@
+2026-06-10 03:59:54,475 [INFO] === Mem0 + Chroma Demo ===
+2026-06-10 03:59:54,475 [INFO] Run ID: zr-gvydjkb
+2026-06-10 03:59:54,475 [INFO] Collection name: mem0_demo_zr-gvydjkb
+2026-06-10 03:59:54,475 [INFO] Chroma persistence path: /home/user/myproject/chroma_db
+2026-06-10 03:59:54,475 [INFO] Creating Memory instance with Chroma vector store...
+2026-06-10 03:59:56,760 [INFO] Memory instance created successfully.
+2026-06-10 03:59:56,761 [INFO] Adding conversation to Mem0 (user_id=alex)...
+2026-06-10 03:59:57,673 [INFO] HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-06-10 03:59:58,335 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-06-10 03:59:58,336 [ERROR] LLM extraction failed: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2026-06-10 03:59:58,337 [INFO] Added 0 memories: []
+2026-06-10 03:59:58,337 [INFO] Searching for: 'What does Alex like to eat?'

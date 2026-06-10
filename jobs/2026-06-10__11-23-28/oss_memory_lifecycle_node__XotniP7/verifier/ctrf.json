@@ -1,0 +1,88 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "7.4.4"
+        },
+        "summary": {
+            "tests": 7,
+            "passed": 7,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1781063322553,
+            "stop": 1781063322588
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_final_state.py::test_package_json_is_esm_with_mem0ai_dependency",
+                "status": "passed",
+                "duration": 1,
+                "start": 1781063322583,
+                "stop": 1781063322584,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_mem0ai_node_module_installed",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781063322584,
+                "stop": 1781063322584,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_alice_search_artifact_shape",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781063322585,
+                "stop": 1781063322585,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_bob_search_artifact_shape",
+                "status": "passed",
+                "duration": 1,
+                "start": 1781063322585,
+                "stop": 1781063322586,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_alice_history_artifact_shape",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781063322586,
+                "stop": 1781063322586,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_output_log_contains_required_lines",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781063322587,
+                "stop": 1781063322587,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            },
+            {
+                "name": "test_final_state.py::test_scope_isolation_keywords",
+                "status": "passed",
+                "duration": 0,
+                "start": 1781063322588,
+                "stop": 1781063322588,
+                "retries": 0,
+                "file_path": "test_final_state.py"
+            }
+        ]
+    }
+}

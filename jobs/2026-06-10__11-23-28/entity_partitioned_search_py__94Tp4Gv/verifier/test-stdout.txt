@@ -1,0 +1,137 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0
+rootdir: /tests
+plugins: anyio-4.13.0, json-ctrf-0.5.2
+collected 7 items
+
+tests/test_final_state.py FFFFF..                                        [100%]
+
+=================================== FAILURES ===================================
+_____________________ test_alice_artifact_exists_and_valid _____________________
+
+    def test_alice_artifact_exists_and_valid():
+>       assert os.path.isfile(ALICE_FILE), f"Expected artifact {ALICE_FILE} to exist."
+E       AssertionError: Expected artifact /home/user/mem0-task/alice_memories.json to exist.
+E       assert False
+E        +  where False = <function isfile at 0x7b4b86800220>('/home/user/mem0-task/alice_memories.json')
+E        +    where <function isfile at 0x7b4b86800220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:66: AssertionError
+______________________ test_bob_artifact_exists_and_valid ______________________
+
+    def test_bob_artifact_exists_and_valid():
+>       assert os.path.isfile(BOB_FILE), f"Expected artifact {BOB_FILE} to exist."
+E       AssertionError: Expected artifact /home/user/mem0-task/bob_memories.json to exist.
+E       assert False
+E        +  where False = <function isfile at 0x7b4b86800220>('/home/user/mem0-task/bob_memories.json')
+E        +    where <function isfile at 0x7b4b86800220> = <module 'posixpath' (frozen)>.isfile
+E        +      where <module 'posixpath' (frozen)> = os.path
+
+tests/test_final_state.py:93: AssertionError
+____________________________ test_log_file_contents ____________________________
+
+    def test_log_file_contents():
+        assert os.path.isfile(LOG_FILE), f"Expected log file {LOG_FILE} to exist."
+        with open(LOG_FILE) as f:
+            content = f.read()
+    
+        rid = _run_id()
+        # RUN_ID line exactly matches
+>       assert re.search(rf"^RUN_ID:\s*{re.escape(rid)}\s*$", content, re.MULTILINE), (
+            f"Log must contain a line 'RUN_ID: {rid}'. Got:\n{content}"
+        )
+E       AssertionError: Log must contain a line 'RUN_ID: zr-94tp4gv'. Got:
+E         
+E       assert None
+E        +  where None = <function search at 0x7b4b8688bba0>('^RUN_ID:\\s*zr\\-94tp4gv\\s*$', '', re.MULTILINE)
+E        +    where <function search at 0x7b4b8688bba0> = re.search
+E        +    and   re.MULTILINE = re.MULTILINE
+
+tests/test_final_state.py:120: AssertionError
+_________________ test_server_side_alice_has_vegetarian_memory _________________
+
+client = <mem0.client.main.MemoryClient object at 0x7b4b496573e0>
+
+    def test_server_side_alice_has_vegetarian_memory(client):
+        ids = _ids()
+        results = _search_scope(
+            client,
+            ids["alice_user"],
+            ids["agent"],
+            ids["app"],
+            ids["run"],
+            "vegetarian Lisbon hotels and seat preferences",
+        )
+>       assert results, "Expected at least one Alice-scoped memory on the server."
+E       AssertionError: Expected at least one Alice-scoped memory on the server.
+E       assert []
+
+tests/test_final_state.py:174: AssertionError
+------------------------------ Captured log call -------------------------------
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+__________________ test_server_side_bob_has_shellfish_memory ___________________
+
+client = <mem0.client.main.MemoryClient object at 0x7b4b496573e0>
+
+    def test_server_side_bob_has_shellfish_memory(client):
+        ids = _ids()
+        results = _search_scope(
+            client,
+            ids["bob_user"],
+            ids["agent"],
+            ids["app"],
+            ids["run"],
+            "shellfish allergy ski Hokkaido seat preference",
+        )
+>       assert results, "Expected at least one Bob-scoped memory on the server."
+E       AssertionError: Expected at least one Bob-scoped memory on the server.
+E       assert []
+
+tests/test_final_state.py:191: AssertionError
+------------------------------ Captured log call -------------------------------
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+==================================== PASSES ====================================
+__________________ test_cross_isolation_alice_not_seeing_bob ___________________
+------------------------------ Captured log call -------------------------------
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+__________________ test_cross_isolation_bob_not_seeing_alice ___________________
+------------------------------ Captured log call -------------------------------
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+ERROR    mem0.client.utils:utils.py:40 HTTP error occurred: Client error '429 Too Many Requests' for url 'https://api.mem0.ai/v3/memories/search/'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+=========================== short test summary info ============================
+PASSED tests/test_final_state.py::test_cross_isolation_alice_not_seeing_bob
+PASSED tests/test_final_state.py::test_cross_isolation_bob_not_seeing_alice
+FAILED tests/test_final_state.py::test_alice_artifact_exists_and_valid - Asse...
+FAILED tests/test_final_state.py::test_bob_artifact_exists_and_valid - Assert...
+FAILED tests/test_final_state.py::test_log_file_contents - AssertionError: Lo...
+FAILED tests/test_final_state.py::test_server_side_alice_has_vegetarian_memory
+FAILED tests/test_final_state.py::test_server_side_bob_has_shellfish_memory
+========================= 5 failed, 2 passed in 47.69s =========================

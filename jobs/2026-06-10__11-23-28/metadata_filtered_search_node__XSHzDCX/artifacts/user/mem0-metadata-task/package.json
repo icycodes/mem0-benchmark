@@ -1,0 +1,10 @@
+{
+  "name": "mem0-metadata-task",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Mem0 Platform Metadata-Tagged Memory + V2 Filtered Retrieval",
+  "main": "index.js",
+  "dependencies": {
+    "mem0ai": "^1.0.37"
+  }
+}

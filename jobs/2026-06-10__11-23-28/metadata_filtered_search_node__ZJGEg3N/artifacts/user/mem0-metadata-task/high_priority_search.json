@@ -1,0 +1,81 @@
+{
+  "user_id": "planner-zr-zjgeg3n",
+  "filter_priority": "high",
+  "results": [
+    {
+      "id": "4f86a432-d199-4362-a15e-163f4d5b1c46",
+      "memory": "User prefers aisle seats on long-haul flights and direct routes to Tokyo.",
+      "user_id": "planner-zr-zjgeg3n",
+      "score": 0.1827,
+      "categories": [],
+      "metadata": {
+        "category": "travel",
+        "priority": "high"
+      },
+      "updated_at": "2026-06-10T03:37:59+00:00",
+      "created_at": "2026-06-10T03:37:44+00:00",
+      "structured_attributes": {
+        "day": 10,
+        "hour": 3,
+        "year": 2026,
+        "month": 6,
+        "minute": 37,
+        "quarter": 2,
+        "is_weekend": false,
+        "day_of_week": "wednesday",
+        "day_of_year": 161,
+        "week_of_year": 24
+      }
+    },
+    {
+      "id": "b10e948a-b317-415d-bbd2-89bf496251d9",
+      "memory": "User runs interval training on the treadmill three times per week",
+      "user_id": "planner-zr-zjgeg3n",
+      "score": 0.1458,
+      "categories": [],
+      "metadata": {
+        "category": "health",
+        "priority": "high"
+      },
+      "updated_at": "2026-06-10T03:38:03+00:00",
+      "created_at": "2026-06-10T03:37:44+00:00",
+      "structured_attributes": {
+        "day": 10,
+        "hour": 3,
+        "year": 2026,
+        "month": 6,
+        "minute": 37,
+        "quarter": 2,
+        "is_weekend": false,
+        "day_of_week": "wednesday",
+        "day_of_year": 161,
+        "week_of_year": 24
+      }
+    },
+    {
+      "id": "047926ad-d320-42ba-be44-7dd12d9f7e76",
+      "memory": "User files quarterly tax estimates with their accountant every March.",
+      "user_id": "planner-zr-zjgeg3n",
+      "score": 0.1754,
+      "categories": [],
+      "metadata": {
+        "category": "finance",
+        "priority": "high"
+      },
+      "updated_at": "2026-06-10T03:37:52+00:00",
+      "created_at": "2026-06-10T03:37:42+00:00",
+      "structured_attributes": {
+        "day": 10,
+        "hour": 3,
+        "year": 2026,
+        "month": 6,
+        "minute": 37,
+        "quarter": 2,
+        "is_weekend": false,
+        "day_of_week": "wednesday",
+        "day_of_year": 161,
+        "week_of_year": 24
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+import importlib
+import os
+
+import pytest
+
+PROJECT_DIR = "/home/user/mem0-async-task"
+
+
+def test_project_dir_exists():
+    assert os.path.isdir(PROJECT_DIR), (
+        f"Project directory {PROJECT_DIR} does not exist."
+    )
+
+
+def test_mem0_sdk_importable():
+    try:
+        mem0 = importlib.import_module("mem0")
+    except ImportError as exc:  # pragma: no cover - diagnostic message only
+        pytest.fail(f"`mem0` Python SDK is not importable: {exc}")
+    assert hasattr(mem0, "AsyncMemoryClient"), (
+        "`mem0` is importable but `AsyncMemoryClient` is not exposed."
+    )
+
+
+def test_mem0_api_key_present():
+    api_key = os.environ.get("MEM0_API_KEY")
+    assert api_key, "MEM0_API_KEY environment variable is not set."
+
+
+def test_zealt_run_id_present():
+    run_id = os.environ.get("ZEALT_RUN_ID")
+    assert run_id, "ZEALT_RUN_ID environment variable is not set."
