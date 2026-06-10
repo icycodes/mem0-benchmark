@@ -273,3 +273,7 @@ These environment variables will be provided:
 
 * MEM0_API_KEY: for Mem0 Platform usage
 * OPENAI_API_KEY: for Mem0 Python/Node.js SDK usage with OpenAI
+
+## Important notes for Task Generation
+
+* Carefully write the final `pytest` test code. When using the Mem0 Platform API to verify task side effects, you must use `webFetch` to retrieve the API reference documentation, double-check that the endpoint actually exists, and ensure the request and response match the documentation.
