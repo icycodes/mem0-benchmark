@@ -1,7 +1,0 @@
-{
-  "library_name": "Mem0",
-  "task_name": "memory_history_audit_py",
-  "complexity_level": "multi-step sequential command set",
-  "research_plan_path": "plan.md",
-  "output_dir": "tasks/"
-}

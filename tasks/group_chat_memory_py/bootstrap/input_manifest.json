@@ -1,7 +1,0 @@
-{
-  "library_name": "Mem0",
-  "task_name": "group_chat_memory_py",
-  "complexity_level": "multi-step sequential command set",
-  "research_plan_path": "plan.md",
-  "output_dir": "tasks/"
-}

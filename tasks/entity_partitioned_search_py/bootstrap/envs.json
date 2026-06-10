@@ -1,4 +1,0 @@
-{
-    "task": ["MEM0_API_KEY", "OPENAI_API_KEY"],
-    "verifier": ["MEM0_API_KEY"]
-}

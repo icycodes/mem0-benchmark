@@ -1,7 +1,0 @@
-{
-  "library_name": "mem0",
-  "task_name": "oss_chroma_vector_store_py",
-  "complexity_level": "multi-step sequential command set",
-  "research_plan_path": "plan.md",
-  "output_dir": "tasks/"
-}

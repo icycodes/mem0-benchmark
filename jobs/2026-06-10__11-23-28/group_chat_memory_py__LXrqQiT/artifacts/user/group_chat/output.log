@@ -1,9 +1,0 @@
-Session: planning-zr-lxrqqit
-User memory: alice-zr-lxrqqit :: User strongly recommends FastAPI for the API layer, highlighting automatic OpenAPI documentation and built‑in async support that will reduce boilerplate code.
-User memory: alice-zr-lxrqqit :: User prefers Redis for caching and session storage, noting existing operational expertise and its ability to handle high throughput easily.
-User memory: alice-zr-lxrqqit :: User recommends using PostgreSQL for the database layer, emphasizing its strong ACID compliance and excellent JSON support for semi-structured data.
-User memory: alice-zr-lxrqqit :: Assistant noted the replication requirement from Alice, Redis Sentinel from Bob, and Kubernetes from Charlie, and suggested reconvening after the spike.
-User memory: alice-zr-lxrqqit :: User proposes deploying all services on Kubernetes, stating it will simplify the CI/CD pipeline and enable repeatable deployments via Helm charts.
-User memory: alice-zr-lxrqqit :: User wants database replication set up from day one, citing past problems with single‑node deployments.
-User memory: alice-zr-lxrqqit :: Assistant summarized that Alice wants PostgreSQL, Bob wants Redis, and Charlie wants FastAPI, recording these as the team's technology preferences to be revisited at the architecture review.
-User memory: alice-zr-lxrqqit :: User requests Redis Sentinel mode for automatic failover, based on previous successful experience.
